@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/_13sdp">
+
+    <com.nsl.app.CustomEditTextNormal
+        android:id="@+id/edit_comments"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_125sdp"
+        android:background="@color/editTextbg"
+        android:gravity="start"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_below="@+id/edit_comments"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.nsl.app.ButtonPlus
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_alignLeft="@+id/iv_sucess"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/iv_sucess"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_red"
+            android:gravity="center"
+            android:text="@string/cast_tracks_chooser_dialog_cancel"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <com.nsl.app.ButtonPlus
+            android:id="@+id/btn_ok"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_alignLeft="@+id/iv_sucess"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/iv_sucess"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:background="@drawable/btn_red"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>
+

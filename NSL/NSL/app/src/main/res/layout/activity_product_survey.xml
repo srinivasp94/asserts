@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:weightSum="1"
+    android:scrollbarSize="@dimen/_1sdp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/_8sdp"
+        android:weightSum="1">
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/tv_companyname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/companyname"
+            android:textSize="@dimen/_10sdp" />
+
+        <com.nsl.app.CustomEditTextNormal
+            android:textColor="@color/black"
+            android:id="@+id/edt_selectcompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgr"
+            android:paddingTop="@dimen/_7sdp"
+            android:inputType="textCapWords"
+            android:paddingBottom="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/_12sdp"/>
+
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/tv_productname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/productname"
+            android:textSize="@dimen/_10sdp" />
+
+        <com.nsl.app.CustomEditTextNormal
+            android:textColor="@color/black"
+            android:id="@+id/edt_selectproduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgr"
+            android:inputType="textCapSentences"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/_12sdp"/>
+
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/segmentname"
+            android:textSize="@dimen/_10sdp" />
+
+        <com.nsl.app.CustomEditTextNormal
+            android:textColor="@color/black"
+            android:id="@+id/edt_segmentname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgr"
+            android:inputType="textCapSentences"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_12sdp"/>
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/launchyear"
+            android:textSize="@dimen/_10sdp" />
+
+        <com.nsl.app.CustomEditTextNormal
+            android:textColor="@color/black"
+            android:id="@+id/edt_launchyear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgr"
+            android:inputType="number"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_12sdp"/>
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/unitssold"
+            android:textSize="@dimen/_10sdp" />
+
+        <com.nsl.app.CustomEditTextNormal
+            android:textColor="@color/black"
+            android:id="@+id/edt_unitssold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgr"
+            android:inputType="number"
+            android:paddingTop="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/_12sdp"/>
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/croparea"
+            android:textSize="@dimen/_10sdp" />
+
+        <com.nsl.app.CustomEditTextNormal
+            android:textColor="@color/black"
+            android:id="@+id/edt_croparea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bgr"
+            android:gravity="start"
+            android:inputType="numberDecimal"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/_12sdp"/>
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/tv_remarks"
+            android:text="@string/remarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textSize="@dimen/_10sdp"/>
+
+        <com.nsl.app.CustomEditTextNormal
+            android:textColor="@color/black"
+            android:id="@+id/edt_remarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textImeMultiLine"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bgr"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/_12sdp"
+            android:gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:padding="@dimen/_3sdp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.nsl.app.ButtonPlus
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@color/green"
+                android:textSize="@dimen/_12sdp"
+                android:text="@string/submit"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"/>
+
+            <com.nsl.app.ButtonPlus
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:background="@color/colorPrimary"
+                android:text="@string/cast_tracks_chooser_dialog_cancel"
+                android:textSize="@dimen/_12sdp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

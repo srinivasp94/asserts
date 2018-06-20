@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nsl.app.multiselectionlist.CheckableRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- We dont want to be able to click the CheckBox -
+         android:clickable="false" added.
+         CheckableRelativeLayout takes care of the toggle when clicking the row -->
+    <CheckBox
+        android:id="@+id/myCheckBox"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:focusable="false"
+        android:clickable="false"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/customcheckbox_background"
+        android:button="@drawable/customcheckbox"
+        />
+    <TextView
+        android:id="@+id/listview_TeamDescription"
+        android:focusable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/myCheckBox"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_3sdp"
+        android:text="jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"/>
+    <TextView
+        android:id="@+id/listview_TeamWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:paddingRight="5dp"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        />
+</com.nsl.app.multiselectionlist.CheckableRelativeLayout>

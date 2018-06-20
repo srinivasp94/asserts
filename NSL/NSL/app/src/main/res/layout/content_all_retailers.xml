@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".retailers.AllRetailersActivity"
+    tools:showIn="@layout/activity_all_retailers">
+
+
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:divider="@null">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/empty"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:padding="@dimen/_6sdp"
+        android:text="@string/no_retailers_found"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:visibility="gone">
+
+    </com.nsl.app.commonutils.CustomTextViewNormal>
+
+
+
+</LinearLayout>

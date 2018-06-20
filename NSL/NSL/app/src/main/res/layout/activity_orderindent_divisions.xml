@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.nsl.app.LoginActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/MyToolbar"
+        app:title="@string/order_indent"
+        app:titleTextColor="@color/white"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/yellow">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:text="@string/new_text" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:text="@string/new_text"
+            android:textStyle="bold" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:text=""
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_above="@+id/tv_amount"
+            android:layout_alignEnd="@+id/tv_amount"
+            android:layout_alignLeft="@+id/tv_amount"
+            android:layout_alignRight="@+id/tv_amount"
+            android:layout_alignStart="@+id/tv_amount"
+            android:background="@color/colorPrimary"></View>-->
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_amount"
+            android:gravity="center"
+            android:text="@string/TOTAL_OUTSTANDING_AMOUNT" />
+
+        <View
+            android:layout_width="250dp"
+            android:layout_height="3dp"
+            android:layout_below="@+id/textView11"
+            android:layout_marginLeft="60dp"
+            android:background="#FF0000" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/textViewAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView11"
+            android:gravity="center"
+            android:text="5,00,000.00"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_amount"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="S#"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            android:layout_weight="1"/>
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_amount"
+            android:layout_marginLeft="@dimen/_35sdp"
+            android:gravity="center"
+            android:text="@string/division"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            android:layout_weight="1"/>
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_amount"
+            android:layout_marginLeft="@dimen/_70sdp"
+            android:gravity="center"
+            android:text="@string/osa"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            android:layout_weight="1"/>
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_amount"
+            android:layout_marginLeft="80dp"
+            android:gravity="center"
+            android:text="@string/aging"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_30sdp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:divider="@null"
+            android:layout_alignParentTop="true"></ListView>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

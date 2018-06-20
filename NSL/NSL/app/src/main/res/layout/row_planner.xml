@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="@dimen/_3sdp">
+
+    <!--  ListRow Left sied Thumbnail image -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:padding="@dimen/_2sdp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp" />
+
+    </LinearLayout>
+
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:gravity="right"
+        android:text="Status"
+        android:textSize="@dimen/_10sdp" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_approvalstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_status"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:gravity="right"
+        android:text="@string/approval_status"
+        android:textSize="@dimen/_10sdp" />
+
+    <!-- Rightend Arrow -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/rightarrow"
+        android:visibility="gone" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
+        android:textAllCaps="true"
+        android:textColor="#040404"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_perpose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tv_customer"
+        android:layout_marginRight="@dimen/_60sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/text_purpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Purpose: "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"
+           />
+
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_purpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#343434"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/rowbottomcolor"
+        android:layout_below="@+id/ll_perpose"></View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:orientation="horizontal"
+        android:gravity="right"
+        >
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_reject"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@mipmap/reject"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:text="" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_accept"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@mipmap/accept"
+            android:text="" />
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title=""
+            app:titleTextColor="@color/white">
+
+            <com.nsl.app.commonutils.CustomTextViewBold
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/cotton_crop"
+                android:textSize="@dimen/_16sdp"
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="18dp"
+        android:layout_below="@+id/abl_toolbar"
+        android:layout_centerHorizontal="true">
+        <com.nsl.app.commonutils.CustomTextViewLight
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Result"
+            android:textSize="@dimen/_12sdp"/>
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="0"
+            android:textSize="@dimen/_20sdp"/>
+
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avg no.of bolls/plant"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:textSize="@dimen/_15sdp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ti1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/ed1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="in sq meters"
+                android:inputType="numberDecimal"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avg boll weight/plant"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_15sdp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ti2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/ed2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="in sq meters"
+                android:inputType="numberDecimal"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Row to Row distance"
+            android:textSize="@dimen/_15sdp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ti3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/ed3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="in sq meters"
+                android:inputType="numberDecimal"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/txt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plant to Plant distance"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_15sdp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ti4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/ed4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="in sq meters"
+                android:inputType="numberDecimal"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+</LinearLayout>
+
+    <com.nsl.app.ButtonPlus
+        android:id="@+id/button_cotton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yield per hector in grams"
+        android:background="@drawable/button"
+        android:textAlignment="center"
+        android:textSize="@dimen/_14sdp"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/white"/>
+
+
+
+
+</RelativeLayout>
+</ScrollView>

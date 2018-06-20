@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:theme="@style/MyToolbar"
+                app:title=" "
+                app:titleTextColor="@color/white">
+
+                <com.nsl.app.commonutils.CustomTextViewBold
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/route_map"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/et_date" />
+
+        <RelativeLayout
+            android:id="@+id/maintop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appbarlayout"
+            android:background="@color/listview_header_color">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:gravity="center"
+                android:padding="@dimen/_6sdp"
+                android:text=""
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/maintop"
+            android:background="@color/yellow">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:gravity="center"
+                android:padding="@dimen/_4sdp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top"
+            android:orientation="vertical">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:id="@+id/text_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:gravity="left"
+                android:text="@string/select_user"
+                android:textColor="@color/textgraycolor" />
+
+            <Spinner
+                android:id="@+id/spin_user"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/spinner_bg" />
+
+            <include layout="@layout/line_view" />
+        </LinearLayout>
+
+        <com.nsl.app.CustomEditTextNormal
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_below="@+id/ll_select"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/bgr"
+            android:clickable="true"
+
+            android:drawableRight="@drawable/cal"
+            android:focusable="false"
+            android:gravity="center"
+            android:hint="@string/PLEASE_SELECT_DATE"
+            android:inputType="none"
+            android:padding="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_24sdp"
+            android:textSize="@dimen/_11sdp" />
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

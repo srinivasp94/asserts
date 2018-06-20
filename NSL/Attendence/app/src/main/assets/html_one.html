@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><!-- Insert your title here --></title>
+    <style>
+        body{
+            padding:10px 30px 0 30px;
+        }
+        div{width: 50%; a color: #cccccc ; border: 1px ;margin-left: 50px;margin-right: 50px;}
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+
+
+        function validClick(){
+        Ok.performClick();
+            var a=document.getElementById("uname").value;
+            var b=document.getElementById("pwd").value;
+            for(var i = 0 ; i <= 10 ; i++)
+            {
+             str=str+para;
+ document.getElementById("demomain").innerHTML = str;
+            }
+
+             valid.performClick();
+             document.getElementById("ok").value = "Submit";
+
+        }
+
+</script>
+
+<h3>Login</h3>
+<div>
+    <form>
+        <p>User Name : <input type="text" value="" id='uname'/></p>
+        <p>Password : <input type="text" value="" id='pwd'/></p>
+
+        <button type="button" id="ok" onclick="validClick();">Submit</button>
+    </form>
+    <!--<button type="button" onclick="ok.performClick();">OK</button>-->
+    <!--<input type="submit" value="Submit" id="ok" onclick="signin();"/>-->
+</div>
+<p id="demomain"></p>
+<p id="demo">Recently in one of my android applications I wanted to obtain the user’s location in
+    terms of city and country that they can feed from their (edit) profile section. So one way to do
+    this is basically have two dropdowns or dialogs (or even open an entirely new activity where the
+    user can search through entities and select one). One of them would display all the countries in
+    which, once a selection is made, the other one will show a restricted set of cities based on the
+    prior country selection. Now the number of cities in the world is large, so to do this we’ll
+    need to get a database that contains all the countries and cities and then make sure we can
+    query that over HTTP to get the cities based on what the user types into the app (autocomplete
+    box). We’ve to make sure the response is really quick and doesn’t cause lags. We can also bundle
+    all the city and country data into our app but then that’ll blow up the apk size.</p>
+</body>
+</html>

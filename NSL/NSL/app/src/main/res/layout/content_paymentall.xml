@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.nsl.app.feedback.Feedbackall"
+    tools:showIn="@layout/activity_paymentcollection_all">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/yellow">
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text=""
+            android:textAllCaps="true"
+            android:textSize="@dimen/_11sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:text="" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/listview_header_color">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_sr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:gravity="center"
+            android:padding="@dimen/_6sdp"
+            android:text="S#"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:gravity="center"
+            android:padding="@dimen/_6sdp"
+            android:text="@string/amount"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_paydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_amount"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_toEndOf="@+id/tv_osa"
+            android:layout_toRightOf="@+id/tv_osa"
+            android:gravity="left"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_rtgs_chq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_toEndOf="@+id/tv_sr"
+            android:layout_toRightOf="@+id/tv_sr"
+            android:gravity="center"
+            android:padding="@dimen/_6sdp"
+            android:text="@string/payment_details"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_osa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_rtgs_chq"
+            android:layout_alignBottom="@+id/tv_rtgs_chq"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:layout_toEndOf="@+id/tv_rtgs_chq"
+            android:layout_toRightOf="@+id/tv_rtgs_chq"
+            android:gravity="center"
+            android:text="  "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:divider="@null">
+
+    </ListView>
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/empty"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:padding="@dimen/_6sdp"
+        android:text="@string/no_records_found"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:visibility="gone">
+
+    </com.nsl.app.commonutils.CustomTextViewNormal>
+</LinearLayout>

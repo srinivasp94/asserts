@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="@string/payment_details"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_13sdp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="@string/bank_name"
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:text="Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp"
+                android:id="@+id/tv_name" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_4sdp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="Amount "
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:text="@string/Amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp"
+                android:id="@+id/tv_amount" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="Mode"
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="gone"
+                android:id="@+id/tv_mode" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginTop="5dp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="Total_amount "
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:visibility="gone"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="total_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:visibility="gone"
+                android:textSize="@dimen/_13sdp"
+                android:id="@+id/tv_total_amount" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_3sdp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="Type "
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:visibility="gone"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"/>
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:visibility="gone"
+                android:textSize="@dimen/_13sdp"
+                android:id="@+id/tv_type" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_3sdp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="Payment mode "
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"/>
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:text="Payment mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_Payment_mode"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_13sdp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_3sdp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="RTGS or NEFT "
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_RTGS"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:id="@+id/colonfeedback"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="rtgs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewrtgs"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:visibility="gone"
+                android:textSize="@dimen/_13sdp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_3sdp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="Pay date "
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"/>
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_pay_date"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_13sdp"
+                android:text=" Pay date"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_3sdp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="Date on cheque"
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_dateoncheque"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:id="@+id/colondateoncheque"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_dateoncheque"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:text="Date on cheque"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_3sdp">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text="@string/Cheque_Number"
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_chequeno"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:text=" :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:id="@+id/colonchequeno"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:textStyle="bold"/>
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_chequeno"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                android:text="Cheque Number"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:background="@color/rowbottomcolor"></View>
+</LinearLayout>

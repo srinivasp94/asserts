@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.nsl.app.feedback.Feedbackall"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_feedbackall">
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:layout_marginTop="@dimen/_3sdp"
+        >
+    </ListView>
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/empty"
+        android:text="@string/no_feedbacks_found"
+        android:background="@color/yellow"
+        android:padding="@dimen/_6sdp"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        style="@android:style/TextAppearance.Large"
+        android:gravity="center">
+    </com.nsl.app.commonutils.CustomTextViewNormal>
+</LinearLayout>

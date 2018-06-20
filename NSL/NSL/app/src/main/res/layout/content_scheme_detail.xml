@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp"
+        android:weightSum="2">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_schemename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center"
+            android:inputType="none"
+            android:text="@string/name"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_slab_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="none"
+            android:text="@string/name"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/_2sdp"
+    android:layout_marginTop="10dp"
+    android:weightSum="3">
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Company"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:layout_weight="1"/>
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Crop"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:layout_weight="1"/>
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:layout_weight="1"/>
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp"
+        android:weightSum="3">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_company"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Company"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_crop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Crop"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+  <!--  <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/colorPrimaryDark">
+
+    </View>-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:padding="2dp"
+    android:orientation="horizontal"
+    android:background="@color/com_facebook_button_background_color_disabled"
+    android:weightSum="7">
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Product name"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_9sdp"
+        android:layout_weight="2"/>
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="price/packet"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_9sdp"
+        android:layout_weight="1"/>
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="region"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/_9sdp"
+        android:textAllCaps="true" />
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:text="valid \nfrom"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_9sdp" />
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Valid \nto "
+        android:textSize="@dimen/_9sdp"
+        android:textAllCaps="true" />
+
+</LinearLayout>
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/empty"
+        android:text="NO SCHEMES FOUND!"
+        android:background="@color/yellow"
+        android:padding="@dimen/_6sdp"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        style="@android:style/TextAppearance.Large"
+        android:gravity="center"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:divider="@null">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

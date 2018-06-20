@@ -1,0 +1,15 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coordinatorLayout"
+    android:background="#ffffff"
+    >
+
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/distributor"
+        android:layout_margin="@dimen/_28sdp"/>
+
+</android.support.design.widget.CoordinatorLayout>

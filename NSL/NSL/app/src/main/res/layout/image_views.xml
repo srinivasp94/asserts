@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+   >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        >
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center">
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:background="@drawable/camera"
+            android:visibility="visible"
+            >
+            <com.nsl.app.commonutils.CircularImageViewWithBoarder
+                android:id="@+id/ivImage"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+               />
+
+            <com.nsl.app.ButtonPlus
+                android:id="@+id/btndelete"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:background="@drawable/remove"
+                android:layout_gravity="right|top"
+                android:visibility="gone"
+               />
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center">
+
+        <FrameLayout
+            android:id="@+id/frame1"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:background="@drawable/camera"
+            android:visibility="visible">
+            <com.nsl.app.commonutils.CircularImageViewWithBoarder
+                android:id="@+id/ivImage1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                />
+
+            <com.nsl.app.ButtonPlus
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:background="@drawable/remove"
+                android:layout_gravity="right|top"
+                android:visibility="gone"
+                />
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_5sdp"
+        android:gravity="center">
+
+        <FrameLayout
+            android:id="@+id/frame2"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:background="@drawable/camera"
+            android:visibility="visible">
+            <com.nsl.app.commonutils.CircularImageViewWithBoarder
+                android:id="@+id/ivImage2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                />
+
+            <com.nsl.app.ButtonPlus
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:background="@drawable/remove"
+                android:layout_gravity="right|top"
+                android:visibility="gone"
+                />
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        >
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center">
+
+            <FrameLayout
+                android:id="@+id/frame4"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:background="@drawable/camera"
+                android:visibility="visible">
+                <com.nsl.app.commonutils.CircularImageViewWithBoarder
+                    android:id="@+id/ivImage4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    />
+
+                <com.nsl.app.ButtonPlus
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:background="@drawable/remove"
+                    android:layout_gravity="right|top"
+                    android:visibility="gone"
+                    />
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center">
+
+            <FrameLayout
+                android:id="@+id/frame5"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:background="@drawable/camera"
+                android:visibility="visible">
+                <com.nsl.app.commonutils.CircularImageViewWithBoarder
+                    android:id="@+id/ivImage5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    />
+
+                <com.nsl.app.ButtonPlus
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:background="@drawable/remove"
+                    android:layout_gravity="right|top"
+                    android:visibility="gone"
+                    />
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center">
+
+            <FrameLayout
+                android:id="@+id/frame6"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:background="@drawable/camera"
+                android:visibility="visible">
+                <com.nsl.app.commonutils.CircularImageViewWithBoarder
+                    android:id="@+id/ivImage6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    />
+
+                <com.nsl.app.ButtonPlus
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:background="@drawable/remove"
+                    android:layout_gravity="right|top"
+                    android:visibility="gone"
+                    />
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

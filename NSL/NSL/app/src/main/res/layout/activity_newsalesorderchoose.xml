@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/MyToolbar"
+        app:title=""
+        app:titleTextColor="@color/white">
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/order_indent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_below="@+id/relativeLayout">
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:gravity="left"
+                    android:text="@string/company"
+
+                    android:textColor="@color/textgraycolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <Spinner
+                    android:id="@+id/spin_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:inputType="textCapWords"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/spin_background"
+                    android:textSize="@dimen/_12sdp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.25dp"
+                    android:background="#666666"
+                    android:layout_below="@id/spin_company"/>
+
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:id="@+id/text_division"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spin_company"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:gravity="left"
+                    android:text="@string/division"
+                    android:textColor="@color/textgraycolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <Spinner
+                    android:id="@+id/spin_division"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_below="@+id/text_division"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/spin_background"
+                    android:textSize="@dimen/_12sdp" />
+
+                <include layout="@layout/line_view" />
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:id="@+id/text_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spin_division"
+                    android:gravity="left"
+                    android:text="@string/customer"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:textColor="@color/textgraycolor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <Spinner
+                    android:id="@+id/spin_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_below="@+id/text_customer"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/spin_background"
+                    android:textSize="@dimen/_12sdp" />
+
+                <include layout="@layout/line_view" />
+
+
+                <Spinner
+                    android:id="@+id/spin_scheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_below="@+id/spin_product"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/spin_background"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+                <include layout="@layout/line_view" />
+
+                <!--<EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:ems="10"
+                    android:hint="Enter Amount"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:id="@+id/et_amount"
+                    android:gravity="center"
+                    android:layout_below="@+id/spin_scheme"
+                    android:layout_alignLeft="@+id/spin_scheme"
+                    android:layout_alignStart="@+id/spin_scheme"
+                    android:layout_alignRight="@+id/spin_scheme"
+                    android:layout_alignEnd="@+id/spin_scheme" />-->
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/et_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@drawable/bgr"
+                    android:gravity="center"
+                    android:hint="@string/enter_advance"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/et_quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@drawable/bgr"
+                    android:digits="0123456789"
+                    android:gravity="center"
+                    android:hint="@string/enter_quantity"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/yellow"
+                android:visibility="gone">
+
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tv_companyname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="@string/new_text"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tv_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_companyname"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/new_text"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_above="@+id/relativeLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/colorPrimary"></View>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top"
+                android:background="@color/listview_header_color">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="@string/new_order_indent"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <com.nsl.app.ButtonPlus
+        android:id="@+id/btn_savebooking"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_36sdp"
+
+        android:background="@color/colorPrimary"
+        android:drawableRight="@drawable/rightarrow"
+        android:drawableTint="@color/white"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_12sdp"
+        android:text="@string/go_to_order_indent"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

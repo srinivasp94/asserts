@@ -1,0 +1,83 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_home"
+        android:icon="@mipmap/home"
+        android:orderInCategory="100"
+        android:title="@string/action_home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_add"
+        android:icon="@mipmap/plus"
+        android:orderInCategory="100"
+        android:title="@string/action_add"
+        app:showAsAction="always"
+        android:visible="false"/>
+
+
+    <!--<item
+        android:id="@+id/action_crops"
+        android:title="Sync Crops"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_divisions"
+        android:title="Sync Divisions"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_companies"
+        android:title="Sync Companies"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_regions"
+        android:title="Sync Regions"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_products"
+        android:title="Sync Products"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_customers"
+        android:title="Sync Customers"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_customerdetails"
+        android:title="Sync Customer Details"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_users"
+        android:title="Sync Users"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_schemes"
+        android:title="Sync Schemes"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_cdc"
+        android:title="Sync CDC"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ucd"
+        android:title="Sync UCD"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ucc"
+        android:title="Sync UCC"
+        android:orderInCategory="100"
+        app:showAsAction="never" />-->
+
+</menu>

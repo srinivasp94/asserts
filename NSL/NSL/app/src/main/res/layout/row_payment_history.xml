@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e0ffff"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_sr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
+            android:text="S#"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_paydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_amount"
+            android:layout_marginLeft="3dp"
+            android:layout_toEndOf="@+id/tv_osa"
+            android:layout_toRightOf="@+id/tv_osa"
+            android:gravity="left"
+            android:text="Payment date"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_rtgs_chq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_toEndOf="@+id/tv_sr"
+            android:layout_toRightOf="@+id/tv_sr"
+            android:gravity="center"
+            android:text="@string/RTGS_NEFT"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_osa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_rtgs_chq"
+            android:layout_alignBottom="@+id/tv_rtgs_chq"
+            android:layout_marginLeft="2dp"
+            android:layout_toEndOf="@+id/tv_rtgs_chq"
+            android:layout_toRightOf="@+id/tv_rtgs_chq"
+            android:gravity="center"
+            android:text="@string/on"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+    </RelativeLayout>
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_rtgsno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp"
+        android:textAllCaps="true"/>
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_bankname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp"
+        android:textAllCaps="true"/>
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_paymemt_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:gravity="left"
+        android:textSize="@dimen/_10sdp"
+        android:textAllCaps="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@color/rowbottomcolor"></View>
+</LinearLayout>

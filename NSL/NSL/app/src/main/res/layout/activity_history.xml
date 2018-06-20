@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.nsl.app.dailydairy.HistoryActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="">
+
+            <com.nsl.app.commonutils.CustomTextViewBold
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/history"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp"
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@color/yellow"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAlignment="gravity">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_33sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/PLEASE_SELECT_DATE"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_13sdp" />
+        <com.nsl.app.ButtonPlus
+            android:id="@+id/diary_date"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:background="@drawable/calender"
+            android:padding="@dimen/_2sdp" />
+        <Spinner
+            android:id="@+id/spinner_date"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="35dp"
+            android:background="@drawable/calender"
+            android:padding="@dimen/_2sdp"
+            android:visibility="gone"/>
+        <include layout="@layout/line_view"/>
+
+        <com.nsl.app.ButtonPlus
+            android:id="@+id/btn_ok"
+            android:layout_width="@dimen/_52sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:background="@drawable/btn_green"
+            android:gravity="center"
+            android:text="@string/cast_tracks_chooser_dialog_ok"
+            android:textColor="@color/cardview_light_background"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/listview_header_color"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/textViewdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_amount"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/_6sdp"
+            android:text="@string/DATE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp" />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null" />
+
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:id="@+id/empty"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_33sdp"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:text="@string/no_records"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp"
+        android:visibility="gone"></com.nsl.app.commonutils.CustomTextViewBold>
+</LinearLayout>

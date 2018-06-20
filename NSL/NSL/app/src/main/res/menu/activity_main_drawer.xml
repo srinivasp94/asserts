@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@mipmap/ic_home"
+        android:title="HOME"
+        />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@mipmap/ic_profile"
+        android:title="PROFILE" />
+    <item
+        android:id="@+id/nav_change_password"
+        android:icon="@mipmap/ic_fieldestimation"
+        android:title="@string/Change_Password" />
+
+    <item
+        android:id="@+id/nav_planner"
+        android:icon="@mipmap/ic_planner"
+        android:title="PLANNER" />
+
+    <item
+        android:id="@+id/nav_distributors"
+        android:icon="@mipmap/ic_distributors"
+        android:title="DISTRIBUTORS" />
+
+    <item
+        android:id="@+id/nav_schemes"
+        android:icon="@mipmap/ic_schemes"
+        android:title="SCHEMES" />
+    <item
+        android:id="@+id/nav_advancebooking"
+        android:icon="@mipmap/ic_advancebooking"
+        android:title="ADVANCE BOOKING" />
+    <item
+        android:id="@+id/nav_products"
+        android:icon="@mipmap/ic_products"
+        android:title="PRODUCTS" />
+    <item
+        android:id="@+id/nav_orderindent"
+        android:icon="@mipmap/ic_orderindent"
+        android:title="ORDER INDENT" />
+    <item
+        android:id="@+id/nav_paymentcollection"
+        android:icon="@mipmap/ic_paymentcollection"
+        android:title="PAYMENT COLLECTIONS" />
+    <item
+        android:id="@+id/nav_marketintelligence"
+        android:icon="@mipmap/ic_marketintelligence"
+        android:title="MARKET INTELLIGENCE" />
+    <item
+        android:id="@+id/nav_stockmovements"
+        android:icon="@mipmap/ic_stockmovements"
+        android:title="STOCK SUPPLY" />
+    <item
+        android:id="@+id/nav_routemap"
+        android:icon="@mipmap/ic_routemap"
+        android:title="ROUTE MAP" />
+    <item
+        android:id="@+id/nav_feedback"
+        android:icon="@mipmap/ic_feedback"
+        android:title="FEEDBACK" />
+    <item
+        android:id="@+id/nav_complaints"
+        android:icon="@mipmap/ic_complaints"
+        android:title="COMPLAINTS" />
+
+    <item
+        android:id="@+id/nav_daily_dairy"
+        android:icon="@mipmap/ic_dailydairy"
+        android:title="DAILY DIARY" />
+    <item
+        android:id="@+id/nav_payment_approval"
+        android:icon="@mipmap/ic_paymentcollection"
+        android:title="PAYMENT APPROVAL" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@mipmap/ic_logout"
+        android:title="LOGOUT"></item>
+
+
+</menu>

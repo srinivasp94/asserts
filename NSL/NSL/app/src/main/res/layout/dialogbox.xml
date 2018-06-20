@@ -1,0 +1,173 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rsb="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/fab_banks_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_18sdp"
+            android:visibility="gone">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/demotext1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_edge"
+                android:padding="@dimen/_6sdp"
+                android:text="@string/bank_details" />
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_toRightOf="@+id/demotext1"
+                android:background="@drawable/fabbackground"
+                android:gravity="bottom"
+                android:padding="@dimen/_8sdp"
+                android:src="@mipmap/ic_paymentcollection" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fab_payment_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_18sdp">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/demotext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_edge"
+                android:padding="@dimen/_6sdp"
+                android:text="@string/payment_collection" />
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_toRightOf="@+id/demotext2"
+                android:background="@drawable/fabbackground"
+                android:gravity="bottom"
+                android:padding="@dimen/_8sdp"
+                android:src="@mipmap/ic_paymentcollection" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fab_stock_movements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_16sdp">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/demotext3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_edge"
+                android:padding="@dimen/_6sdp"
+                android:text="@string/stock_movement" />
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/demotext3"
+                android:background="@drawable/fabbackground"
+                android:gravity="bottom"
+                android:padding="@dimen/_8sdp"
+                android:src="@mipmap/ic_stockmovements" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fab_orderindent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_18sdp">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/demotext4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_edge"
+                android:padding="@dimen/_6sdp"
+                android:text="Order Indent " />
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/demotext4"
+                android:background="@drawable/fabbackground"
+                android:gravity="bottom"
+                android:padding="@dimen/_8sdp"
+                android:src="@mipmap/ic_orderindent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fab_advancebooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_18sdp">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/demotext5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_edge"
+                android:padding="8dp"
+                android:text="@string/advance_booking" />
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/demotext5"
+                android:background="@drawable/fabbackground"
+                android:gravity="bottom"
+                android:padding="@dimen/_8sdp"
+                android:src="@mipmap/ic_advancebooking" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cross"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_8sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:gravity="bottom"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/add" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\git repo\NSL\NSL\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="fe20951ee85f0e6359d046192e980326fb42c7fe">
+        <dex dex="D:\git repo\NSL\NSL\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ea8cfad512347de6e858c77fc034514f36c7e52a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\git repo\NSL\NSL\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\git repo\NSL\NSL\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_1f7e8bf520a52e78f0cdef79f914122534aedc10\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\git repo\NSL\NSL\app\libs\achartengine-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b2bb0af9f390c0edd4d7d95f613f38da3abe0144">
+        <dex dex="D:\git repo\NSL\NSL\app\build\intermediates\transforms\dex\debug\folders\1000\2\achartengine-1.0.0_d557690bf2ca920cb266a71dbcbeab7751db32a0\classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,227 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_18sdp"
+            android:orientation="vertical">
+
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/account_name"
+                android:textSize="@dimen/_10sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+
+                android:id="@+id/etRetailerName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/bgr"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz- "
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/account_name"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/Bank_Name"
+                android:textSize="@dimen/_10sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+
+                android:id="@+id/ettinno"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/bgr"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/Bank_Name"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:id="@+id/mobile"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/account_no"
+                android:textSize="@dimen/_10sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+
+                android:id="@+id/etMobile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/bgr"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/account_no"
+                android:maxLength="10"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:id="@+id/phone"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/branch"
+                android:textSize="@dimen/_10sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+
+                android:id="@+id/etphone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/bgr"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/branch"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:id="@+id/email"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/IFSCCode"
+                android:textSize="@dimen/_10sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/etemail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/bgr"
+                android:clickable="true"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/IFSCCode"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/_11sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:id="@+id/address"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/Address"
+                android:textSize="@dimen/_10sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+
+                android:id="@+id/etaddress"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/bgr"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/Address"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:weightSum="2">
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_weight="1"
+                    android:background="@color/green"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btncancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/cancel"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

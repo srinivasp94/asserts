@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nsl.app.dailydairy.FragmentDailyDairy">
+
+
+    <com.nsl.app.ButtonPlus
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/btn_red"
+        android:gravity="center"
+        android:text="@string/daily_dairy"
+        android:textColor="@color/cardview_light_background"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:divider="@null"
+        android:layout_alignParentTop="true">
+
+    </ListView>
+
+</LinearLayout>

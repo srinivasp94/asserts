@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.nsl.app.LoginActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/MyToolbar"
+        app:title=" "
+        app:titleTextColor="@color/white">
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/payment"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <com.nsl.app.ButtonPlus
+            android:id="@+id/refresh"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_60sdp"
+            android:background="@drawable/refresh"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/yellow"
+                    android:orientation="horizontal">
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:id="@+id/tv_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text=""
+                        android:textSize="@dimen/_11sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@color/yellow"
+                    android:orientation="horizontal">
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:id="@+id/textViewcompany"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/company"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text=":"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:id="@+id/textViewdivision"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:text="@string/division"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_marginLeft="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/osa"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold" />
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_8sdp"
+
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text=":"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:id="@+id/textViewAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textSize="@dimen/_11sdp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/listview_header_color"
+                android:orientation="vertical">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/payment_collection"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/_16sdp">-->
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:text="@string/payment_amount"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/_10sdp" />
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:textColor="@color/black"
+                    android:id="@+id/etp_amt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bgr"
+                    android:digits="0123456789"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_12sdp" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:text="@string/Payment_Type"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/_10sdp" />
+
+                <Spinner
+                    android:id="@+id/spin_payment_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/spin_background"
+                    android:ems="10"
+                    android:hint="@string/Payment_Type"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_11sdp" />
+
+                <include layout="@layout/line_view" />
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tvInvisibleError1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingRight="@dimen/_42sdp"
+                    android:paddingTop="0dp" />
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:text="@string/Bank_Name"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/_10sdp" />
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:textColor="@color/black"
+                    android:id="@+id/etBank"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_33sdp"
+                    android:inputType="textCapSentences"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/bgr"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tvInvisibleError2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingRight="@dimen/_42sdp"
+                    android:paddingTop="0dp" />
+
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:id="@+id/date"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/_16sdp">-->
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:text="@string/payment_date"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/_10sdp" />
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:textColor="@color/black"
+                    android:id="@+id/etdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/bgr"
+                    android:clickable="true"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="none"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_11sdp" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:text="@string/Payment_mode"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/_10sdp" />
+
+                <Spinner
+                    android:id="@+id/spin_payment_mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_33sdp"
+
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/spin_background"
+                    android:ems="10"
+                    android:hint="@string/Payment_mode"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_11sdp" />
+
+                <include layout="@layout/line_view" />
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tvInvisibleError"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingRight="@dimen/_42sdp"
+                    android:paddingTop="0dp" />
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:text="@string/crop_name"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/_10sdp" />
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:textColor="@color/black"
+                    android:id="@+id/etrtgs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/bgr"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/RTGS_NEFT"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_11sdp"
+                    android:visibility="gone" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:ems="10"
+                    android:visibility="gone"
+                    android:gravity="left"
+                    android:text="@string/crop_name"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/_10sdp" />
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:textColor="@color/black"
+                    android:id="@+id/etchq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/bgr"
+                    android:digits="0123456789"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/Cheque_DD_Number"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_11sdp"
+                    android:visibility="gone" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:ems="10"
+                    android:visibility="gone"
+                    android:gravity="left"
+                    android:text="@string/crop_name"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/_10sdp" />
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:textColor="@color/black"
+                    android:id="@+id/etdatechq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/bgr"
+                    android:clickable="true"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="@string/Date_on_Cheque_or_DD"
+                    android:inputType="none"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_11sdp"
+                    android:visibility="gone" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

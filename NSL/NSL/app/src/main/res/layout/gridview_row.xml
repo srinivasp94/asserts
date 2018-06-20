@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_2sdp"
+    android:background="@drawable/gridrowborder">
+
+    <com.nsl.app.commonutils.CustomTextViewLight
+        android:id="@+id/tv_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:padding="@dimen/_2sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_8sdp"
+        android:textAllCaps="true"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_below="@+id/iv_gridView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/iv_gridView"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:contentDescription=""
+        android:padding="@dimen/_1sdp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher" />
+
+</RelativeLayout>

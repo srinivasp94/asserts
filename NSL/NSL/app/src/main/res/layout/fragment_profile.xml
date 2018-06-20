@@ -1,0 +1,285 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.nsl.app.RoundedImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:src="@drawable/icon_profile" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="false"
+                android:gravity="center"
+                android:inputType="none"
+                android:text="@string/name"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:gravity="center"
+                android:text="@string/designation"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_11sdp" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp">
+
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/text_emp_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="none"
+                    android:text="@string/employee_id"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tv_emp_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_emp_id"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="none"
+                    android:text="321321"
+                    android:textColor="@color/textgraycolor"
+                    android:textSize="@dimen/_11sdp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_emp_id"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_28sdp"
+                    android:layout_marginRight="@dimen/_28sdp"
+                    android:background="@color/colorPrimary"></View>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="@string/mobile"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/_12sdp"
+
+                    />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/mobile"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_38sdp"
+                    android:layout_marginRight="@dimen/_38sdp"
+                    android:background="@color/colorPrimary"></View>
+
+
+            </RelativeLayout>
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_mobileno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginTop="4dp"
+                android:digits="0123456789"
+                android:gravity="center"
+                android:text="7396146186"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_11sdp" />
+
+            <RelativeLayout
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/text_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:text="@string/email"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_email"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_38sdp"
+                    android:layout_marginRight="@dimen/_38sdp"
+                    android:background="@color/colorPrimary"></View>
+
+
+            </RelativeLayout>
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:clickable="true"
+                android:digits=""
+                android:focusable="false"
+                android:gravity="center"
+                android:inputType="none"
+                android:text="asaad@fdkj.com"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_11sdp" />
+
+            <RelativeLayout
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/text_workingfor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="@string/working_for"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/_12sdp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_workingfor"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_28sdp"
+                    android:layout_marginRight="@dimen/_28sdp"
+                    android:background="@color/colorPrimary"></View>
+
+
+            </RelativeLayout>
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_workingfor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:clickable="true"
+                android:digits=""
+                android:focusable="false"
+                android:gravity="center"
+                android:inputType="none"
+                android:text="NSL"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_11sdp" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/text_headquarter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="@string/headquarter"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/_12sdp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/text_headquarter"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_28sdp"
+                    android:layout_marginRight="@dimen/_28sdp"
+                    android:background="@color/colorPrimary"></View>
+
+
+            </RelativeLayout>
+
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_headquarter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:clickable="true"
+                android:digits=""
+                android:focusable="false"
+                android:gravity="center"
+                android:inputType="none"
+                android:text="Macharla, Andhrapradesh"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

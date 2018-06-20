@@ -1,0 +1,245 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.nsl.app.CustomEditTextNormal
+
+                android:id="@+id/ettinno1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/tin_number"
+                android:inputType="number"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_11sdp"
+                android:digits="QWERTZUIOPASDFGHJKLYXCVBNM,qwertzuiopasdfghjklyxcvbnm,0123456789,"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <com.nsl.app.ButtonPlus
+            android:id="@+id/btnGo"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/btn_green"
+            android:gravity="center"
+            android:text="MAP"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.nsl.app.CustomEditTextNormal
+
+                        android:id="@+id/etRetailerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/edittext_background"
+                        android:digits="qwertzuiopasdfghjklyxcvbnm,QWERTZUIOPASDFGHJKLYXCVBNM, ,"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/retailer_name"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.nsl.app.CustomEditTextNormal
+
+                        android:id="@+id/ettinno"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/edittext_background"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/tin_number"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:digits="QWERTZUIOPASDFGHJKLYXCVBNM,qwertzuiopasdfghjklyxcvbnm,0123456789,"
+                        android:inputType="number"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.nsl.app.CustomEditTextNormal
+
+                        android:id="@+id/etMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/edittext_background"
+                        android:digits="0123456789"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/mobile_number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:maxLines="10"/>
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.nsl.app.CustomEditTextNormal
+
+                        android:id="@+id/etphone"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/edittext_background"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/phone_number"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:inputType="number"
+                        android:maxLength="13"
+                        android:digits="0123456789"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.nsl.app.CustomEditTextNormal
+                        android:id="@+id/etemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/edittext_background"
+                        android:clickable="true"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/email"
+                        android:inputType="textPersonName"
+                        android:textSize="@dimen/_11sdp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <com.nsl.app.CustomEditTextNormal
+
+                        android:id="@+id/etaddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/edittext_background"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/address"
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="40dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.nsl.app.ButtonPlus
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_43sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_green"
+                        android:gravity="center"
+                        android:text="@string/submit"
+                        android:textColor="@color/white" />
+
+                    <com.nsl.app.ButtonPlus
+                        android:id="@+id/btncancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_43sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_red"
+                        android:gravity="center"
+                        android:text="@string/cancel"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

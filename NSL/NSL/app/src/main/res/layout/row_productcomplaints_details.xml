@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="@string/complaint_details"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_13sdp"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:id="@+id/status"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/_106sdp"
+                    />
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/statustext"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:text= "@string/status"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_13sdp">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_remarks"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text= "@string/remarks"/>
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/remarks"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text= "@string/remarks"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:layout_weight="3"
+
+                android:layout_marginRight="@dimen/_13sdp"
+                android:orientation="horizontal">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:text="@string/complaints_detail"
+                    android:layout_width="match_parent"             android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:text=" :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold"/>
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:text="Complaint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_weight="2"
+                    android:id="@+id/tv_details" />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_13sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Company Name "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="compnyName"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_companyname" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Division"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp" />
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="division"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_weight="2"
+                        android:id="@+id/tv_divname" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="@string/crop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:text=" :"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold" />
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="crop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_cropname"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="@string/product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_weight="2"
+                        android:id="@+id/tv_productname" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="@string/marketing_lot_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Mkt_lot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_mkt_lot"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="@string/Farmer_Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="@string/regulatory_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_farmer_name"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="@string/contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Sampling date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_contact"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Complaint Area(in acres) "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Samp place"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_cmpl_area"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Retailer Name "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_retailername"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Distributor Name "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Dist Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_dist_name"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Soil Type "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Soil type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_soil"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Others "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="others"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_others"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Purchase Quantity "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Purchase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_purchase_qty"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Complaint Quantity "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Complaint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_weight="2"
+                        android:id="@+id/tv_complaint_qty" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Purchase Date "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="purchase date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_weight="2"
+                        android:id="@+id/tv_purchase_date" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Bill Number "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Bill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_billno"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Mandal "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="mandal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_weight="2"
+                        android:id="@+id/tv_mandal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Village "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="village"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_weight="2"
+                        android:id="@+id/tv_village" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:weightSum="3">
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Comment "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text=" :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold"/>
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:text="Comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:id="@+id/tv_comment"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+
+                <include layout="@layout/image_views"/>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

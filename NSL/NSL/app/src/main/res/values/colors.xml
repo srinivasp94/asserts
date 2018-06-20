@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="colorPrimary">#ed1c24</color>
+    <color name="colorPrimaryDark">#bf1516</color>
+    <color name="colorAccent">#ed1c24</color>
+    <color name="green">#008000</color>
+    <color name="yellow">#fbcf2a</color>
+    <color name="white">#FFFFFF</color>
+    <color name="rowbottomcolor">#cccccc</color>
+    <color name="textgraycolor">#808080</color>
+    <color name="listview_header_color">#5E0A05</color>
+    <color name="editTextbg">#99cccccc</color>
+    <color name="spinner_view_color">#666666</color>
+
+    <color name="black">#000</color>
+    <color name="transparent">#80000000</color>
+    <color name="tabcolor">#ffffff</color>
+    <color name="tabselectedcolor">#ff8400</color>
+
+    <color name="defaultcolor">#bf1516</color>
+    <color name="light_yellow">#fbcf2a</color>
+    <color name="supportcolor">#e9696969</color>
+    <color name="text_color">#e92d2424</color>
+    <color name="support_color">#e9331818</color>
+
+</resources>

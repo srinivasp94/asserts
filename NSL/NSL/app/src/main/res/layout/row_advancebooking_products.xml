@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/chk_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:text="@string/nuziveeduseeds_limited"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/textgraycolor">
+
+    </View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chk_product"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_weight="1.6"
+            android:orientation="vertical">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chk_product"
+                android:layout_gravity="center"
+                android:text="@string/scheme"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_8sdp" />
+
+            <Spinner
+                android:id="@+id/spin_scheme"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/price_pkt"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_8sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/et_schemeprice"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:ems="4"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:hint=""
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity"
+                android:gravity="center"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_8sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/et_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:ems="4"
+                android:gravity="center"
+                android:hint=""
+                android:inputType="number"
+                android:maxLength="8"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/amount"
+                android:textColor="@color/textgraycolor"
+                android:textSize="@dimen/_8sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/et_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:ems="4"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:inputType="number"
+                android:text=""
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

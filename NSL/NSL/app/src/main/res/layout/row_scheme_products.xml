@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+
+    android:orientation="horizontal"
+    android:weightSum="7"
+      >
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_productname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Product name"
+            android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_9sdp"
+        android:layout_weight="2"/>
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_productprice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="price/packet"
+        android:textAllCaps="true"
+            android:gravity="center"
+        android:textSize="@dimen/_9sdp"
+        android:layout_weight="1"/>
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_productregion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="region"
+            android:gravity="center"
+        android:textSize="@dimen/_9sdp"
+        android:textAllCaps="true" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_productfrom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:text="valid from"
+            android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_9sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_productto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:text="Valid to"
+            android:gravity="center"
+        android:textSize="@dimen/_9sdp"
+        android:textAllCaps="true" />
+
+</LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,445 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/company"
+                android:textSize="@dimen/_10sdp" />
+
+            <Spinner
+                android:id="@+id/spinCompany"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_34sdp"
+                android:background="@drawable/spin_background"
+                android:focusable="true"
+                android:textSize="@dimen/_11sdp" />
+
+            <include layout="@layout/line_view" />
+
+            <android.widget.TextView
+                android:id="@+id/tvInvisibleError1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingRight="50dp"
+                android:paddingTop="0dp" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/division"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <Spinner
+                android:id="@+id/spinDivision"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/spin_background"
+                android:textSize="@dimen/_11sdp" />
+
+            <include layout="@layout/line_view" />
+
+            <android.widget.TextView
+                android:id="@+id/tvInvisibleError2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingRight="50dp"
+
+                android:paddingTop="0dp" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/crop"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <Spinner
+                android:id="@+id/spinCrop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/spin_background"
+                android:focusable="true"
+                android:textSize="@dimen/_11sdp" />
+
+            <include layout="@layout/line_view" />
+
+            <android.widget.TextView
+                android:id="@+id/tvInvisibleError3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingRight="50dp"
+
+                android:paddingTop="0dp" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/product"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <Spinner
+                android:id="@+id/spinProduct"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/spin_background"
+                android:focusable="true"
+                android:textSize="@dimen/_11sdp" />
+
+            <include layout="@layout/line_view" />
+
+            <android.widget.TextView
+                android:id="@+id/tvInvisibleError4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingRight="50dp"
+                android:paddingTop="0dp" />
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/farmer_name"
+                android:textSize="@dimen/_10sdp" />
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/etMarketingLotNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/bgr"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-1234567890_"
+                android:focusable="true"
+                android:gravity="center"
+                android:inputType="textCapSentences"
+                android:maxLines="2"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/complaint"
+                    android:textSize="@dimen/_10sdp" />
+
+
+                <Spinner
+                    android:id="@+id/spinRegulatoryComplaint"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/spin_background"
+                    android:focusable="true"
+                    android:textSize="@dimen/_11sdp" />
+
+                <include layout="@layout/line_view" />
+
+                <android.widget.TextView
+                    android:id="@+id/tvInvisibleError5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingRight="50dp"
+                    android:paddingTop="0dp" />
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/date_of_sampling"
+                    android:textSize="@dimen/_10sdp" />
+
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/etDateOfSampling"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bgr"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="none"
+                    android:maxLines="2"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/place_of_sampling"
+                    android:textSize="@dimen/_10sdp" />
+
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/etPlaceOfSampling"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bgr"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/retailer_name"
+                    android:textSize="@dimen/_10sdp" />
+
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/etRetailerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bgr"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:focusable="true"
+                    android:inputType="textCapSentences"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/distributor"
+                    android:textSize="@dimen/_10sdp" />
+
+                <Spinner
+                    android:id="@+id/spinDistributor"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/spin_background"
+                    android:focusable="true"
+                    android:textSize="@dimen/_11sdp" />
+
+                <include layout="@layout/line_view" />
+
+                <android.widget.TextView
+                    android:id="@+id/tvInvisibleError6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingRight="@dimen/_40sdp"
+                    android:paddingTop="0dp" />
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/sampling_officer_name"
+                    android:textSize="@dimen/_10sdp" />
+
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/etSamplingOfficerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bgr"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/sampling_officer_contact"
+                    android:textSize="@dimen/_10sdp" />
+
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/etSamplingOfficerContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bgr"
+                    android:digits="0123456789"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/complaint"
+                    android:textSize="@dimen/_10sdp" />
+
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/etComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bgr"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/image_upload"
+                    android:textSize="@dimen/_11sdp" />
+
+
+            </LinearLayout>
+
+
+            <include layout="@layout/image_views" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_weight="1"
+                    android:background="@color/green"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textColor="@color/white" />
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btncancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/abl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title=""
+                app:titleTextColor="@color/white">
+
+                <com.nsl.app.commonutils.CustomTextViewBold
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/maize_crop"
+                    android:textSize="@dimen/_16sdp" />
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/abl_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/abl_toolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="18dp"
+            android:orientation="vertical">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Result"
+                android:textSize="@dimen/_12sdp" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="0"
+                android:textSize="@dimen/_20sdp" />
+
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="Plot cob weight"
+                android:textSize="@dimen/_15sdp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/ed1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="in KG"
+                    android:inputType="numberDecimal" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="5 cob grains weight"
+                android:textSize="@dimen/_15sdp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/ed2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="in KG"
+                    android:inputType="numberDecimal" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="5 cob total weight"
+                android:textSize="@dimen/_15sdp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/ed3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="in KG"
+                    android:inputType="numberDecimal" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.nsl.app.commonutils.CustomTextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Enter Area"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.nsl.app.CustomEditTextNormal
+                            android:id="@+id/et_area_in_meters"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="in Squre Meters"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/green" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:id="@+id/tv_go_to_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/go_to_map"
+                android:textColor="@color/com_facebook_blue"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="italic" />
+        </LinearLayout>
+</ScrollView>
+        <com.nsl.app.ButtonPlus
+            android:id="@+id/button_cotton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button"
+            android:padding="@dimen/_10sdp"
+            android:text="Yield in Quintals"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+
+
+    </RelativeLayout>
+</LinearLayout>

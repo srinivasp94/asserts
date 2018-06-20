@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/MyToolbar"
+        app:title="@string/advance_booking"
+        app:titleTextColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/ll_nameandtoken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/light_yellow"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+            <com.nsl.app.commonutils.CustomTextViewBold
+                android:layout_weight="1"
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_6sdp"
+                android:text=""
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+
+            <com.nsl.app.commonutils.CustomTextViewBold
+                android:id="@+id/tv_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_1sdp"
+                android:text="@string/cotton"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/_2sdp"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:layout_weight="0.8"
+                android:id="@+id/tv_company_name"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="field"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:src="@drawable/greater" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:orientation="vertical">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/token_amt"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="@color/colorPrimary" />
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tv_token_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:layout_margin="@dimen/_3sdp"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_weight="1.2"
+                android:orientation="vertical">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/booking_amt"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="@color/colorPrimary" />
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tv_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_3sdp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_below="@+id/ll_nameandtoken"
+        android:background="@color/colorPrimary" />-->
+    <!--<RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_nameandtoken"
+        android:background="@color/yellow">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="1@dimen/_3sdp"
+            android:text="com.nsl.app.commonutils.TextViewAsap" />
+
+        <TextView
+            android:id="@+id/tv_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3@dimen/_3sdp"
+            android:text="com.nsl.app.commonutils.TextViewAsap"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/com.nsl.app.TextViewAsap11"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="000"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_alignEnd="@+id/com.nsl.app.TextViewAsap11"
+            android:layout_alignLeft="@+id/com.nsl.app.TextViewAsap11"
+            android:layout_alignRight="@+id/com.nsl.app.TextViewAsap11"
+            android:layout_alignStart="@+id/com.nsl.app.TextViewAsap11"
+            android:layout_below="@+id/com.nsl.app.TextViewAsap11"
+            android:layout_marginLeft="83dp"
+            android:layout_marginRight="83dp"
+            android:layout_marginTop="@dimen/_1sdp
+            android:background="@color/colorPrimary"></View>
+
+        <TextView
+            android:id="@+id/com.nsl.app.TextViewAsap11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_token_amount"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
+            android:text="TOTAL ADVANCE BOOKING AMOUNT" />
+
+        <TextView
+            android:id="@+id/text_token_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_code"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
+            android:text="TOKEN AMOUNT" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_below="@+id/text_token_amount"
+
+            android:layout_marginLeft="1@dimen/_32sdp"
+            android:layout_marginRight="1@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_1sdp
+            android:background="@color/colorPrimary"></View>
+
+        <TextView
+            android:id="@+id/tv_token_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_token_amount"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="000"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+    </RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:visibility="gone"
+        android:layout_below="@+id/ll_nameandtoken"
+        android:background="@color/listview_header_color">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:text="@string/s_details"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/amount"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:divider="@null"
+        android:layout_below="@+id/header"
+        android:visibility="gone">
+
+    </ListView>
+
+    <ScrollView
+        android:id="@+id/linear_listview2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/white"
+        android:dividerHeight="@dimen/_1sdp"
+        android:groupIndicator="@null"
+        android:background="@color/white"
+        android:layout_below="@+id/header"
+
+        />
+</RelativeLayout>

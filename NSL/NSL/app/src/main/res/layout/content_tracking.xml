@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.nsl.app.TrackingActivity"
+    tools:showIn="@layout/activity_tracking">
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_todaytdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_42sdp"
+        android:text="@string/name"
+        android:textColor="@color/black" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_85sdp"
+        android:layout_below="@+id/tv_todaytdate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/_18sdp"
+        android:layout_marginRight="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:visibility="gone"
+        android:background="@color/listview_header_color"
+        android:textColor="@color/white">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_checkin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/Chickin"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_checkin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:padding="@dimen/_3sdp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            >
+
+        </View>
+
+    </RelativeLayout>
+
+    <com.nsl.app.ButtonPlus
+        android:id="@+id/btn_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:padding="@dimen/_6sdp"
+        android:text="@string/Show_map"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_below="@+id/btn_toggle"
+        android:layout_centerHorizontal="true" />
+
+    <com.nsl.app.ButtonPlus
+        android:id="@+id/btn_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:padding="@dimen/_6sdp"
+        android:text="@string/Check_in"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_below="@+id/tv_todaytdate"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

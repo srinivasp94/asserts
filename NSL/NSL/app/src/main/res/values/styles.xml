@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/NavigationDrawerStyle</item>
+        <item name="android:buttonStyle">@style/NavigationDrawerStyle</item>
+
+    </style>
+
+    <style name="My.Spinner.Style" parent="Base.Widget.AppCompat.Spinner.Underlined">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NavigationDrawerStyle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:fontFamily">SEGOEWP.TTF</item>
+    </style>
+
+    <style name="MyToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textSize">13sp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:fontFamily">SEGOEWP-LIGHT.TTF</item>
+    </style>
+
+</resources>

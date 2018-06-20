@@ -1,0 +1,300 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:padding="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="vertical">
+
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/farmer_name"
+            android:textSize="@dimen/_10sdp" />
+
+
+        <com.nsl.app.CustomEditTextNormal
+
+            android:id="@+id/etFarmerName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/bgr"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/_4sdp"
+            android:textSize="@dimen/_11sdp" />
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/place"
+            android:textSize="@dimen/_10sdp" />
+
+
+        <com.nsl.app.CustomEditTextNormal
+
+            android:id="@+id/etPlace"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/bgr"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/_4sdp"
+            android:textSize="@dimen/_11sdp" />
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/mobile_number"
+            android:textSize="@dimen/_10sdp" />
+
+        <com.nsl.app.CustomEditTextNormal
+
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/bgr"
+            android:digits="0123456789"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="@dimen/_8sdp"
+            android:textSize="@dimen/_11sdp" />
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/crop"
+            android:textSize="@dimen/_10sdp" />
+
+        <Spinner
+            android:id="@+id/spinCrop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/spin_background"
+            android:gravity="center" />
+
+        <include layout="@layout/line_view" />
+
+        <android.widget.TextView
+            android:id="@+id/tvInvisibleError"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingRight="50dp"
+            android:paddingTop="0dp" />
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/Hybrid"
+            android:textSize="@dimen/_10sdp" />
+
+
+        <com.nsl.app.CustomEditTextNormal
+
+            android:id="@+id/etHybrid"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/bgr"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/_8sdp"
+            android:textSize="@dimen/_11sdp" />
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/sowing_date"
+            android:textSize="@dimen/_10sdp" />
+
+
+        <com.nsl.app.CustomEditTextNormal
+            android:id="@+id/etSowingDate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/bgr"
+            android:clickable="true"
+            android:ems="10"
+            android:focusable="false"
+            android:gravity="center"
+            android:inputType="none"
+           android:hint="@string/DATE"
+            android:textSize="@dimen/_11sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/feedback_message"
+            android:textSize="@dimen/_10sdp" />
+
+
+        <com.nsl.app.CustomEditTextNormal
+
+            android:id="@+id/etFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/bgr"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:padding="@dimen/_4sdp"
+            android:textSize="@dimen/_11sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/image_upload"
+            android:textSize="@dimen/_11sdp" />
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+        <!--  <com.nsl.app.ButtonPlus
+              android:id="@+id/btnupload"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="20dp"
+              android:background="@drawable/btn_red"
+              android:gravity="center"
+              android:text="Upload Image"
+              android:textColor="@color/white"
+              android:textStyle="bold" />-->
+
+        <!--
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1">
+
+                            <FrameLayout
+                                android:id="@+id/frame"
+                                android:layout_width="220dp"
+                                android:layout_height="220dp"
+                                android:layout_marginLeft="70dp"
+                                android:background="@drawable/customborder"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/ivImage"
+                                    android:layout_width="180dp"
+                                    android:layout_height="180dp"
+                                    android:padding="5dp"
+                                    android:scaleType="fitXY"
+                                    android:adjustViewBounds="true"/>
+
+
+                            </FrameLayout>
+                            <com.nsl.app.ButtonPlus
+                                android:id="@+id/btndelete"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/remove"
+                                android:gravity="center"
+                                android:visibility="gone" />
+                        </LinearLayout>
+        -->
+        <include layout="@layout/image_views" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.nsl.app.ButtonPlus
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_weight="1"
+                android:background="@color/green"
+                android:gravity="center"
+                android:text="@string/submit"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+            <com.nsl.app.ButtonPlus
+                android:id="@+id/btncancel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

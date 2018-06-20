@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title=""
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <com.nsl.app.commonutils.CustomTextViewBold
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/feedback_details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+            </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text=" :"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="@string/name"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/Place"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text=" :"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="@string/Place"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_number"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text=" :"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="contact_no"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/crop"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text=" :"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_crop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="crop"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/Hybrid"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text=" :"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_hybrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="hybrid"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/Sowing_date"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text=" :"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_sowing_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="sowing_date"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:orientation="horizontal">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/Feedback"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+                android:id="@+id/colonfeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text=" :"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/textViewfbkfull"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="@string/feedback"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/tv_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="image"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/image_views"/>
+</LinearLayout>

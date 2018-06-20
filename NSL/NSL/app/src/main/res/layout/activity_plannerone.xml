@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:style="@style/MyToolbar"
+        app:title=" "
+        app:titleTextColor="@color/white">
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/planner"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:background="@color/listview_header_color">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:gravity="center"
+                android:text="@string/DATE"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textSize="@dimen/_11sdp" />
+
+            <ImageButton
+                android:id="@+id/btn_add"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="right"
+                android:src="@mipmap/plus"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/ll_select">
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/text_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:gravity="left"
+                android:text="@string/select_user"
+                android:textColor="@color/textgraycolor" />
+
+            <Spinner
+                android:id="@+id/spin_user"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/spin_background" />
+            <include layout="@layout/line_view"/>
+
+        </LinearLayout>
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:divider="@null">
+
+        </ListView>
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_noresults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/No_Schedules_Events"
+            android:textAllCaps="true"
+            android:background="@color/yellow"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="@dimen/_38sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/_18sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:clickable="true"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_checkin"
+        app:backgroundTint="@color/green" />
+</RelativeLayout>

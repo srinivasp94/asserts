@@ -1,0 +1,23 @@
+<resources>
+    <!--<string name="app_name">RapmedixUser</string>-->
+    <string name="app_name">RapMedix</string>
+    <string name="server">https://www.rapmedix.com/user/</string>
+    <string name="serverData">https://www.rapmedix.com/index/</string>
+    <string name="webData">https://www.rapmedix.com/webservices/</string>
+    <string name="serverHost">https://www.rapmedix.com/</string>
+    <string name="mobile">9959437667</string>
+    <string name="desc">The field includes medical diagnosis and treatment of congenital heart defects.</string>
+    <string name="about_hos">Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit,</string>
+
+    <string name="about_1"> "\u25CF" Health is wealth, it is a common adage that has been standing true with the test of time. Rapmedix as a unit actively follows the age old saying. We provide you a helping hand by pooling all necessary resources at our disposal to keep you fit.</string>
+    <string name="about_2"> "\u25CF"  We here at Rapmedix,  believe technology can deliver positive change, and we spend every day making that happen.</string>
+    <string name="about_3"> "\u25CF" Our team of designers, developers, and healthcare specialists are committed to making life better for you and your family. Collectively we have made a strong network spread across a large area with special support to reach out to you in the time of need. It connects you with everything you need to take good care of yourself and your near and dear ones assessing health issues, finding the right doctor, booking diagnostic tests, obtaining medicines, storing health records or learning new ways to live healthier. Healthcare providers can also harness the power of Rapmedix as the definitive platform that helps them build their presence, grow establishments and engage patients more deeply than ever.</string>
+    <string name="about_4"> "\u25CF" We are dreamers, thinkers and do-ers transfused into one.Together, we want to better the healthcare experience for all the ones in need. We are ushered by our values and driven by our motto to do great. These are not just guidelines for our products or our company, but they are a reflection of who we are as people.</string>
+    <string name="title_activity_home_page">RapMedix</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+</resources>

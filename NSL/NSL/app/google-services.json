@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "303319876436",
+    "firebase_url": "https://nslbeejtantra.firebaseio.com",
+    "project_id": "nslbeejtantra",
+    "storage_bucket": "nslbeejtantra.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303319876436:android:c7fc64d043c7182f",
+        "android_client_info": {
+          "package_name": "com.nslbeejtantra.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303319876436-909g3u433fkpug83329q6m018s21594j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAumhwpZNe3Sn8l172-dN_mKZGaq4gFFVg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303319876436:android:755734b44ac19d78",
+        "android_client_info": {
+          "package_name": "com.nsl.beejtantra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303319876436-909g3u433fkpug83329q6m018s21594j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAumhwpZNe3Sn8l172-dN_mKZGaq4gFFVg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

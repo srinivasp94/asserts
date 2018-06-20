@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_4sdp"
+        android:weightSum="4">
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/tv_name_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/tv_variety_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Variety"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_feedback"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11sdp"
+            android:layout_weight="1"
+            android:textColor="@color/textgraycolor" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_4sdp"
+        android:weightSum="4">
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/tv_prev_area_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Previous Year Area"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_prev_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/tv_agent_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Current Year Expected Area"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_agent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11sdp"
+            android:layout_weight="1"
+            android:textColor="@color/textgraycolor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_4sdp"
+        android:weightSum="4">
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/tv_industry_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="% increase/decrease"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_industry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/tv_reason_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Reason"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_reason"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11sdp"
+            android:layout_weight="1"
+            android:textColor="@color/textgraycolor" />
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:background="@color/rowbottomcolor"></View>
+</LinearLayout>

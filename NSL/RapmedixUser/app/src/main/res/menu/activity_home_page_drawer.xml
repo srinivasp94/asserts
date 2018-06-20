@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_familymember"
+            android:icon="@drawable/family_member"
+            android:title="Family Member" />
+        <item
+            android:id="@+id/nav_appointments"
+            android:icon="@drawable/prescription"
+            android:title="Appointments" />
+        <item
+            android:id="@+id/nav_prescription"
+            android:icon="@drawable/prescription"
+            android:title="Prescription" />
+        <item
+            android:id="@+id/nav_health_records"
+            android:icon="@drawable/health_records"
+            android:title="Health Records" />
+        <item
+            android:id="@+id/nav_invite"
+            android:icon="@drawable/invite"
+            android:title="Invite Friends" />
+        <item
+            android:id="@+id/nav_changepwd"
+            android:icon="@drawable/chnage_password"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout1"
+            android:title="Logout"
+            />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_menu_send"
+                android:title="About" />
+            <item
+                android:id="@+id/nav_terms"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Terms and Conditions" />
+        </menu>
+    </item>
+
+</menu>

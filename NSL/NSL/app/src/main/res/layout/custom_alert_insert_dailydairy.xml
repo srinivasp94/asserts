@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:orientation="vertical">
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:gravity="left"
+            android:text="@string/Title"
+            android:textColor="@color/textgraycolor" />
+
+
+        <com.nsl.app.CustomEditTextNormal
+            android:background="@drawable/bgr"
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:hint="@string/Title"
+            android:inputType="textCapWords"
+            android:padding="@dimen/_6sdp"
+            android:textSize="@dimen/_11sdp" />
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:gravity="left"
+            android:text="@string/remarks"
+            android:textColor="@color/textgraycolor" />
+
+
+        <com.nsl.app.CustomEditTextNormal
+            android:background="@drawable/bgr"
+            android:id="@+id/et_remark"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:hint="@string/remarks"
+            android:inputType="textCapSentences"
+            android:padding="@dimen/_6sdp"
+            android:textSize="@dimen/_11sdp" />
+
+        <com.nsl.app.ButtonPlus
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_alignLeft="@+id/iv_sucess"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/iv_sucess"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/btn_red"
+            android:gravity="center"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
+

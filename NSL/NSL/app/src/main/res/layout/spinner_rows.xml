@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_sr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="S#"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            android:visibility="invisible" />
+
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_bankname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/tv_sr"
+            android:layout_toRightOf="@+id/tv_sr"
+            android:gravity="center"
+            android:text="RTGS/NEFT"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_accountno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="HDFCRTGS123456790"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_ifsc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:gravity="center"
+        android:text="IFSC"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/tv_sr"
+        android:layout_toRightOf="@+id/tv_sr"
+        android:background="@color/rowbottomcolor"></View>
+</LinearLayout>

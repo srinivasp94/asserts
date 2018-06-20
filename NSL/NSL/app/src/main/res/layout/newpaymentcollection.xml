@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/MyToolbar"
+        app:title=" "
+        app:titleTextColor="@color/white">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Payment Collection"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:id="@+id/text_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="left"
+                    android:text="Company"
+                    android:textColor="@color/textgraycolor" />
+
+                <Spinner
+                    android:id="@+id/spin_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:background="@drawable/spinner_bg"
+                    android:gravity="bottom"
+
+                    />
+                <include layout="@layout/line_view" />
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:id="@+id/text_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="left"
+                    android:text="Distributor"
+                    android:visibility="gone"
+                    android:textColor="@color/textgraycolor" />
+
+                <Spinner
+                    android:id="@+id/spin_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/text_customer"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:background="@drawable/spinner_bg"
+                  />
+                <include layout="@layout/line_view" />
+
+                 <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/text_division"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spin_company"
+                    android:layout_marginTop="15dp"
+                    android:gravity="left"
+                    android:text="Distributors"
+                    android:textColor="@color/textgraycolor" />
+
+                <Spinner
+                    android:id="@+id/spin_distributor"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/spinner_bg"
+                    android:gravity="bottom"
+                     />
+                <include layout="@layout/line_view"/>
+
+                <Spinner
+                    android:id="@+id/spin_scheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/spinner_bg"
+
+
+                    android:visibility="gone" />
+                <include layout="@layout/line_view"/>
+
+
+                <!--<EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:hint="Enter Amount"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/et_amount"
+                    android:gravity="center"
+                    android:layout_below="@+id/spin_scheme"
+                    android:layout_alignLeft="@+id/spin_scheme"
+                    android:layout_alignStart="@+id/spin_scheme"
+                    android:layout_alignRight="@+id/spin_scheme"
+                    android:layout_alignEnd="@+id/spin_scheme" />-->
+                <EditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignEnd="@+id/spin_scheme"
+                    android:layout_alignLeft="@+id/spin_scheme"
+                    android:layout_alignRight="@+id/spin_scheme"
+                    android:layout_alignStart="@+id/spin_scheme"
+                    android:layout_below="@+id/spin_scheme"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:hint="Enter Advance Amount"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+
+                <EditText
+                    android:id="@+id/et_quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignEnd="@+id/et_amount"
+                    android:layout_alignLeft="@+id/et_amount"
+                    android:layout_alignRight="@+id/et_amount"
+                    android:layout_alignStart="@+id/et_amount"
+                    android:layout_below="@+id/et_amount"
+                    android:layout_marginTop="5dp"
+                    android:digits="0123456789"
+                    android:gravity="center"
+                    android:hint="Enter Quantity"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/yellow"
+                android:visibility="gone">
+
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tv_companyname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="New Text" />
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/tv_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_companyname"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="New Text"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.25dp"
+                android:layout_above="@+id/relativeLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/colorPrimary"></View>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top"
+                android:background="@color/listview_header_color">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Select company and distributor"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+    <com.nsl.app.ButtonPlus
+        android:id="@+id/btn_savebooking"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_36sdp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="Go to details"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+
+        />
+</RelativeLayout>

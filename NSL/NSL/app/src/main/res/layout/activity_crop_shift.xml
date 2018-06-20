@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_18sdp"
+            android:orientation="vertical">
+
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:id="@+id/tv_cropname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/selectcrop"
+                android:textSize="@dimen/_10sdp" />
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_selectcrop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="textCapSentences"
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/selectvariety"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_selectcropvariety"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="textCapSentences"
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/prevarea"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_enterarea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="numberDecimal"
+
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/enterarea"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="numberDecimal"
+
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/percentage"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_enterpercent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="numberDecimal"
+
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/reason"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:fadeScrollbars="false"
+                android:gravity="center_horizontal"
+                android:inputType="textMultiLine"
+
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/savedseed"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_savedseeds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="textCapSentences"
+
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/previous_year"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_previous_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="textCapSentences"
+
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/current_year"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_current_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="textCapSentences"
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/next_year"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/edt_next_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bgr"
+                android:inputType="textCapSentences"
+
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:padding="@dimen/_4sdp"
+                android:weightSum="2">
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    android:background="@color/green"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_120sdp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/cast_tracks_chooser_dialog_cancel"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

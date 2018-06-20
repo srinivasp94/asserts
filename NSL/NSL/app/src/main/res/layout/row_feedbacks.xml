@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:text="@string/name"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp"
+        android:textStyle="bold" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_name"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:visibility="gone" />
+
+    <com.nsl.app.commonutils.CustomTextViewLight
+        android:id="@+id/tv_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:textSize="@dimen/_11sdp"
+        android:text="@string/_p_b"
+        android:layout_marginLeft="@dimen/_13sdp"
+        />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_feedbackfull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_feedback"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:textSize="@dimen/_11sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:background="@color/rowbottomcolor">
+
+    </View>
+</LinearLayout>

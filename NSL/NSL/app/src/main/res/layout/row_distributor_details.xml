@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="4">
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:id="@+id/tv_div"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:gravity="start"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:text="@string/division"
+        android:layout_weight="1"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp" />
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_credit_limit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+
+        android:gravity="center"
+        android:text="@string/credit_limit"
+        android:layout_weight="1"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_osa"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:gravity="center"
+        android:text="@string/outstanding"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:gravity="center"
+            android:src="@drawable/less" />
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_aging2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:gravity="center"
+            android:text="@string/aging"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:background="@color/rowbottomcolor"></View>
+</LinearLayout>

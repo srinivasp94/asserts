@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/MyToolbar"
+        app:title=" "
+        app:titleTextColor="@color/white">
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/Plan_Schedule"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_45sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/relativeLayout"
+                android:background="@color/white">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@color/yellow"
+                    android:gravity="center"
+                    android:padding="@dimen/_3sdp"
+                    android:text="@string/DATE"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/start_date"
+                    android:orientation="vertical">
+
+
+                    <com.nsl.app.commonutils.CustomTextViewLight
+                        android:id="@+id/text_company"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:gravity="left"
+                        android:text="@string/select_user"
+                        android:textColor="@color/textgraycolor" />
+
+                    <Spinner
+                        android:id="@+id/spin_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@drawable/spinner_bg" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.25dp"
+                        android:layout_below="@id/spin_visittype"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:background="#666666" />
+
+                </LinearLayout>
+
+
+                <Spinner
+                    android:id="@+id/spin_customers"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_below="@+id/spin_visittype"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@drawable/spinner_bg"
+                    android:visibility="gone" />
+
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_below="@+id/spin_customers"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:ems="10"
+                    android:hint="@string/name"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_11sdp"
+                    android:visibility="gone" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.25dp"
+                    android:layout_below="@id/spin_customers"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:background="#666666" />
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:id="@+id/text_purpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/et_name"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="left"
+                    android:text="@string/Purpose"
+                    android:textColor="@color/textgraycolor" />
+
+                <com.nsl.app.view.MultiSelectionSpinner
+                    android:id="@+id/spin_purpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_below="@+id/text_purpose"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:background="@drawable/spinner_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.25dp"
+                    android:layout_below="@id/spin_purpose"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:background="#666666" />
+
+
+                <android.widget.TextView
+                    android:id="@+id/tvInvisibleError1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingRight="@dimen/_40sdp"
+                    android:paddingTop="0dp" />
+
+                <!-- <com.nsl.app.CustomEditTextNormal
+                     android:id="@+id/et_address"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:minHeight="@dimen/_32sdp"
+                     android:maxLines="4"
+                     android:layout_below="@+id/et_name"
+                     android:layout_marginLeft="@dimen/_15sdp"
+                     android:layout_marginRight="@dimen/_15sdp"
+                     android:layout_marginTop="@dimen/_4sdp
+                     android:ems="10"
+                     android:visibility="gone"
+                     android:gravity="center"
+                     android:hint=" Please Enter Valid Address"
+                     android:textSize="@dimen/_11sdp" />-->
+
+                <com.nsl.app.CustomAutoCompleteTextView
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spin_purpose"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/Address"
+                    android:maxLines="4"
+                    android:minHeight="@dimen/_32sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:visibility="gone" />
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/et_fieldarea"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_below="@+id/et_address"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:digits="0123456789."
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/Field_Area"
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/_11sdp"
+                    android:visibility="gone" />
+
+                <!-- <com.nsl.app.CustomEditTextNormal
+                     android:id="@+id/et_date"
+                     android:layout_width="match_parent"
+                     android:layout_height="@dimen/_32sdp"
+                     android:layout_below="@+id/et_fieldarea"
+                     android:layout_marginLeft="@dimen/_15sdp"
+                     android:layout_marginRight="@dimen/_15sdp"
+                     android:layout_marginTop="@dimen/_4sdp
+                     android:clickable="true"
+                     android:drawableRight="@drawable/cal"
+                     android:ems="10"
+                     android:paddingLeft="@dimen/_22sdp"
+                     android:focusable="false"
+                     android:gravity="center"
+                     android:hint="Date"
+                     android:inputType="none"
+                     android:textSize="@dimen/_11sdp" />
+ -->
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:id="@+id/text_starttime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/et_fieldarea"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="left"
+                    android:text="@string/Start_Time"
+                    android:textColor="@color/textgraycolor" />
+
+                <com.nsl.app.CustomEditTextNormal
+                    android:id="@+id/et_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:background="@drawable/bgr"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/cal"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="@string/Start_Time"
+                    android:inputType="none"
+                    android:paddingLeft="@dimen/_22sdp"
+                    android:paddingRight="@dimen/_4sdp"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_marginRight="@dimen/_13sdp"
+                    android:layout_below="@+id/text_starttime"
+                    android:layout_alignLeft="@+id/text_starttime"
+                    android:layout_alignStart="@+id/text_starttime" />
+
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btn_saveplan"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/et_time"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.nsl.app.commonutils.CustomTextViewLight
+                    android:id="@+id/text_visittpe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_select"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="left"
+                    android:text="@string/Visit_Type"
+                    android:textColor="@color/textgraycolor" />
+
+                <Spinner
+                    android:id="@+id/spin_visittype"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_below="@+id/text_visittpe"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_toEndOf="@+id/tvInvisibleError"
+                    android:layout_toRightOf="@+id/tvInvisibleError"
+                    android:background="@drawable/spinner_bg" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.25dp"
+                    android:layout_below="@id/spin_visittype"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:background="#666666" />
+
+
+                <android.widget.TextView
+                    android:id="@+id/tvInvisibleError"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_below="@+id/spin_visittype"
+                    android:layout_marginTop="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingRight="@dimen/_40sdp"
+                    android:paddingTop="0dp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top"
+                android:background="@color/listview_header_color">
+
+                <com.nsl.app.commonutils.CustomTextViewNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/Plan_day"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

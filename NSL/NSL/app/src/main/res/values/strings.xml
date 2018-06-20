@@ -1,0 +1,416 @@
+<resources>
+    <string name="app_name">NSL Saathi</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="action_checkin">Checkin</string>
+    <string name="action_checkout">Checkout</string>
+    <string name="action_add">Add</string>
+    <string name="action_map">Map</string>
+    <string name="action_home">Home</string>
+    <string name="title_activity_login">" "</string>
+
+    <string name="title_activity_sample_floating_actiity">SampleFloatingActiity</string>
+    <string name="pick_image_intent_text">Choose Image</string>
+    <string name="title_activity_main_commodity_price">MainCommodityPriceActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="will_be_live_soon">will be live soon.</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="companyname">Company Name</string>
+
+    <string name="productname">Product Name</string>
+
+    <string name="packsize">SKU/ Pack size</string>
+
+    <string name="retailprice">Retail Price</string>
+
+    <string name="invoiceprice">Invoice Price</string>
+
+    <string name="landingprice">Distributor Landing Price</string>
+
+    <string name="segmentname">Name of Check/ Segment</string>
+
+    <string name="launchyear">Launch Year</string>
+
+    <string name="unitssold">No.of units sold</string>
+
+    <string name="croparea">Crop Area Sown(New Product)</string>
+
+    <string name="remarks">Remarks</string>
+
+
+    <string name="selectcrop">Crop Name</string>
+    <string name="selectvariety">Variety/Type</string>
+    <string name="prevarea">Previous Year Area</string>
+    <string name="enterarea">Current year expected area</string>
+    <string name="percentage">%Increase/ Decrease</string>
+    <string name="reason">Reason for Crop Shift</string>
+    <string name="savedseed">Crop in which farm saved seed used</string>
+
+    <string name="title_activity_stock_information">Stock information</string>
+
+    <string name="stock_placed">Stock palced</string>
+    <string name="currenr_stock">Current Stock</string>
+    <string name="quantity_placed">Qty Placed</string>
+    <string name="pog_name">Net Sales</string>
+
+    <string name="subtitle_name">LIST OF ALL ORDERED PRODUCTS</string>
+
+    <string name="stock_placement">Stock placement</string>
+    <string name="product">Product</string>
+    <string name="close_button">Close</string>
+
+    <string name="leftstock">Stock left in store till date</string>
+
+    <string name="a_new_update_is_available">New update available</string>
+    <string name="update">Update</string>
+
+
+    <string name="select_user">Select User</string>
+    <string name="advance_booking">Advance Booking</string>
+    <string name="list_of_all_advance_bookings">List of all advance bookings</string>
+    <string name="distributor">Distributor</string>
+    <string name="abs_amount">ABS AMOUNT</string>
+    <string name="no_records_found">No Records Found!</string>
+    <string name="stock_movement">Stock Supply</string>
+    <string name="choose_options_below">CHOOSE OPTIONS BELOW</string>
+    <string name="go_to_stock_movement">Go to Stock Supply</string>
+    <string name="go_to_stock_returns">Go to Stock Returns</string>
+    <string name="kareena_p10g">KAREENA_P10G</string>
+    <string name="details">Details</string>
+    <string name="medium_text">Medium Text</string>
+    <string name="amount">Amount</string>
+    <string name="quantity">Quantity</string>
+    <string name="_p_b">15.00 p/b</string>
+    <string name="scheme">Scheme</string>
+    <string name="amt">Amt</string>
+    <string name="nuziveeduseeds_limited">Nuziveeduseeds limited</string>
+    <string name="price_pkt">Price/pkt</string>
+
+
+    <string name="contact">Contact</string>
+    <string name="complaint_details">COMPLAINT DETAILS</string>
+    <string name="status">status</string>
+    <string name="complaints_detail">Complaint Details</string>
+    <string name="crop">Crop</string>
+    <string name="marketing_lot_number">Marketing LoT Number </string>
+    <string name="Farmer_Name">Farmer Name</string>
+    <string name="regulatory_type">Regulatory type</string>
+
+    <string name="retailers">Retailers</string>
+    <string name="crop_name">Crop Name</string>
+    <string name="variety_type">Variety/Type</string>
+    <string name="mandi_price">APMC Mandi Price</string>
+    <string name="commodity_dealer">Commodity Dealer/Commission Agent Price</string>
+    <string name="purchase_price">Purchase Price By Industry</string>
+
+    <string name="submit">Submit</string>
+    <string name="commodity_price">Commodity Price</string>
+    <string name="complaints">Complaints</string>
+    <string name="select_complaint_type">Select Complaint Type</string>
+    <string name="previous_year">Previous year SRR</string>
+    <string name="current_year">Current year SRR</string>
+    <string name="next_year">Next year SRR</string>
+    <string name="crop_shifts">Crop Shifts</string>
+    <string name="daily_dairy">Daily Diary</string>
+    <string name="distributors">Distributors</string>
+    <string name="division">Division</string>
+    <string name="credit_limit">credit limit</string>
+    <string name="osa">OSA</string>
+    <string name="Purchase_Quantity">Purchase Quantity</string>
+    <string name="Others">Others</string>Purchase Quantity
+
+
+    <string name="no_records">No Records Found !</string>
+    <string name="account_no">Account No</string>
+    <string name="IFSCCode">IFSC Code</string>
+    <string name="name">NAME</string>
+    <string name="company">Company</string>
+    <string name="List_of_distributors">List of distributors</string>
+    <string name="feedback">Feedback</string>
+    <string name="history">History</string>
+    <string name="PLEASE_SELECT_DATE">PLEASE SELECT DATE</string>
+    <string name="DATE">DATE</string>
+    <string name="login">Login</string>
+    <string name="bank_details">Bank Details</string>
+    <string name="pricing_servey">Pricing Survey </string>
+    <string name="product_complaints">Product Complaints</string>
+    <string name="product_servey">Product Servey</string>
+    <string name="regulatory_complaint">Regulatory Complaint</string>
+    <string name="tracking">Tracking</string>
+    <string name="market_intelligence">Market Intelligence</string>
+    <string name="payment_collection">Payment Collection</string>
+    <string name="select_distributor">Select Distributor</string>
+    <string name="order_indent">Order Indent</string>
+    <string name="customer">Distributor</string>
+    <string name="enter_advance">Enter Advance Amount</string>
+    <string name="enter_quantity">Enter Quantity</string>
+    <string name="go_to_order_indent">Go to order indent</string>
+    <string name="new_text">New Text</string>
+    <string name="new_order_indent">new order indent - choose options below</string>
+    <string name="TOTAL_OUTSTANDING_AMOUNT">TOTAL OUTSTANDING AMOUNT</string>
+    <string name="orders">Orders</string>
+    <string name="list_of_advance_bookings">List of all advance bookings</string>
+    <string name="payment">Payment</string>
+    <string name="payment_amount">Payment Amount</string>
+    <string name="Payment_Type">Payment Type</string>
+    <string name="Bank_Name">Bank Name</string>
+    <string name="payment_date">Payment Date</string>
+    <string name="Payment_mode">Payment Mode</string>
+    <string name="RTGS_NEFT">RTGS/NEFT</string>
+    <string name="Cheque_DD_Number">Cheque/DD Number</string>
+    <string name="Date_on_Cheque_or_DD">Date on Cheque or DD</string>
+    <string name="PAYMENT_HISTORY">PAYMENT HISTORY</string>
+    <string name="Title">Title</string>
+    <string name="Plan_Event">Plan Event</string>
+    <string name="Plan_day">Plan a day</string>
+    <string name="Event_Name">Event Name</string>
+    <string name="Address">Address</string>
+    <string name="Field_Area">Field Area (in hectares)</string>
+    <string name="Start_Time">Start Time</string>
+    <string name="End_Date">End Date</string>
+    <string name="End_Time">End Time</string>
+
+    <string name="Purpose">Purpose</string>
+    <string name="Venue">Venue</string>
+    <string name="Event_participants">Event Participants</string>
+    <string name="Plan_Schedule">Plan Schedule</string>
+    <string name="Visit_Type">Visit Type</string>
+    <string name="planner">Planner</string>
+    <string name="Appointment_time">Appointment Time :</string>
+    <string name="Purpose_of_Visit">Purpose of Visit: Payment Collection</string>
+    <string name="No_Schedules_Events">No Schedules/Events Found Today</string>
+    <string name="Complete_Task">Complete Task</string>
+    <string name="THIRUMALA_SEEDS">THIRUMALA SEEDS</string>
+    <string name="Task_Completed">Task Completed</string>
+    <string name="select_a_company">Select a company</string>
+    <string name="Pick_Date">Pick Date To Plan</string>
+
+    <string name="View_Products">View Products</string>
+    <string name="choose_options_bellow">choose options bellow</string>
+    <string name="retailer_details">Retailer Details</string>
+    <string name="tin_number">TIN Number </string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone</string>
+    <string name="Mobile">Mobile </string>
+    <string name="route_map">Route Map</string>
+    <string name="sales_order_amount">SALES ORDER AMOUNT</string>
+    <string name="go_to_booking">Go to Booking</string>
+    <string name="new_booking">new booking - choose options bellow</string>
+    <string name="save_booking">Save Booking</string>
+    <string name="order_amt">Order Amt</string>
+
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_new_password">enter new password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="Change_Password">Change Password</string>
+    <string name="Regulatory">Regulatory</string>
+    <string name="Designation">Designation</string>
+    <string name="outsta">OUTSTA</string>
+    <string name="cotton">COTTON</string>
+    <string name="token_amt">TOKEN AMT</string>
+    <string name="booking_amt">BOOKING AMT</string>
+    <string name="s_details">S# DETAILS</string>
+    <string name="no_complaints_found">NO COMPLAINTS FOUND!</string>
+    <string name="no_retailers_found">NO Retailers FOUND!</string>
+
+    <string name="no_feedbacks_found">NO FEEDBACKS FOUND!</string>
+    <string name="Total_Distance_travelled">Total Distance travelled : </string>
+    <string name="payment_details">PAYMENT DETAILS</string>
+    <string name="sri_sai">SRI SAI RAM SEEDS AND AGENCIES</string>
+    <string name="Sales_Order">Sales Order</string>
+    <string name="Chickin">Chickin</string>
+    <string name="Show_map">Show Map</string>
+    <string name="Check_in">Check In</string>
+
+    <string name="save_advance_order">Save Advance Order</string>
+    <string name="token_amount">ABS TOKEN AMT</string>
+    <string name="Price_exceeded">Amount exceeded. Order will be saved only after approval.</string>
+
+    <string name="save_stock_movement">Save Stock Supply</string>
+    <string name="packets">PACKETS</string>
+    <string name="ok">OK</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="master_data">Master Data sync in progress ...Please Do not close app during sync process</string>
+    <string name="approval_status">Approval Status</string>
+    <string name="on">on</string>
+    <string name="hdfc">HDFCRTGS123456790</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="Amount">Amount</string>
+    <string name="Cheque_Number">Cheque Number</string>
+    <string name="Place">Place</string>
+    <!--<string name="place">place </string>-->
+    <string name="contact_number">Contact Number </string>
+    <string name="Hybrid">Hybrid</string>
+
+    <string name="Sowing_date">Sowing date</string>
+    <string name="Feedback">Feedback</string>
+
+    <string name="outstanding">Outstanding </string>
+    <string name="time_slot">Time slot</string>
+    <string name="title">Title</string>
+
+    <string name="purpose">Purpose:</string>
+
+    <string name="complaint_details_smalls">Complaint detais</string>
+    <string name="complaint">Complaint </string>
+    <string name="mkt_lot">Mkt_lot</string>
+    <string name="date_of_sampling">Date of Sampling </string>
+    <string name="sampling_date">Sampling date</string>
+    <string name="sampling_place">Sampling Place</string>
+    <string name="retailer_name">Retailer Name </string>
+    <string name="name_smalls">Name </string>
+    <string name="distributor_name">Distributor name</string>
+    <string name="dist_name">Dist. name</string>
+    <string name="sampling_officer_name">Sampling Officer Name </string>
+    <string name="officer_name">Officer Name</string>
+    <string name="sampling_officer_contact">Sampling Officer Contact </string>
+    <string name="sri_sai_ram_seeds_and_agencies">SRI SAI RAM SEEDS AND AGENCIES</string>
+
+
+    <string name="booked_amount">Booked amount </string>
+    <string name="heading">Heading </string>
+    <string name="description">Description</string>
+
+    <string name="select_a_division">Select a division</string>
+    <string name="s_details_date">S# DETAILS (01/12/2016)</string>
+    <string name="indraja_bt2_p450g">INDRAJA-BT2-P450G</string>
+    <string name="cancel">Cancel</string>
+
+
+    <string name="mobile_number">Mobile Number</string>
+    <string name="address">Address</string>
+    <string name="designation">Designation</string>
+    <string name="employee_id">Employee ID</string>
+    <string name="mobile">Mobile</string>
+    <string name="working_for">Working for</string>
+    <string name="headquarter">Headquarter</string>
+    <string name="view_all_book_orders">view all / book orders</string>
+    <string name="view_all_schemes">View All Schemes</string>
+    <string name="daily_sales_report">Daily Sales Report</string>
+    <string name="sales_orders">Sales Orders</string>
+    <string name="feedback_message">Feedback Message</string>
+    <string name="sowing_date">Sowing Date</string>
+    <string name="place">Place</string>
+    <string name="farmer_name">Farmer name</string>
+    <string name="image_upload">Image Upload</string>
+    <string name="place_of_sampling">Place of Sampling</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="bill_number">Bill Number</string>
+    <string name="complaint_area_in_acres">Complaint Area in Acres</string>
+    <string name="others">Others</string>
+    <string name="purchase_quantity">Purchase Quantity</string>
+    <string name="complaint_quantity">Complaint Quantity</string>
+    <string name="purchase_date">Purchase Date</string>
+    <string name="retailer">Retailer</string>
+    <string name="mandal">Mandal</string>
+    <string name="village">Village</string>
+    <string name="account_name">Account Name</string>
+    <string name="branch">Branch</string>
+    <string name="view_schemes">View Schemes</string>
+    <string name="regulatory">Regulatory</string>
+    <string name="view_book_new">view / book new</string>
+    <string name="aging">ageing</string>
+    <string name="indent_amt">Indent Amt</string>
+    <string name="save_order_indent">Save Order Indent</string>
+    <string name="feedback_details">Feedback Details</string>
+
+
+    <string name="Soil_Type">Soil Type</string>
+    <string name="comments">Comments</string>
+    <string name="select_product">Select Product</string>
+    <string name="select_pack_size">Select Pack Size</string>
+    <string name="adhoc_task">Adhoc Task</string>
+    <string name="calculate_area">Calculate Area</string>
+    <string name="field_estimation">Field Estimation</string>
+    <string name="complete">Complete</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="title_activity_cotton_new">Cotton</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_cotton">Cotton</string>
+    <string name="cotton_crop">Cotton Crop</string>
+    <string name="go_to_map"><u>Go to Map</u></string>
+    <string name="yield_estimation">Yield Estimation</string>
+    <string name="maize_crop">Maize Crop</string>
+    <string name="other_crop">Other Crop</string>
+    <string name="mo_rm">MO/RM</string>
+
+
+</resources>

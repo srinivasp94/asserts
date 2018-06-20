@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/tv_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nuziveeduseeds_limited"
+        android:textSize="@dimen/_11sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:textColor="@color/black" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:background="@color/rowbottomcolor"></View>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/rightarrow"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:tint="@color/rowbottomcolor"
+        android:layout_centerVertical="true"/>
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_customer_code"
+        android:textSize="@dimen/_11sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_below="@+id/tv_customer"
+        android:layout_alignLeft="@+id/tv_customer"
+        android:layout_alignStart="@+id/tv_customer" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sfmnsfmf"
+        android:visibility="invisible"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/tv_customer_code"
+        android:layout_alignLeft="@+id/tv_customer_code"
+        android:layout_alignStart="@+id/tv_customer_code" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tv_osas"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:textStyle="bold"
+        android:textSize="@dimen/_11sdp"
+        android:layout_alignBaseline="@+id/tv_customer"
+        android:layout_alignBottom="@+id/tv_customer"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_osa"
+        android:textSize="@dimen/_11sdp"
+        android:layout_alignBottom="@+id/tv_osas"
+        android:layout_alignLeft="@+id/tv_osas"
+        android:layout_alignStart="@+id/tv_osas" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_alignBottom="@+id/tv_customer_code"
+        android:background="@color/rowbottomcolor"></View>
+
+</RelativeLayout>

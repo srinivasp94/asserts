@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/_4sdp"
+    android:fitsSystemWindows="true">
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/_14sdp"
+            android:layout_marginRight="@dimen/_14sdp">
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_14sdp"
+                android:ems="10"
+                android:gravity="left"
+                android:text="@string/crop_name"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/_10sdp" />
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/et_crop_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="textCapSentences"
+                android:background="@drawable/bgr"
+                android:ems="10"
+                android:textAlignment="center"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="@dimen/_14sdp"
+                android:ems="10"
+                android:gravity="left"
+                android:text="@string/variety_type"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/_10sdp" />
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/et_variety"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+
+                android:inputType="textCapSentences"
+                android:background="@drawable/bgr"
+                android:ems="10"
+                android:gravity="center"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginTop="@dimen/_14sdp"
+                android:ems="10"
+                android:gravity="left"
+                android:text="@string/mandi_price"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/_10sdp" />
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/et_apmc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+
+
+                android:background="@drawable/bgr"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_14sdp"
+                android:ems="10"
+                android:gravity="left"
+                android:text="@string/commodity_dealer"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/_10sdp" />
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/et_commodity_dealer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+
+
+                android:background="@drawable/bgr"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <com.nsl.app.commonutils.CustomTextViewLight
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_14sdp"
+                android:ems="10"
+                android:gravity="left"
+                android:text="@string/purchase_price"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/_10sdp" />
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <com.nsl.app.CustomEditTextNormal
+                android:id="@+id/et_purchase_price"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@drawable/bgr"
+
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_28sdp"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp"
+                android:weightSum="2">
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_weight="1"
+                    android:background="@color/green"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.nsl.app.ButtonPlus
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/cast_tracks_chooser_dialog_cancel"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/_1sdp">
+
+    <LinearLayout
+        android:id="@+id/lay_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:padding="@dimen/_3sdp"
+        android:background="@color/listview_header_color"
+        android:orientation="horizontal">
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_mo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_13sdp"
+            android:layout_gravity="center_vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp"
+            android:layout_weight="1"
+            android:text="@string/name"/>
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/tv_mo_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_13sdp"
+            android:layout_weight="1"
+            android:text="id"
+            android:textAllCaps="true"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

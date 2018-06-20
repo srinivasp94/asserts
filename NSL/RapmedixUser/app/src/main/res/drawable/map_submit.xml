@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This is the line -->
+    <item>
+        <shape>
+            <solid android:color="#c20c11" />
+            />
+
+        </shape>
+
+    </item>
+
+    <!-- This is the main color -->
+    <item android:top="1dp"
+        android:right="1dp" android:bottom=".5dp"
+        android:left="1dp">
+        <shape>
+            <solid android:color="@color/tab_indicator" />
+            />
+
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nsl.app">
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <permission
+        android:name="com.nsl.app.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.muhoortams.aandroidapp.permission.MAPS_RECEIVE" />
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--
+        <meta-data
+        android:name=".MyApplication"
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+android:name="android.support.multidex.MultiDexApplication"
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        -->
+
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+             />
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!--
+            <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBpgID2ZhZ-hTJJhylTw1rl-DLUAb0zHDM" />
+        -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBxCip_717NsFx2dnMQsY5zm6t5ywD4wek" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".MapActivity"
+             />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".advancebooking.NewAdvancebokingActivity"
+             />
+        <activity
+            android:name=".advancebooking.AdvanceBookingMainActivity"
+             />
+        <activity
+            android:name=".MainBankDetailsActivity"
+             />
+        <activity
+            android:name=".orderindent.OrderIndentMainActivity"
+             />
+        <activity
+            android:name=".MainDailyDiaryActivity"
+             />
+        <activity
+            android:name=".PostRouteMapActivityCopy"
+             />
+        <activity
+            android:name=".advancebooking.NewAdvancebokingCustomersActivity"
+             />
+        <activity
+            android:name=".NewOrderindentActivity"
+             />
+        <activity
+            android:name=".orderindent.NewSalesOrderChooseActivity"
+             />
+        <activity
+            android:name=".stockmovement.NewStockMovementChooseActivity"
+             />
+        <activity
+            android:name=".stockmovement.CropsFragmentViewStockMovementActivity"
+             />
+        <activity
+            android:name=".DistributorsViewStockMovementActivity"
+             />
+        <activity
+            android:name=".NewViewStockMovementChooseActivity"
+             />
+        <activity
+            android:name=".stockmovement.CropsFragmentStockMovementActivity"
+             />
+        <activity
+            android:name=".stockmovement.StockMovementMainActivity"
+             />
+        <activity
+            android:name=".NewOrderindentCustomersActivity"
+             />
+        <activity
+            android:name=".OrdrerIndentdivisionsActivity"
+             />
+        <activity
+            android:name=".advancebooking.NewAdvancebokingChooseActivity"
+             />
+        <activity
+            android:name=".advancebooking.ViewBookings1Activity"
+             />
+        <activity
+            android:name=".orderindent.ViewSalesOrderBookingsActivity"
+             />
+        <activity
+            android:name=".orderindent.ViewSalesOrderCompanyActivity"
+             />
+        <activity
+            android:name=".orderindent.ViewSalesOrderCustomerDetailsActivity"
+             />
+        <activity
+            android:name=".SchemesActivity"
+             />
+        <activity
+            android:name=".SchemesDetailsActivity"
+             />
+        <activity
+            android:name=".NewPaymentCollectionDistributorsActivity"
+             />
+        <activity
+            android:name=".Payment_collection_detailsActivity"
+             />
+        <activity
+            android:name=".PaymentActivity"
+             />
+        <activity
+            android:name=".PlanerDetailActivity"
+             />
+        <activity
+            android:name=".PlanerOneActivity"
+             />
+        <activity
+            android:name=".PlanerTypeActivity"
+             />
+        <activity
+            android:name=".PlanScheduleFormActivity"
+             />
+        <activity
+            android:name=".PlanEventFormActivity"
+             />
+        <activity
+            android:name=".PlanerMainActivity"
+             />
+        <activity
+            android:name=".PlannerTaskActivity"
+             />
+        <activity
+            android:name=".PlannerMapActivity"
+             />
+        <activity
+            android:name=".PlanerMapTypeActivity"
+             />
+        <activity
+            android:name=".PlannerMapActivityCopy"
+             />
+        <activity
+            android:name=".ProfileMainActivity"
+             />
+        <activity
+            android:name=".PaymentCollectionPaymentTypeActivity"
+             />
+        <activity
+            android:name=".feedback.FeedbackallActivity"
+             />
+        <activity
+            android:name=".complaints.ComplaintsallActivity"
+             />
+        <activity
+            android:name=".Paymentcollection_All_Activity"
+             />
+        <activity
+            android:name=".feedback.MainFeedbackActivity"
+             />
+        <activity
+            android:name=".complaints.MainComplaintsActivity"
+             />
+        <activity
+            android:name=".dailydairy.DailyDairyActivity"
+             />
+        <activity
+            android:name=".dailydairy.DailyDairyForm"
+             />
+        <activity
+            android:name=".PaymentAll"
+             />
+        <activity
+            android:name=".retailers.AllRetailersActivity"
+             />
+        <activity
+            android:name=".retailers.MainRetailerActivity"
+             />
+        <activity
+            android:name=".retailers.Retailerdetails"
+             />
+        <activity
+            android:name=".orderindent.ViewMOTeamOrderIndentActivity"
+             />
+        <activity
+            android:name=".SampleFloatingActiity"
+            android:label="@string/title_activity_sample_floating_actiity"
+            android:theme="@style/AppTheme" />
+
+        <receiver
+            android:name=".ConnectivityReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".advancebooking.CropsFragmentAdvancebookingActivity"
+             />
+        <activity
+            android:name=".products.Activity_Webview"
+             />
+
+        <activity
+            android:name=".CropsFragmentSalesorderActivity"
+             />
+        <activity
+            android:name=".advancebooking.ViewMOTeamBookingsActivity"
+             />
+        <activity
+            android:name=".advancebooking.NewAdvancebokingDivisionsActivity"
+             />
+        <activity
+            android:name=".distributors.DistributorsActivity"
+            
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".distributors.Distributor_details"
+            
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".feedback.Feedbackall"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".complaints.AllregulatoryActivity"
+            android:label="activity_allregulatory"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".complaints.AllproductsActivity"
+            android:label="activity_allproducts"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".marketintelligence.MainCropShiftActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".marketintelligence.MainPricingSurveyActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MainProductSurveyActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".marketintelligence.CropShiftAllActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".marketintelligence.PricingSurveyAllActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".marketintelligence.ProductSurveyAllActivity"
+            android:theme="@style/AppTheme" />
+
+        <service android:name=".GPSTracker" />
+
+        <!--
+        <receiver android:name="com.nsl.app.NetworkChangeReceiver">
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+        </receiver>
+        -->
+
+        <activity
+            android:name=".complaints.Complaintsselectactivity"
+             />
+        <activity
+            android:name=".complaints.ComplaintsregallActivity"
+             />
+        <activity
+            android:name=".complaints.ComplaintsprodallActivity"
+             />
+        <activity
+            android:name=".MainRegulatoryActivity"
+             />
+        <activity
+            android:name=".MainProductActivity"
+             />
+
+        <service android:name=".BackgroundPushService" />
+
+        <activity android:name=".dailydairy.HistoryActivity" />
+        <activity
+            android:name=".marketintelligence.MainCommodityPriceActivity"
+            android:label="@string/title_activity_main_commodity_price"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".marketintelligence.CommodityPriceAllActivity" />
+        <activity android:name=".marketintelligence.MarketIntelligenceAcivity" />
+        <activity android:name=".ChangePassword" />
+
+        <!--
+        <receiver android:name=".network.NetworkReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        -->
+
+        <activity
+            android:name=".stockexchange.StockInformation"
+            android:label="@string/title_activity_stock_information"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".stockexchange.Stock_for_Retailer" />
+        <activity android:name=".distributors.DIstributorsListActivity" />
+
+        <receiver android:name=".scheduler.DailySchedulerReceiver" />
+
+        <service android:name=".scheduler.SchedulingService" />
+        <service android:name=".scheduler.LocationService" />
+
+
+        <activity android:name=".dailydairy.AdhocActivity" />
+        <activity android:name=".dailydairy.AdhocHistoryActivity" />
+        <activity android:name=".dailydairy.CompleteAdhocTaskActivity" />
+        <activity android:name=".fieldestimation.FieldEstimationActivity" />
+        <activity android:name=".dailydairy.DailyDiaryHistoryActivity" />
+        <activity android:name=".fieldestimation.FieldAreaActivity" />
+        <activity android:name=".stockreturns.CropsFragmentStockReturnsActivity" />
+        <activity android:name=".stockreturns.CropsFragmentViewStockReturnsActivity" />
+        <activity android:name=".stockreturns.StockReturnsDistributorsActivity" />
+        <activity android:name=".stockreturns.StockReturnsMainActivity" />
+        <activity android:name=".stockreturns.NewStockReturnsChooseActivity" />
+        <activity android:name=".fieldestimation.Cotton_new" />
+        <activity android:name=".fieldestimation.MaizeActivity" />
+        <activity android:name=".fieldestimation.FieldEstimationMainAcivity" />
+        <activity android:name=".fieldestimation.OtherActivity"></activity>
+        <activity android:name=".advancebooking.ViewABSDetailsActivity"></activity>
+        <activity android:name=".advancebooking.ViewMOTeamBookingsApprovalActivity"></activity>
+        <activity android:name=".advancebooking.ViewBookings2Activity"></activity>
+
+        <service android:name=".scheduler.DownloadService"/>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:style="@style/MyToolbar"
+        app:title=" "
+        app:titleTextColor="@color/white">
+
+        <com.nsl.app.commonutils.CustomTextViewBold
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/planner"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:background="@color/listview_header_color"
+            android:visibility="gone">
+
+            <com.nsl.app.commonutils.CustomTextViewNormal
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:gravity="center"
+                android:text="@string/select_a_company"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <com.nsl.app.commonutils.CustomTextViewLight
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/PLEASE_SELECT_DATE"
+            android:layout_marginLeft="@dimen/_17sdp"
+            android:layout_marginRight="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_8sdp"/>
+
+        <com.nsl.app.CustomEditTextNormal
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_below="@+id/et_fieldarea"
+            android:layout_marginLeft="@dimen/_17sdp"
+            android:layout_marginRight="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:clickable="true"
+            android:drawableRight="@drawable/cal"
+            android:ems="10"
+            android:focusable="false"
+            android:gravity="center"
+            android:hint="@string/Pick_Date"
+            android:background="@drawable/bgr"
+            android:paddingRight="@dimen/_8sdp"
+            android:inputType="none"
+            android:paddingLeft="@dimen/_24sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:layout_margin="@dimen/_17sdp"
+            android:numColumns="2">
+
+        </GridView>
+
+        <com.nsl.app.commonutils.CustomTextViewNormal
+            android:id="@+id/txt_select_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_user"
+            android:layout_marginLeft="@dimen/_17sdp"
+            android:layout_marginRight="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:textSize="@dimen/_14sdp"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/_8sdp"/>
+
+        <Spinner
+            android:id="@+id/spin_user"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/_17sdp"
+            android:layout_marginRight="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:visibility="gone"
+            android:background="@drawable/spinner_bg" />
+        <include layout="@layout/line_view"/>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:orientation="horizontal">
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:id="@+id/tv_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
+        android:textAllCaps="true"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:text="@string/cast_intro_overlay_button_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp"
+        android:textStyle="bold" />
+
+    <com.nsl.app.commonutils.CustomTextViewNormal
+        android:id="@+id/text_purpose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_purpose"
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
+        android:text="@string/purpose"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp"
+        android:visibility="gone" />
+
+    <com.nsl.app.commonutils.CustomTextViewLight
+        android:id="@+id/tv_customer_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_customer"
+        android:layout_alignStart="@+id/tv_customer"
+        android:layout_below="@+id/tv_customer"
+        android:text="@string/cast_intro_overlay_button_text"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold" />
+
+    <com.nsl.app.commonutils.CustomTextViewBold
+        android:id="@+id/tv_osa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:textColor="@color/black"
+        android:text="@string/cast_intro_overlay_button_text"
+        android:textSize="@dimen/_11sdp"
+        android:layout_alignBaseline="@+id/tv_customer"
+        android:layout_alignBottom="@+id/tv_customer"
+        android:layout_alignRight="@+id/view2"
+        android:layout_alignEnd="@+id/view2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:background="@color/rowbottomcolor"
+        android:id="@+id/view2" />
+</RelativeLayout>
