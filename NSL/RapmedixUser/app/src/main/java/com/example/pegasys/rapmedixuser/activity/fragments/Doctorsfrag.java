@@ -9,11 +9,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.pegasys.rapmedixuser.R;
+import com.example.pegasys.rapmedixuser.activity.Home_page;
 import com.example.pegasys.rapmedixuser.activity.LoginActivity;
 import com.example.pegasys.rapmedixuser.activity.adapters.docspecgrid;
 import com.example.pegasys.rapmedixuser.activity.newactivities.DoctorlistPage;
@@ -48,7 +51,8 @@ public class Doctorsfrag extends Fragment implements RetrofitResponseListener {
     public static final String pref = "Location";
     private long longitude, latit;
     private String id, title, icon_Url;
-    ArrayList<String> Id = new ArrayList<>();
+    ArrayList<String> searchname = new ArrayList<>();
+    private ArrayList<String> idlist=new ArrayList<>();
 
     public Doctorsfrag() {
     }
@@ -77,12 +81,14 @@ public class Doctorsfrag extends Fragment implements RetrofitResponseListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.doctors_layout, container, false);
-        gridView = (GridView) view.findViewById(R.id.grid_doctors);
+        gridView = view.findViewById(R.id.grid_doctors);
 
         sp = getActivity().getSharedPreferences(pref, MODE_PRIVATE);
         ref_code_sp = getActivity().getSharedPreferences("category",MODE_PRIVATE);
-        latit = sp.getLong("lattitude", 0L);
-        longitude = sp.getLong("longitude", 0L);
+        lat = Double.valueOf(sp.getLong("lattitude", 0L));
+        longg= Double.valueOf(sp.getLong("longitude", 0L));
+
+
         //            obj = Class.forName(loginRequsest.class.getName()).cast(logRequest);
         obj = new Object();
         Log.d("obj", obj.toString());
@@ -102,7 +108,12 @@ public class Doctorsfrag extends Fragment implements RetrofitResponseListener {
             Gson gson = new Gson();
             if (spec.status.equals("success")) {
                 docspecLists = (ArrayList<DocspecList>) spec.docspecLists;
-
+                for (int i=0;i<docspecLists.size();i++) {
+                    searchname.add(docspecLists.get(i).specialisationName);
+                    idlist.add(docspecLists.get(i).id);
+                }
+                Home_page activity = (Home_page) getActivity();
+                activity.setSearchAdaper(searchname,idlist);
                 specadapter = new docspecgrid(getActivity(), docspecLists);
                 gridView.setAdapter(specadapter);
                 gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -126,11 +137,16 @@ public class Doctorsfrag extends Fragment implements RetrofitResponseListener {
                         intent.putExtra("location", selected_address);
                         Log.e("aa", latit + id + "ccc" + longitude);
                         Log.e("aa", lat + id + "ccc" + longg);
-                        Toast.makeText(getActivity(), "clicked at" + position + id, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(), "clicked at" + position + id, Toast.LENGTH_SHORT).show();
                         startActivity(intent);
+
 //                            actv.setText("");
                     }
                 });
+                Animation slide_down = AnimationUtils.loadAnimation(getActivity(),
+                        R.anim.right_left);
+                gridView.setAnimation(slide_down);
+
             } else {
                 Toast.makeText(getActivity(), "" + spec.status, Toast.LENGTH_SHORT).show();
             }

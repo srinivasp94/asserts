@@ -2,16 +2,18 @@ package com.example.pegasys.rapmedixuser.activity.newactivities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.pegasys.rapmedixuser.R;
 import com.example.pegasys.rapmedixuser.activity.database.DataBase_Helper;
 import com.example.pegasys.rapmedixuser.activity.pojo.Simpleresponse;
-import com.example.pegasys.rapmedixuser.activity.pojo.addMember;
 import com.example.pegasys.rapmedixuser.activity.pojo.changepwdReq;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitRequester;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitResponseListener;
@@ -29,6 +31,17 @@ public class Changepassword extends AppCompatActivity implements RetrofitRespons
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_changepassword);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ImageView backButton = (ImageView) toolbar.findViewById(R.id.backbutton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         dataBase_helper = new DataBase_Helper(this);
 
@@ -62,7 +75,7 @@ public class Changepassword extends AppCompatActivity implements RetrofitRespons
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
                     }
-                    new RetrofitRequester(Changepassword.this).callPostServices(obj, 1, "/user/addfamily_member_service", true);
+                    new RetrofitRequester(Changepassword.this).callPostServices(obj, 1, "/user/changePassword_service", true);
                 }
             }
         });
@@ -86,5 +99,18 @@ public class Changepassword extends AppCompatActivity implements RetrofitRespons
                 Toast.makeText(Changepassword.this, res.status, Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
 

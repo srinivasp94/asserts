@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.pegasys.rapmedixuser">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="com.khusaki.rapmedix.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    //AIzaSyC-gMt1p1czZ-N_w5jQWL_RcIxgUurpXw4
+    <application
+        android:name=".activity.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:versionCode="1"
+        android:versionName="1.0">
+        <activity android:name=".activity.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.FirstActivity" />
+
+        <service android:name=".activity.receivers.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".activity.receivers.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".activity.receivers.IncomingSms">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC-gMt1p1czZ-N_w5jQWL_RcIxgUurpXw4" />
+
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.OtpActivity" />
+        <activity
+            android:name=".activity.Home_page"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.newactivities.DoctorlistPage" />
+        <activity android:name=".activity.newactivities.Map_Loc" />
+        <activity android:name=".activity.newactivities.DoctorDescription" />
+        <activity android:name=".activity.newactivities.Slot_Selectionpage" />
+        <activity android:name=".activity.Forgotpassword" />
+        <activity android:name=".activity.newactivities.Selected_candidate_page" />
+        <activity android:name=".activity.newactivities.AboutusActivity" />
+        <activity android:name=".activity.newactivities.TermsActivity" />
+        <activity android:name=".activity.newactivities.ProfileActivity" />
+        <activity android:name=".activity.newactivities.EditprofileActivity" />
+        <activity android:name=".activity.newactivities.FamilymemberActivity" />
+        <activity android:name=".activity.newactivities.Changepassword" />
+        <activity android:name=".activity.newactivities.InviteFriendsActivity" />
+        <activity android:name=".activity.newactivities.AppointmentActivity" />
+        <activity android:name=".activity.newactivities.PrescriptionActivity" />
+        <activity android:name=".activity.newactivities.HealthRecordsActivity"></activity>
+    </application>
+
+</manifest>

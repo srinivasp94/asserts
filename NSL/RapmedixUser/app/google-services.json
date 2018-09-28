@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "22610665771",
-    "firebase_url": "https://rapmedix-234ce.firebaseio.com",
-    "project_id": "rapmedix-234ce",
-    "storage_bucket": "rapmedix-234ce.appspot.com"
+    "project_number": "326115997630",
+    "firebase_url": "https://rapmedix-e9ebf.firebaseio.com",
+    "project_id": "rapmedix-e9ebf",
+    "storage_bucket": "rapmedix-e9ebf.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:22610665771:android:77e4f34fa7b984ae",
+        "mobilesdk_app_id": "1:326115997630:android:91754fc59bd683ad",
         "android_client_info": {
-          "package_name": "com.example.pegasys.rapmedixuser"
+          "package_name": "com.tiqs.rapmedix"
         }
       },
       "oauth_client": [
         {
-          "client_id": "22610665771-fbb60ih7jbj8dou9t50anj7doghn7cit.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.pegasys.rapmedixuser",
-            "certificate_hash": "d2fde41956d6c97f1fb7767cd257d7dd32ca6bd7"
-          }
-        },
-        {
-          "client_id": "22610665771-c7sdj0q5kmq2voa1shm1nfuf7lqi8r9d.apps.googleusercontent.com",
+          "client_id": "326115997630-e5s7pf4ooqkdfkfca9k2enpfl5e3lejq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDZr85l4yj0A7Dk_Wjk4dw4lU_zfKuJRCA"
+          "current_key": "AIzaSyByJNZbSqwqo3Wpr2rQudJXZE7cdeq99Fs"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "22610665771-c7sdj0q5kmq2voa1shm1nfuf7lqi8r9d.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

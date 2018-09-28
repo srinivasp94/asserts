@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -32,27 +34,40 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pegasys.rapmedixuser.activity.fragments.Pharmacy;
+import com.example.pegasys.rapmedixuser.activity.newactivities.DiagnosticsPageSubCatActivity;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
 import com.example.pegasys.rapmedixuser.R;
 import com.example.pegasys.rapmedixuser.activity.adapters.PlaceArrayAdapter;
+import com.example.pegasys.rapmedixuser.activity.adapters.SearchAdapter;
+import com.example.pegasys.rapmedixuser.activity.customviews.RoundedImageView;
 import com.example.pegasys.rapmedixuser.activity.database.DataBase_Helper;
 import com.example.pegasys.rapmedixuser.activity.fragments.Bestquotesfragment;
+import com.example.pegasys.rapmedixuser.activity.fragments.Diagnostics;
 import com.example.pegasys.rapmedixuser.activity.fragments.Doctorsfrag;
 import com.example.pegasys.rapmedixuser.activity.fragments.HealthCheckups;
 import com.example.pegasys.rapmedixuser.activity.fragments.HomeVisitsFragment;
 import com.example.pegasys.rapmedixuser.activity.newactivities.AboutusActivity;
 import com.example.pegasys.rapmedixuser.activity.newactivities.AppointmentActivity;
 import com.example.pegasys.rapmedixuser.activity.newactivities.Changepassword;
+import com.example.pegasys.rapmedixuser.activity.newactivities.DoctorlistPage;
 import com.example.pegasys.rapmedixuser.activity.newactivities.FamilymemberActivity;
 import com.example.pegasys.rapmedixuser.activity.newactivities.HealthRecordsActivity;
 import com.example.pegasys.rapmedixuser.activity.newactivities.InviteFriendsActivity;
@@ -62,6 +77,9 @@ import com.example.pegasys.rapmedixuser.activity.newactivities.ProfileActivity;
 import com.example.pegasys.rapmedixuser.activity.newactivities.TermsActivity;
 import com.example.pegasys.rapmedixuser.activity.pojo.AppointmentsList;
 import com.example.pegasys.rapmedixuser.activity.pojo.AppointmentsResp;
+import com.example.pegasys.rapmedixuser.activity.pojo.DocspecList;
+import com.example.pegasys.rapmedixuser.activity.pojo.ProfileResponse;
+import com.example.pegasys.rapmedixuser.activity.pojo.Searchmodel;
 import com.example.pegasys.rapmedixuser.activity.pojo.userIdreq;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitRequester;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitResponseListener;
@@ -76,9 +94,11 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 
 public class Home_page extends AppCompatActivity
@@ -90,10 +110,19 @@ public class Home_page extends AppCompatActivity
     private int[] tabIcons = {
             R.drawable.tab_icon_chang,
             R.drawable.tab_icon_chang_diagnostics,
+            R.drawable.tab_icon_chang_pharmacy,
             R.drawable.tab_icon_chang_diagnostics,
             R.drawable.tab_icon_chang_pharmacy,
             R.drawable.tab_icon_chang_home_visit
     };
+    public static Home_page instance;
+
+    private Doctorsfrag doctorsfrag;
+    private Diagnostics diagnosticsFrag;
+    private Pharmacy pharmacy;
+    private HealthCheckups healthCheckupsFrag;
+    private Bestquotesfragment bestquotesfragment;
+    private HomeVisitsFragment homeVisitsFragment;
 
     private SharedPreferences ref_code_sp, sp;
     public static final String pref = "Location";
@@ -114,17 +143,23 @@ public class Home_page extends AppCompatActivity
     TextView aPending, aActive, aComplete;
     int pending = 0, active = 0, completed = 0;
     ArrayList<AppointmentsList> lists = new ArrayList<>();
-    ImageView hProfile;
+    RoundedImageView hProfile;
     private SharedPreferences global;
     private String sMobile, sName;
     private Object obj;
+    private TextView tab11;
+    private ImageView icon;
+    ArrayList<String> tabs = new ArrayList<>();
+    private AutoCompleteTextView actv_searchDos;
+    ArrayList<String> actv_ArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        instance = this;
         setContentView(R.layout.activity_home_page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Bundle bundle = new Bundle();
@@ -137,6 +172,15 @@ public class Home_page extends AppCompatActivity
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+        tabs.clear();
+        tabs.add("Doctors");
+        tabs.add("Diagnostics");
+        tabs.add("Pharmacy");
+        tabs.add("Health Checkups");
+        tabs.add("Best Quotes");
+        tabs.add("Home Visits");
+
         DataBase_Helper db = new DataBase_Helper(this);
         String UserId = db.getUserId("1");
 
@@ -146,12 +190,66 @@ public class Home_page extends AppCompatActivity
         lat = Double.longBitsToDouble(sp.getLong("lattitude", Double.doubleToLongBits(0.0)));
         longg = Double.longBitsToDouble(sp.getLong("longitude", Double.doubleToLongBits(0.0)));
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager1);
-        setupViewPager(viewPager);
+//        viewPager = (ViewPager) findViewById(R.id.viewpager1);
+//        setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.tab);
-        tabLayout.setupWithViewPager(viewPager);
-        setupTabIcons();
+        tabLayout = findViewById(R.id.tab);
+        actv_searchDos = findViewById(R.id.search_for_doctor);
+//        tabLayout.setupWithViewPager(viewPager);
+//                setupTabIcons();
+
+        doctorsfrag = new Doctorsfrag();
+        diagnosticsFrag = new Diagnostics();
+        pharmacy = new Pharmacy();
+        healthCheckupsFrag = new HealthCheckups();
+        bestquotesfragment = new Bestquotesfragment();
+        homeVisitsFragment = new HomeVisitsFragment();
+
+        for (int i = 0; i < tabs.size(); i++) {
+            Drawable img1 = getResources().getDrawable(tabIcons[i]);
+
+            LinearLayout relativeLayout = (LinearLayout)
+                    LayoutInflater.from(this).inflate(R.layout.custom_tab, tabLayout, false);
+
+            tab11 = relativeLayout.findViewById(R.id.tab_title);
+            icon = relativeLayout.findViewById(R.id.tab_icon);
+
+
+            icon.setImageDrawable(img1);
+            tab11.setText(tabs.get(i));
+
+            tabLayout.addTab(tabLayout.newTab().setCustomView(relativeLayout));
+
+        }
+
+        Fragment existing = getSupportFragmentManager().findFragmentById(R.id.fl_container);
+
+        if (existing == null) {
+            Fragment newFragment = new Doctorsfrag();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fl_container, newFragment)
+                    .commit();
+        }
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                setCurrentTabFragment(tab.getPosition());
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
 
         userIdreq req = new userIdreq();
         req.userId = new DataBase_Helper(this).getUserId("1");
@@ -163,23 +261,50 @@ public class Home_page extends AppCompatActivity
             e.printStackTrace();
         }
         new RetrofitRequester(Home_page.this).callPostServices(obj, 1, "/user/userAppointments_service", true);
+        new RetrofitRequester(Home_page.this).callPostServices(obj, 2, "/user/check_user_membership_type", true);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         View header = navigationView.getHeaderView(0);
-        hName = (TextView) header.findViewById(R.id.header_name);
-        hMail = (TextView) header.findViewById(R.id.header_mail);
-        aPending = (TextView) header.findViewById(R.id.header_notification_pending);
-        aActive = (TextView) header.findViewById(R.id.header_notification_active);
-        aComplete = (TextView) header.findViewById(R.id.header_notification_completer);
+        hName = header.findViewById(R.id.header_name);
+     /*   hMail = (TextView) header.findViewById(R.id.header_mail);*/
+        hProfile = header.findViewById(R.id.header_imageView);
+        aPending = header.findViewById(R.id.header_notification_pending);
+        aPending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pendingIntent = new Intent(Home_page.this, AppointmentActivity.class);
+                pendingIntent.putExtra("Input", 2);
+                startActivity(pendingIntent);
 
-        hName.setText(sName);
-        hMail.setText(sMobile);
+            }
+        });
+        aActive = header.findViewById(R.id.header_notification_active);
+        aActive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pendingIntent = new Intent(Home_page.this, AppointmentActivity.class);
+                pendingIntent.putExtra("Input", 1);
+                startActivity(pendingIntent);
+            }
+        });
+        aComplete = header.findViewById(R.id.header_notification_completer);
+        aComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pendingIntent = new Intent(Home_page.this, AppointmentActivity.class);
+                pendingIntent.putExtra("Input", 3);
+                startActivity(pendingIntent);
+            }
+        });
+
+//        hName.setText(sName);
+//        hMail.setText(sMobile);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -191,25 +316,26 @@ public class Home_page extends AppCompatActivity
                 Intent intent = new Intent(this, Map_Loc.class);
                 startActivity(intent);
 
+
             } else {
                 int currentapiVersion = Build.VERSION.SDK_INT;
 
                 if (currentapiVersion >= Build.VERSION_CODES.M) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (!shouldShowRequestPermissionRationale(android.Manifest.permission.ACCESS_FINE_LOCATION)) {
+                        if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
                             showMessageOKCancel("You need to allow access Location ",
                                     new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             ActivityCompat.requestPermissions(Home_page.this,
-                                                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                                                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                                                     REQUEST_CODE_ASK_PERMISSIONS);
                                         }
                                     });
                             return;
                         } else {
                             ActivityCompat.requestPermissions(Home_page.this,
-                                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                                     REQUEST_CODE_ASK_PERMISSIONS);
                         }
                     }
@@ -224,6 +350,88 @@ public class Home_page extends AppCompatActivity
 
     }
 
+    public void logSentFriendRequestEvent () {
+//        logger.logEvent("sentFriendRequest");
+        Logger.getLogger("sentFriendRequest");
+    }
+
+    public void setSearchAdaper(final ArrayList<String> actv_ArrayList,final ArrayList<String> IdList) {
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Home_page.this, R.layout.auto_list, actv_ArrayList);
+//        SearchAdapter adapter = new SearchAdapter(Home_page.this,actv_ArrayList);
+//        actv_searchDos.setThreshold(2);
+        actv_searchDos.setAdapter(arrayAdapter);
+        actv_searchDos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selected = (String) adapterView.getItemAtPosition(i);
+                int pos = actv_ArrayList.indexOf(selected);
+
+                Intent intent = new Intent(Home_page.this, DoctorlistPage.class);
+                intent.putExtra("lat", lat);
+                intent.putExtra("longg", longg);
+                intent.putExtra("id", IdList.get(pos));
+                intent.putExtra("location", selected_address);
+                Log.e("aa", pos + "   posi  " + lat + "ccc" + IdList.get(i));
+
+                startActivity(intent);
+                actv_searchDos.setText("");
+            }
+        });
+    }
+
+    public void setSearchAdaperDiagnostics(final ArrayList<String> actv_ArrayList,final ArrayList<String> IdList) {
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Home_page.this, R.layout.auto_list, actv_ArrayList);
+        actv_searchDos.setAdapter(arrayAdapter);
+        actv_searchDos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selected = (String) adapterView.getItemAtPosition(i);
+                int pos = actv_ArrayList.indexOf(selected);
+
+                Intent intent = new Intent(getApplicationContext(), DiagnosticsPageSubCatActivity.class);
+                intent.putExtra("ID", IdList.get(pos));
+                Log.e("aa", pos + "   posi  "+ IdList.get(i));
+                startActivity(intent);
+                actv_searchDos.setText("");
+            }
+        });
+    }
+
+    private void setCurrentTabFragment(int tabPosition) {
+        switch (tabPosition) {
+            case 0:
+                replaceFragment(doctorsfrag);
+                break;
+            case 1:
+                replaceFragment(diagnosticsFrag);
+                break;
+            case 2:
+                replaceFragment(pharmacy);
+                break;
+            case 3:
+                replaceFragment(healthCheckupsFrag);
+                break;
+            case 4:
+                replaceFragment(bestquotesfragment);
+                break;
+
+            case 5:
+                replaceFragment(homeVisitsFragment);
+                break;
+            default:
+                replaceFragment(doctorsfrag);
+
+        }
+    }
+
+    public void replaceFragment(Fragment fragment) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fl_container, fragment);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        ft.commit();
+    }
+
     private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(Home_page.this)
                 .setMessage(message)
@@ -236,7 +444,7 @@ public class Home_page extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -260,43 +468,6 @@ public class Home_page extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_profile) {
-            Intent intent = new Intent(Home_page.this, ProfileActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_familymember) {
-            Intent intent = new Intent(Home_page.this, FamilymemberActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_appointments) {
-            Intent intent = new Intent(Home_page.this, AppointmentActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_prescription) {
-            Intent intent = new Intent(Home_page.this, PrescriptionActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_health_records) {
-            Intent intent = new Intent(Home_page.this, HealthRecordsActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_invite) {
-            Intent intent = new Intent(Home_page.this, InviteFriendsActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_changepwd) {
-            Intent intent = new Intent(Home_page.this, Changepassword.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_logout) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Home_page.this);
             builder.setTitle("Alert");
             builder.setMessage("Are you sure to logout..?");
@@ -323,35 +494,96 @@ public class Home_page extends AppCompatActivity
             });
             builder.show();
 
-
-        } else if (id == R.id.nav_about) {
-            Intent intent = new Intent(Home_page.this, AboutusActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_terms) {
-            Intent intent = new Intent(Home_page.this, TermsActivity.class);
-            startActivity(intent);
-
+            return true;
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
 
-        Bundle bundle = new Bundle();
-        bundle.putDouble("LATITUDE", lat);
-        bundle.putDouble("LONGITUDE", longg);
+        if (id == R.id.nav_profile) {
+            Intent intent = new Intent(Home_page.this, ProfileActivity.class);
+            startActivity(intent);
+            finish();
 
-        adapter.addFragment(new Doctorsfrag().newInstance(lat, longg), "Doctors");
-        adapter.addFragment(new Doctorsfrag(), "Diagnostics");
-        adapter.addFragment(new HealthCheckups(), "Health CheckUps");
-        adapter.addFragment(new Bestquotesfragment(), "Best Quotes");
-        adapter.addFragment(new HomeVisitsFragment(), "Home Visits");
-        viewPager.setAdapter(adapter);
+
+        } else if (id == R.id.nav_familymember) {
+            Intent intent = new Intent(Home_page.this, FamilymemberActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_appointments) {
+            Intent intent = new Intent(Home_page.this, AppointmentActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_prescription) {
+            Intent intent = new Intent(Home_page.this, PrescriptionActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_health_records) {
+            Intent intent = new Intent(Home_page.this, HealthRecordsActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_invite) {
+            Intent intent = new Intent(Home_page.this, InviteFriendsActivity.class);
+            startActivity(intent);
+
+
+        } else if (id == R.id.nav_changepwd) {
+            Intent intent = new Intent(Home_page.this, Changepassword.class);
+            startActivity(intent);
+
+
+        }
+        /*else if () {
+        }*/
+        else {
+            if (id == R.id.nav_logout) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Home_page.this);
+                builder.setTitle("Alert");
+                builder.setMessage("Are you sure to logout..?");
+                builder.setCancelable(false);
+                final AlertDialog dialog = builder.create();
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        DataBase_Helper dataBase_helper = new DataBase_Helper(Home_page.this);
+                        SQLiteDatabase db = dataBase_helper.getWritableDatabase();
+                        db.execSQL("delete  from User ");
+                        db.close();
+                        dialog.dismiss();
+                        Intent intent = new Intent(Home_page.this, FirstActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
+
+
+            } else if (id == R.id.nav_about) {
+                Intent intent = new Intent(Home_page.this, AboutusActivity.class);
+                startActivity(intent);
+
+            } else if (id == R.id.nav_terms) {
+                Intent intent = new Intent(Home_page.this, TermsActivity.class);
+                startActivity(intent);
+
+            }
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     @Override
@@ -359,23 +591,39 @@ public class Home_page extends AppCompatActivity
         if (objectResponse == null || objectResponse.equals("")) {
             Toast.makeText(Home_page.this, "Please Retry", Toast.LENGTH_SHORT).show();
         } else {
-            AppointmentsResp res = Common.getSpecificDataObject(objectResponse, AppointmentsResp.class);
-            Gson gson = new Gson();
-            if (res.status.equals("success")) {
-                lists = (ArrayList<AppointmentsList>) res.appointmentsLists;
-                for (int i = 0; i < lists.size(); i++) {
-                    if (lists.get(i).status.equals("0")) {
-                        pending++;
-                        aPending.setText("" + pending);
-                    } else if (lists.get(i).status.equals("1")) {
-                        active++;
-                        aActive.setText("" + active);
-                    } else if (lists.get(i).status.equals("3")) {
-                        completed++;
-                        aComplete.setText("" + completed);
+            switch (requestId) {
+                case 1:
+                    AppointmentsResp res = Common.getSpecificDataObject(objectResponse, AppointmentsResp.class);
+                    Gson gson = new Gson();
+                    if (res.status.equals("success")) {
+                        lists = res.appointmentsLists;
+                        for (int i = 0; i < lists.size(); i++) {
+                            if (lists.get(i).status.equals("0")) {
+                                pending++;
+                                aPending.setText("" + pending);
+                            } else if (lists.get(i).status.equals("1")) {
+                                active++;
+                                aActive.setText("" + active);
+                            } else if (lists.get(i).status.equals("3")) {
+                                completed++;
+                                aComplete.setText("" + completed);
+                            }
+                        }
+                    } else {
+
                     }
-                }
+                    break;
+                case 2:
+                    ProfileResponse instan = Common.getSpecificDataObject(objectResponse, ProfileResponse.class);
+                    gson = new Gson();
+                    if (instan.status.equals("success")) {
+                        hName.setText(instan.name);
+                        String ImgUrl = instan.profilePic.replace("\\", "");
+                        Picasso.with(Home_page.this).load(ImgUrl).error(R.drawable.doctor_icon).into(hProfile);
+                    }
+                    break;
             }
+
         }
     }
 
@@ -389,6 +637,9 @@ public class Home_page extends AppCompatActivity
 
         @Override
         public Fragment getItem(int position) {
+            if (position == 0) {
+
+            }
             return mFragmentList.get(position);
         }
 
@@ -435,9 +686,9 @@ public class Home_page extends AppCompatActivity
 
 
         final AutoCompleteTextView mAutocompleteTextView =
-                (AutoCompleteTextView) dialog.findViewById(R.id.input_address);
-        Button submit = (Button) dialog.findViewById(R.id.submit);
-        Button cancel = (Button) dialog.findViewById(R.id.cancel);
+                dialog.findViewById(R.id.input_address);
+        Button submit = dialog.findViewById(R.id.submit);
+        Button cancel = dialog.findViewById(R.id.cancel);
 
 
         Window window = dialog.getWindow();

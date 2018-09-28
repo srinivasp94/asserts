@@ -6,8 +6,11 @@
     xmlns:app="http://schemas.android.com/tools"
     app:cardUseCompatPadding="true"
     card_view:cardCornerRadius="4dp"
-    android:layout_margin="@dimen/_2sdp"
-    android:layout_marginBottom="@dimen/_2sdp">
+    card_view:cardElevation="@dimen/_5sdp"
+    android:layout_margin="@dimen/_4sdp"
+    android:background="@color/white"
+    android:layout_marginBottom="@dimen/_2sdp"
+    android:padding="@dimen/_2sdp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,8 +34,8 @@
 
                 <ImageView
                     android:id="@+id/doctor_image"
-                    android:layout_width="70dp"
-                    android:layout_height="95dp"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_85sdp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/rap_banner">
 
@@ -66,7 +69,7 @@
                         android:src="@drawable/telephone"></ImageView>
                 </LinearLayout>
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -88,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                     android:id="@+id/doctor_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -125,7 +128,7 @@
                             android:src="@drawable/telephone"></ImageView>
                     </LinearLayout>
 
-                    <TextView
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -155,7 +158,7 @@
                         android:src="@drawable/medical" />
                 </LinearLayout>
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                     android:id="@+id/specialization"
                     android:layout_width="@dimen/_80sdp"
                     android:layout_height="wrap_content"
@@ -165,7 +168,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                     android:id="@+id/exp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -193,7 +196,7 @@
                         android:src="@drawable/education" />
                 </LinearLayout>
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                     android:id="@+id/degree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -222,7 +225,7 @@
                         android:src="@drawable/healthy" />
                 </LinearLayout>
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                     android:id="@+id/hospital"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -270,7 +273,7 @@
                         android:gravity="center"
                         android:padding="5dp">
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                             android:id="@+id/distance"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"

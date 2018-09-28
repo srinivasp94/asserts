@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This is the line -->
+    <item>
+        <shape>
+            <solid android:color="#c20c11" />
+            />
+            <corners android:bottomRightRadius="0dp"
+                android:bottomLeftRadius="3dp"
+                android:topLeftRadius="3dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+
+    </item>
+
+    <!-- This is the main color -->
+    <item android:top="1dp"
+         android:bottom=".5dp"
+        android:left="1dp">
+        <shape>
+            <solid android:color="@color/tab_indicator" />
+            />
+            <corners android:bottomRightRadius="0dp"
+                android:bottomLeftRadius="3dp"
+                android:topLeftRadius="3dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+    </item>
+</layer-list>

@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,11 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pegasys.rapmedixuser.R;
-import com.example.pegasys.rapmedixuser.activity.Forgotpassword;
 import com.example.pegasys.rapmedixuser.activity.database.DataBase_Helper;
 import com.example.pegasys.rapmedixuser.activity.pojo.ProfileResponse;
-import com.example.pegasys.rapmedixuser.activity.pojo.forgotpwdresponse;
-import com.example.pegasys.rapmedixuser.activity.pojo.fpwreq;
 import com.example.pegasys.rapmedixuser.activity.pojo.userIdreq;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitRequester;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitResponseListener;
@@ -28,32 +27,52 @@ import com.google.gson.Gson;
 public class InviteFriendsActivity extends AppCompatActivity implements RetrofitResponseListener {
     TextView ref_code, p1, p2, p3;
     Button share_referral;
-    SharedPreferences ref_code_sp,preferences,sp;
+    SharedPreferences ref_code_sp, preferences, sp;
     ImageView share_via;
     public static final String ref_codee = "referral";
     DataBase_Helper db;
     private String userid;
     private Object obj;
     String invite_code;
+    private String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invite_friends);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+//        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.back_arrow));
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
 
-        p1 = (TextView) findViewById(R.id.point1);
-        p2 = (TextView) findViewById(R.id.point2);
-        p3 = (TextView) findViewById(R.id.point3);
-        ref_code = (TextView) findViewById(R.id.ref_code);
-        share_via = (ImageView) findViewById(R.id.share_via);
-        share_referral = (Button) findViewById(R.id.share_referral);
+        ImageView backButton = toolbar.findViewById(R.id.backbutton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
+        p1 = findViewById(R.id.point1);
+        p2 = findViewById(R.id.point2);
+        p3 = findViewById(R.id.point3);
+        ref_code = findViewById(R.id.ref_code);
+        share_via = findViewById(R.id.share_via);
+        share_referral = findViewById(R.id.share_referral);
 
         db = new DataBase_Helper(this);
         userid = db.getUserId("1");
         sp = getSharedPreferences("refcode", MODE_PRIVATE);
-        preferences = getSharedPreferences("REF",MODE_PRIVATE);
-        invite_code = preferences.getString("REFERRAL","");
-        Log.i("ref",invite_code);
+        preferences = getSharedPreferences("REF", MODE_PRIVATE);
+        invite_code = preferences.getString("REFERRAL", "");
+        Log.i("ref", invite_code);
         if (invite_code.equals("")) {
             userIdreq req = new userIdreq();
             req.userId = userid;
@@ -76,11 +95,19 @@ public class InviteFriendsActivity extends AppCompatActivity implements Retrofit
         share_via.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent share_intent = new Intent(Intent.ACTION_SEND);
-                share_intent.setType("text/plain");
-                share_intent.putExtra("android.intent.extra.TEXT", "Hey, \nI care about you, so i thought this app would be extremely useful for you & your family for your future Doctor Consultations and Health Checkups. Signup today to avail free consultations by using referral code"
-                        + ": " + ref_code_sp.getString("referral_code", "empty") + "\n" + "https://play.google.com/store/apps/details?id=" + getPackageName().toString());
-                startActivity(share_intent);
+
+                text = "Hey, \nI care about you, so i thought this app would be extremely useful for you & your family for your future Doctor Consultations and Health Checkups. Signup today to avail free consultations by using referral code"
+                        + ": " + ref_code.getText().toString() + "\n" + "https://play.google.com/store/apps/details?id=" + getPackageName().toString();
+
+
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+                sendIntent.setType("text/plain");
+
+                // Do not forget to add this to open whatsApp App specifically
+//                sendIntent.setPackage("com.whatsapp");
+                startActivity(sendIntent);
             }
         });
 
@@ -96,7 +123,7 @@ public class InviteFriendsActivity extends AppCompatActivity implements Retrofit
                     waIntent.setType("text/plain");
 
                     String text = "Hey, \nI care about you, so i thought this app would be extremely useful for you & your family for your future Doctor Consultations and Health Checkups. Signup today to avail free consultations by using referral code"
-                            + ": " + ref_code_sp.getString("referral_code", "empty") + "\n" + "https://play.google.com/store/apps/details?id=" + getPackageName().toString();
+                            + ": " + ref_code.getText().toString() + "\n" + "https://play.google.com/store/apps/details?id=" + getPackageName().toString();
 
                     PackageInfo info = pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                     //Check if package exists or not. If not then code
@@ -109,10 +136,12 @@ public class InviteFriendsActivity extends AppCompatActivity implements Retrofit
                 } catch (PackageManager.NameNotFoundException e) {
                     Toast.makeText(InviteFriendsActivity.this, "WhatsApp not Installed", Toast.LENGTH_SHORT)
                             .show();
+
+                    //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("com.whatsapp")));
                 }
+                //"android.intent.extra.TEXT",
             }
         });
-
 
 
     }
@@ -125,17 +154,37 @@ public class InviteFriendsActivity extends AppCompatActivity implements Retrofit
         } else {
             ProfileResponse mProfileResponse = Common.getSpecificDataObject(objectResponse, ProfileResponse.class);
             Gson gson = new Gson();
-            if (mProfileResponse.state.equals("success")) {
-                String referal = mProfileResponse.referral;
-                ref_code.setText(referal);
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putString("REF", referal);
-                editor.commit();
 
+            if (mProfileResponse.status.equals("success")) {
+                try {
+
+                    String referal = mProfileResponse.referral;
+                    ref_code.setText(referal);
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("REF", referal);
+                    editor.commit();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             } else {
                 Toast.makeText(this, mProfileResponse.status, Toast.LENGTH_SHORT).show();
             }
         }
 
+
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }

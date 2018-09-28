@@ -63,10 +63,10 @@ public class OtpActivity extends AppCompatActivity implements RetrofitResponseLi
         setContentView(R.layout.activity_otp);
 
         rootview = findViewById(R.id.Otp_rootview);
-        linearLayout = (LinearLayout) findViewById(R.id.llsnack);
-        editText_otp = (EditText) findViewById(R.id.logmobileotp);
-        Submit = (Button) findViewById(R.id.otp_submit);
-        resend_otp = (TextView) findViewById(R.id.resend_otp);
+        linearLayout = findViewById(R.id.llsnack);
+        editText_otp = findViewById(R.id.logmobileotp);
+        Submit = findViewById(R.id.otp_submit);
+        resend_otp = findViewById(R.id.resend_otp);
 
         Intent intent = getIntent();
         uid = intent.getStringExtra("uid");
@@ -75,7 +75,7 @@ public class OtpActivity extends AppCompatActivity implements RetrofitResponseLi
         otp = motp.substring(0, 4);
         Name = intent.getStringExtra("name");
         Log.e("otp_", Name + "otp  " + otp + "  mob  " + Mobile + "  uid  " + uid);
-        preferences = getSharedPreferences("REF",MODE_PRIVATE);
+        preferences = getSharedPreferences("REF", MODE_PRIVATE);
 
 //        Otpresend otpobject = new Otpresend();
 
@@ -102,12 +102,12 @@ public class OtpActivity extends AppCompatActivity implements RetrofitResponseLi
                 servercallresendotp();
             }
         });
-//        if (isReadStorageAllowed()) {
-//            //If permission is already having then showing the toast
-//            //Toast.makeText(Otp_page.this,"You already have the permission",Toast.LENGTH_LONG).show();
-//            //Existing the method with return
-//            return;
-//        } else requestStoragePermission();
+        /*if (isReadStorageAllowed()) {
+            //If permission is already having then showing the toast
+            //Toast.makeText(Otp_page.this,"You already have the permission",Toast.LENGTH_LONG).show();
+            //Existing the method with return
+            return;
+        } else requestStoragePermission();*/
 
     }
 
@@ -147,9 +147,7 @@ public class OtpActivity extends AppCompatActivity implements RetrofitResponseLi
         int result = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS);
 
         //If permission is granted returning true
-        if (result == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        } else return false;
+        return result == PackageManager.PERMISSION_GRANTED;
 
         //If permission is not granted returning false
     }
@@ -247,8 +245,8 @@ public class OtpActivity extends AppCompatActivity implements RetrofitResponseLi
                     if (statusmsg.equalsIgnoreCase("success")) {
                         String otpsmsg = otpobject.status;
                         String rOtp = otpobject.otp;
-                        otp = rOtp.substring(0,4);
-                        Log.i("otp_",rOtp + "" + otp);
+                        otp = rOtp.substring(0, 4);
+                        Log.i("otp_", rOtp + "" + otp);
 //                        otp = String.valueOf(otpobject.otp);
                     } else {
                         Toast.makeText(getApplicationContext(), "" + statusmsg, Toast.LENGTH_SHORT).show();
@@ -262,7 +260,7 @@ public class OtpActivity extends AppCompatActivity implements RetrofitResponseLi
                     if (status.equalsIgnoreCase("success")) {
                         DataBase_Helper dh = new DataBase_Helper(OtpActivity.this);
                         SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("REFERRAL",otpresponse.referral);
+                        editor.putString("REFERRAL", otpresponse.referral);
                         editor.commit();
                         int c = dh.getUserCount();
                         if (c == 0) {
@@ -279,7 +277,10 @@ public class OtpActivity extends AppCompatActivity implements RetrofitResponseLi
 
                         Intent intent = new Intent(OtpActivity.this, Home_page.class);
                         startActivity(intent);
-                        unregisterReceiver(broadcastReceiver);
+                        /*if (broadcastReceiver != null) {
+                            unregisterReceiver(broadcastReceiver);
+                            broadcastReceiver = null;
+                        }*/
                         finish();
 
 

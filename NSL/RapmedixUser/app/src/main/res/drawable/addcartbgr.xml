@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#a8dad9d9"/>
+    <stroke android:color="#b5ff3e3e"
+        android:width="0.1dp"/>
+    <corners android:radius="@dimen/_10sdp"/>
+
+   <!-- <item
+        android:state_focused="true"
+        android:state_pressed="true"
+        android:drawable="@drawable/bgr_slots" />
+
+    <item
+        android:state_focused="false"
+        android:state_pressed="true"
+        android:drawable="@drawable/bgr_header" />
+
+    <item android:drawable="@drawable/bgr_slots" />-->
+</shape>

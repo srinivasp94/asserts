@@ -6,6 +6,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.pegasys.rapmedixuser.activity.newactivities.AboutusActivity">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/MyToolbar"
+            app:title=""
+            app:titleTextColor="@color/white">
+
+            <ImageView
+                android:id="@+id/backbutton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:tint="@color/white"
+                android:src="@drawable/back_arrow"/>
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:text="@string/app_name"
+                android:textSize="@dimen/_16sdp"
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -16,7 +55,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/text_about_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -26,7 +65,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/text_about_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,7 +75,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/text_about_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,7 +85,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/text_about_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

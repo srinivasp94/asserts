@@ -56,6 +56,9 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
         holder.hos_place.setText(appointmentsList.location);
         holder.date.setText(appointmentsList.appointmentDate);
         holder.time.setText(appointmentsList.appointmentTime);
+        if (appointmentsList.status.equals("3")) {
+            holder.cancel.setVisibility(View.GONE);
+        }
 
     }
 
@@ -64,20 +67,28 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
         return alist.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView doctor_name, specialization, hos_name, hos_place, date, time;
         ImageView cancel;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            doctor_name = (TextView) itemView.findViewById(R.id.doctor_name);
-            specialization = (TextView) itemView.findViewById(R.id.specialization);
-            hos_name = (TextView) itemView.findViewById(R.id.hos_name);
-            hos_place = (TextView) itemView.findViewById(R.id.hos_place);
-            date = (TextView) itemView.findViewById(R.id.date);
-            time = (TextView) itemView.findViewById(R.id.time);
-            cancel = (ImageView) itemView.findViewById(R.id.cancel_ant);
+            doctor_name = itemView.findViewById(R.id.doctor_name);
+            specialization = itemView.findViewById(R.id.specialization);
+            hos_name = itemView.findViewById(R.id.hos_name);
+            hos_place = itemView.findViewById(R.id.hos_place);
+            date = itemView.findViewById(R.id.date);
+            time = itemView.findViewById(R.id.time);
+            cancel = itemView.findViewById(R.id.cancel_ant);
+            cancel.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (mListener != null) {
+                mListener.onItemClick(view, getPosition());
+            }
         }
     }
 }

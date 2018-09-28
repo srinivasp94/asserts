@@ -20,22 +20,22 @@ public class DocdetailsResponse {
     public List<Doctorworkingdatail> doctorworkingdatails = null;
     @SerializedName("doctor_experience")
     @Expose
-    public List<Object> doctorExperience = null;
+    public List<DoctorExperience> doctorExperience = null;
     @SerializedName("doctor_qualification")
     @Expose
     public List<Object> doctorQualification = null;
     @SerializedName("doctor_awords")
     @Expose
-    public List<Object> doctorAwords = null;
+    public List<DoctorAword> doctorAwords = null;
     @SerializedName("doctor_regnumbers")
     @Expose
-    public List<Object> doctorRegnumbers = null;
+    public List<DoctorRegnumber> doctorRegnumbers = null;
     @SerializedName("doctor_presentations")
     @Expose
-    public List<Object> doctorPresentations = null;
+    public List<DoctorPresentation> doctorPresentations = null;
     @SerializedName("doctor_selected_service")
     @Expose
-    public List<Object> doctorSelectedService = null;
+    public List<DoctorSelectedService> doctorSelectedService = null;
     @SerializedName("status")
     @Expose
     public String status;

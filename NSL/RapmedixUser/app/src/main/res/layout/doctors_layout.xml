@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e1dfdfdf"
     android:orientation="vertical"
     android:padding="@dimen/_4sdp">
+
 
     <GridView
         android:id="@+id/grid_doctors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:verticalSpacing="15dp"
-        android:horizontalSpacing="15dp"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/_4sdp"
-        android:paddingBottom="@dimen/_4sdp"
+        android:horizontalSpacing="4dp"
+        android:numColumns="2"
+        android:paddingBottom="@dimen/_3sdp"
         android:stretchMode="columnWidth"
-        android:numColumns="2">
+        android:verticalSpacing="4dp">
 
     </GridView>
 
-    <TextView
+    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Today Deals"
-        android:textColor="@color/dark_red"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:gravity="center"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:textSize="@dimen/_25sdp"/>
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center"
+        android:text="Today Deals"
+        android:visibility="gone"
 
-</LinearLayout>
+        android:textColor="@color/dark_red"
+        android:textSize="@dimen/_17sdp" />
+</RelativeLayout>

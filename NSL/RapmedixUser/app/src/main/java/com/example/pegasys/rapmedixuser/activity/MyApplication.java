@@ -9,6 +9,8 @@ import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.APIInterface;
 import com.example.pegasys.rapmedixuser.activity.utils.Constants;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.concurrent.TimeUnit;
 
@@ -49,6 +51,9 @@ public class MyApplication extends Application {
                 .connectTimeout(120,TimeUnit.SECONDS)
                 .build();
 
+        Gson gson  = new GsonBuilder()
+                .setLenient()
+                .create();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)

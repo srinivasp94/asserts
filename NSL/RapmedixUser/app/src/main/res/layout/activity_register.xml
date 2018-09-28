@@ -2,16 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginsnackbar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/loginsnackbar"
     tools:context="com.example.pegasys.rapmedixuser.activity.RegisterActivity">
 
     <RelativeLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_75sdp"
+        android:layout_height="@dimen/_100sdp"
         android:layout_alignParentTop="true"
         android:background="@color/colorAccent">
 
@@ -21,244 +21,246 @@
             android:background="@drawable/header_reg" />
 
     </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center|left"
-        android:orientation="vertical"
-        android:padding="@dimen/_12sdp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:background="@drawable/patient_name" />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tl_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:padding="0dp">
-
-                <EditText
-                    android:id="@+id/name_reg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Name"
-                    android:textSize="15sp" />
-            </android.support.design.widget.TextInputLayout>
+            android:gravity="center|left"
+            android:orientation="vertical"
+            android:padding="@dimen/_12sdp">
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/patient_name" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tl_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/name_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        android:textSize="15sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/contact_number" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tl_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="0dp"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/mob_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textSize="15sp" />
+                </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:background="@drawable/contact_number" />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tl_phone"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:padding="0dp">
-
-                <EditText
-                    android:id="@+id/mob_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Phone Number"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:textSize="15sp" />
-            </android.support.design.widget.TextInputLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:background="@drawable/email_hos" />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tl_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:padding="0dp">
-
-                <EditText
-                    android:id="@+id/email_reg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:textSize="15sp" />
-            </android.support.design.widget.TextInputLayout>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:background="@drawable/new_password" />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tl_pwd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:padding="0dp">
-
-                <EditText
-                    android:id="@+id/pwd_reg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:hint="Create Password"
-                    android:inputType="textPassword"
-                    android:textSize="15sp" />
-            </android.support.design.widget.TextInputLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:background="@drawable/confirm_password" />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tl_cnfpwd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:padding="0dp">
-
-                <EditText
-                    android:id="@+id/confirm_pwd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:hint="Confirm Password"
-                    android:inputType="textPassword"
-                    android:textSize="15sp" />
-            </android.support.design.widget.TextInputLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:background="@drawable/prefferd_hospital" />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tl_referal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:padding="0dp">
-
-                <EditText
-                    android:id="@+id/referral_code"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Enter Referral Code (If Available)"
-                    android:textSize="15sp" />
-            </android.support.design.widget.TextInputLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/submit_reg"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:background="@drawable/red_shadow"
                 android:gravity="center"
-                android:text="REGISTER NOW"
-                android:textColor="@color/white" />
-        </LinearLayout>
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scroll_reg"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:gravity="center">
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/email_hos" />
 
-            <TextView
-                android:layout_width="wrap_content"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tl_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="0dp"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/email_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textSize="15sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Already have an account? Log in"
-                android:textColor="@color/black" />
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/login_text"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/new_password" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tl_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="0dp"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/pwd_reg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:hint="Create Password"
+                        android:inputType="textPassword"
+                        android:textSize="15sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_5sdp"
-                android:text="Here"
-                android:textColor="@color/colorAccent" />
-        </LinearLayout>
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/confirm_password" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tl_cnfpwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="0dp"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/confirm_pwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:textSize="15sp" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/prefferd_hospital" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tl_referal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="0dp"
+                    android:padding="0dp">
+
+                    <EditText
+                        android:id="@+id/referral_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Referral Code (If Available)"
+                        android:textSize="15sp" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/submit_reg"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/red_shadow"
+                    android:gravity="center"
+                    android:text="REGISTER NOW"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scroll_reg"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center">
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account? Log in"
+                    android:textColor="@color/black" />
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                    android:id="@+id/login_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="Here"
+                    android:textColor="@color/colorAccent" />
+            </LinearLayout>
+
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>

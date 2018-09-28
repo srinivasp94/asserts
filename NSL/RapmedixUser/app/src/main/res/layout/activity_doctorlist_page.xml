@@ -4,8 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgr_color"
     android:orientation="vertical"
     tools:context="com.example.pegasys.rapmedixuser.activity.newactivities.DoctorlistPage">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/MyToolbar"
+            app:title=""
+            app:titleTextColor="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/backbutton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="1dp"
+                    android:src="@drawable/back_arrow"
+                    android:tint="@color/white" />
+
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/backbutton"
+                    android:layout_centerInParent="true"
+                    android:gravity="left"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/searchinput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_toLeftOf="@+id/searchfor"
+                    android:background="@drawable/shadow3"
+                    android:hint="Enter Doctor Name"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="#a4a4a4"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+
+                <CheckBox
+                    android:id="@+id/searchfor"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:background="@drawable/search_icon"
+                    android:backgroundTint="@color/white"
+                    android:button="@null" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,8 +92,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:visibility="gone"
-            android:background="@color/tab_indicator">
+            android:background="@color/tab_indicator"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/header"
@@ -67,7 +145,7 @@
                 android:layout_toLeftOf="@+id/menu"
                 android:background="@drawable/profile_back"
                 android:gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <ImageView
                     android:id="@+id/topic_grid"
@@ -100,7 +178,7 @@
                 android:background="@color/light_black"
                 android:padding="10dp">
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                     android:id="@+id/location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -133,7 +211,7 @@
             android:layout_height="match_parent"
             android:divider="@android:color/darker_gray"
             android:dividerHeight="1dp"
-            android:padding="@dimen/_2sdp"/>
+            android:padding="@dimen/_2sdp" />
 
     </LinearLayout>
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>-->
+
+    <color name="colorPrimary">#ed3237</color>
+    <color name="colorPrimaryDark">#ed3237</color>
+    <color name="colorAccent">#ed3237</color>
+    <color name="white">#ffffff</color>
+    <color name="input_bg">#d6d6d6</color>
+    <color name="popupbg">#f0eeee</color>
+    <color name="tab_selected">#707070</color>
+    <color name="tab_unselected">#2f2e2e</color>
+    <color name="tab_indicator">#ed3237</color>
+    <color name="green_rating">#22b022</color>
+    <color name="green_dark">#1a7d23</color>
+    <color name="black">#424242</color>
+    <color name="dark_red">#b70e11</color>
+    <color name="light_black">#2a2a2a</color>
+    <color name="home_grid">#e2e1eb</color>
+    <color name="text_color">#383838</color>
+    <color name="nbtn_text">#ed3237</color>
+    <color name="nbtn_border">#d6d6d6</color>
+    <color name="textColor">#2a2a2a</color>
+    <color name="hint">#727273</color>
+    <color name="hint1">#8a8a8a</color>
+</resources>

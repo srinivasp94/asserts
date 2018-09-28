@@ -63,7 +63,7 @@
             </LinearLayout>
 
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/resend_otp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

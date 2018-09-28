@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_sort_dist"
+        android:title="Sort By Distance"
+        android:icon="@drawable/subcat_selector" />
+    <item android:id="@+id/action_sort_expeiance"
+        android:title="Sort By Experiance"
+        android:icon="@drawable/subcat_selector2" />
+</menu>

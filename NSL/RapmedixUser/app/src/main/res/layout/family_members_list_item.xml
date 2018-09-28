@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
     android:background="@drawable/shadow3"
-    android:id="@+id/cv_root"
-    android:orientation="vertical">
+    android:elevation="@dimen/_3sdp"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/_1sdp">
 
     <RelativeLayout
         android:id="@+id/layout_member"
@@ -20,7 +24,7 @@
             android:layout_centerInParent="true"
             android:orientation="vertical">
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -29,7 +33,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                 android:id="@+id/age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:gravity="center"
+            android:gravity="start"
             android:orientation="horizontal">
 
             <ImageView
@@ -50,11 +54,13 @@
                 android:layout_height="24dp"
                 android:src="@drawable/group" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                 android:id="@+id/relation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="start"
                 android:layout_marginLeft="5dp"
+                android:gravity="start"
                 android:text="Father"
                 android:textColor="@color/light_black"
                 android:textSize="12sp"
@@ -65,9 +71,10 @@
             android:id="@+id/mobilee_root"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:gravity="center"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_toLeftOf="@+id/iv_delete"
+            android:gravity="start"
             android:orientation="horizontal">
 
             <ImageView
@@ -75,16 +82,24 @@
                 android:layout_height="24dp"
                 android:src="@drawable/mobile" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/mobile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
-                android:text="9908819653"
+                android:text="0"
                 android:textColor="@color/light_black"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icons_trash"
+            android:tint="@color/colorPrimary" />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

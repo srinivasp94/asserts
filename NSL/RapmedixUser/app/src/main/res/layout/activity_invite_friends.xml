@@ -7,11 +7,51 @@
     android:orientation="vertical"
     tools:context="com.example.pegasys.rapmedixuser.activity.newactivities.InviteFriendsActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/MyToolbar"
+            app:title=""
+            app:titleTextColor="@color/white">
+
+            <ImageView
+                android:id="@+id/backbutton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:src="@drawable/back_arrow"
+                android:tint="@color/white" />
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:text="@string/app_name"
+                android:textSize="@dimen/_16sdp" />
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/rela"
-        android:layout_below="@+id/prfl_head"
+        android:layout_below="@+id/appbar"
         android:scrollbars="none">
 
         <LinearLayout
@@ -21,7 +61,7 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/t1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,7 +87,7 @@
 
             </LinearLayout>
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/point3"
@@ -58,7 +98,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                 android:id="@+id/point3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,7 +110,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_11sdp" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                 android:id="@+id/point2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +122,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_11sdp" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                 android:id="@+id/point1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,7 +145,7 @@
         android:layout_margin="@dimen/_4sdp"
         android:background="@drawable/dotted_square_red">
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
             android:id="@+id/ref_code"
             android:layout_width="wrap_content"
             android:layout_height="50dp"

@@ -1,6 +1,6 @@
 <resources>
     <!--<string name="app_name">RapmedixUser</string>-->
-    <string name="app_name">RapMedix</string>
+    <string name="app_name">RAPMEDIX</string>
     <string name="server">https://www.rapmedix.com/user/</string>
     <string name="serverData">https://www.rapmedix.com/index/</string>
     <string name="webData">https://www.rapmedix.com/webservices/</string>
@@ -19,5 +19,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- <string name="facebook_app_id">353703941777288</string>
+    <string name="fb_login_protocol_scheme">fb353703941777288</string>-->
+
+    <string name="facebook_app_id">144147189618302</string>
+    <string name="fb_login_protocol_scheme">fb144147189618302</string>
+
+    <string name="no_family_member_added_yet">No Family Member Added yet</string>
 
 </resources>

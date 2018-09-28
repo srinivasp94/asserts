@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.pegasys.rapmedixuser.R;
@@ -60,15 +61,25 @@ public class healthAdapter extends RecyclerView.Adapter<healthAdapter.ViewHolder
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textView, description;
         ImageView imagee;
+        LinearLayout  root;
 
         public ViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.title);
             description = (TextView) itemView.findViewById(R.id.description);
             imagee = (ImageView) itemView.findViewById(R.id.imagee);
+            root = (LinearLayout)itemView.findViewById(R.id.ll_hc);
+            root.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (mListener != null) {
+                mListener.onItemClick(view, getPosition());
+            }
         }
     }
 }

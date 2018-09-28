@@ -7,7 +7,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -56,39 +58,66 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
     public static final String cost = "price_c";
     private SharedPreferences global;
     private String cate;
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selectedcandidate_page);
-        Intent intent = getIntent();
-        mdoctor_id = intent.getStringExtra("DocId");
-        mWork_id = intent.getStringExtra("WorkingId");
-        mHosp_id = intent.getStringExtra("HospitalId");
-        mDate = intent.getStringExtra("SelectedDate");
-        mFee = intent.getStringExtra("Price");
-        mtimeslot = intent.getStringExtra("TimeSlot");
-        Log.i("data", mdoctor_id + " workid" + mWork_id + " hospid" + mHosp_id + " date " + mDate + " fee " + mFee + " time" + mtimeslot);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        member_name = (TextView) findViewById(R.id.member_name);
-        mobile_number = (EditText) findViewById(R.id.mobile_number);
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        fre_con = (RadioButton) findViewById(R.id.fre_con);
-        off_con = (RadioButton) findViewById(R.id.off_con);
-        booknow = (Button) findViewById(R.id.booknow);
-        Namee = (TextView) findViewById(R.id.doctor_name);
-        Desig = (TextView) findViewById(R.id.doctor_desig);
-        price = (TextView) findViewById(R.id.price);
-        service_tax = (TextView) findViewById(R.id.service_tax);
-        total = (TextView) findViewById(R.id.total);
-        Qualification = (TextView) findViewById(R.id.doctor_quli);
-        Experience = (TextView) findViewById(R.id.doctor_exp);
-        Imageview = (ImageView) findViewById(R.id.doctorImg);
-        plus_add_member = (ImageView) findViewById(R.id.plus_add_member);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+//        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.back_arrow));
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
+        ImageView backButton = toolbar.findViewById(R.id.backbutton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
+        Intent intent = getIntent();
+        if (intent != null) {
+
+            mdoctor_id = intent.getStringExtra("DocId");
+            mWork_id = intent.getStringExtra("WorkingId");
+            mHosp_id = intent.getStringExtra("HospitalId");
+            mDate = intent.getStringExtra("SelectedDate");
+            mFee = intent.getStringExtra("Price");
+            mtimeslot = intent.getStringExtra("TimeSlot");
+            Log.i("data", mdoctor_id + " workid" + mWork_id + " hospid" + mHosp_id + " date " + mDate + " fee " + mFee + " time" + mtimeslot);
+        }
+        member_name = findViewById(R.id.member_name);
+        mobile_number = findViewById(R.id.mobile_number);
+        radioGroup = findViewById(R.id.radioGroup);
+        fre_con = findViewById(R.id.fre_con);
+        off_con = findViewById(R.id.off_con);
+        booknow = findViewById(R.id.booknow);
+        Namee = findViewById(R.id.doctor_name);
+        Desig = findViewById(R.id.doctor_desig);
+        price = findViewById(R.id.price);
+        service_tax = findViewById(R.id.service_tax);
+        total = findViewById(R.id.total);
+        Qualification = findViewById(R.id.doctor_quli);
+        Experience = findViewById(R.id.doctor_exp);
+        Imageview = findViewById(R.id.doctorImg);
+        plus_add_member = findViewById(R.id.plus_add_member);
 
         Qualification.setText(mDate);
         Experience.setText(mtimeslot);
+
         dataBase_helper = new DataBase_Helper(this);
+        member_name.setText(dataBase_helper.getUserName("1"));
+        mobile_number.setText(dataBase_helper.getUserMobileNumber("1"));
+        Log.i("mobile", dataBase_helper.getUserMobileNumber("1"));
 
         sp = getSharedPreferences(cost, MODE_PRIVATE);
         ref_code_sp = getSharedPreferences("category", MODE_PRIVATE);
@@ -96,18 +125,19 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
         global = getSharedPreferences("loggers", MODE_PRIVATE);
 
         String uid = global.getString("UID", null);
+//        member_name.setText(user);
         member_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 userIdreq idreq = new userIdreq();
-                idreq.userId = dataBase_helper.getUserId("1");
+                idreq.userId = new DataBase_Helper(Selected_candidate_page.this).getUserId("1");
                 try {
                     obj = Class.forName(userIdreq.class.getName()).cast(idreq);
                     Log.d("obj", obj.toString());
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-                new RetrofitRequester(Selected_candidate_page.this).callPostServices(obj, 3, "user/get_family_members", true);
+                new RetrofitRequester(Selected_candidate_page.this).callPostServices(obj, 3, "/user/get_family_members", true);
             }
         });
         plus_add_member.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +146,7 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
                 Intent intent_plus = new Intent(Selected_candidate_page.this, FamilymemberActivity.class);
                 intent_plus.putExtra("Add_Family", "1");
                 startActivity(intent_plus);
+                finish();
             }
         });
 
@@ -124,7 +155,7 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
         requ.hospitalId = mHosp_id;
         requ.doctorworkingdetailsId = mWork_id;
 //        requ.userId = "1";
-        requ.userId = dataBase_helper.getUserId("1");
+        requ.userId = new DataBase_Helper(Selected_candidate_page.this).getUserId("1");
         try {
             obj = Class.forName(checkoutRequ.class.getName()).cast(requ);
             Log.d("obj", obj.toString());
@@ -148,7 +179,7 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
                             });
                     snackBar.setActionTextColor(Color.RED);
                     View sbView = snackBar.getView();
-                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                    TextView textView = sbView.findViewById(android.support.design.R.id.snackbar_text);
                     textView.setTextColor(Color.YELLOW);
                     snackBar.show();
                 } else {
@@ -198,7 +229,11 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
                     if (Respo.resStatus.equals("success")) {
                         Namee.setText(Respo.name);
                         Desig.setText(Respo.hospitalName);
-                        Picasso.with(this).load(Respo.profilePic).into(Imageview);
+                        if (!Respo.profilePic.equals("")) {
+                            Picasso.with(this).load(Respo.profilePic).into(Imageview);
+                        } else {
+                            Imageview.setImageResource(R.drawable.rap_banner);
+                        }
                         String mConsultation = Respo.consultation;
                         if (mConsultation.equals("0")) {
                             off_con.setVisibility(View.GONE);
@@ -206,13 +241,16 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
                             off_con.setText(mConsultation + "% OFF");
                         }
                         price.setText(mFee);
-                        service_tax.setText("" + Math.round(Integer.parseInt(mFee) * (Respo.consultationServiceTax / 100)));
+                        Double d = Respo.consultationServiceTax;
+                        service_tax.setText("" + Math.round(Integer.parseInt(mFee) * (d / 100)));
                         Log.e("zzzaaa", "Aa " + Respo.userFreecoupon);
 
                         total.setText("" + (Integer.parseInt(mFee) + Double.parseDouble(service_tax.getText().toString())));
-                        if (Respo.userFreecoupon < 1) {
+                        int value = Respo.userFreecoupon;
+                        if (!Respo.userFreecoupon.equals(1)) {
                             fre_con.setVisibility(View.GONE);
                         }
+
                         fre_con.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                             @Override
                             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -296,24 +334,30 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
                     familydata mFamilydata = Common.getSpecificDataObject(objectResponse, familydata.class);
                     gson = new Gson();
                     if (mFamilydata.status.equals("success")) {
+                        user = mFamilydata.username;
                         ArrayList<Familydatum> list = new ArrayList<>();
                         final ArrayList<String> nameslist = new ArrayList<>();
+                        final ArrayList<String> mobilelist = new ArrayList<>();
                         list = (ArrayList<Familydatum>) mFamilydata.familydata;
+                        nameslist.add(mFamilydata.username);
+                        mobilelist.add(mobile_number.getText().toString());
                         for (int i = 0; i < list.size(); i++) {
                             String mem_name = list.get(i).name;
                             String mem_mobile = list.get(i).mobile;
                             nameslist.add(mem_name);
+                            mobilelist.add(list.get(i).mobile);
                         }
-                        nameslist.add(mFamilydata.username);
+
                         final Dialog dialog = new Dialog(Selected_candidate_page.this);
                         dialog.setContentView(R.layout.person_details);
-                        ListView listView = (ListView) dialog.findViewById(R.id.person_details_list);
+                        ListView listView = dialog.findViewById(R.id.person_details_list);
                         ArrayAdapter dataAdapter_age = new ArrayAdapter(Selected_candidate_page.this, R.layout.spinner_item, nameslist);
                         listView.setAdapter(dataAdapter_age);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                                 member_name.setText(nameslist.get(position).toString());
+                                mobile_number.setText(mobilelist.get(position).toString());
                                 dialog.dismiss();
                             }
                         });
@@ -328,5 +372,17 @@ public class Selected_candidate_page extends AppCompatActivity implements Retrof
 
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

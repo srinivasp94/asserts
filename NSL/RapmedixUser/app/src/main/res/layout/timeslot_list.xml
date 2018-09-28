@@ -5,13 +5,15 @@
     android:layout_gravity="center"
     android:orientation="vertical">
 
-    <CheckedTextView
+    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
         android:id="@+id/timeslot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/grid_selector"
+        android:background="@drawable/bgr_slots"
         android:gravity="center"
-        android:text="ji" />
+        android:padding="@dimen/_2sdp"
+        android:textColor="@color/black"
+        android:text="jilkasdvjnskldn" />
 
 </LinearLayout>

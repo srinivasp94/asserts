@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pegasys.rapmedixuser.R;
@@ -16,6 +17,7 @@ import com.example.pegasys.rapmedixuser.activity.adapters.AppointmentAdapter;
 import com.example.pegasys.rapmedixuser.activity.database.DataBase_Helper;
 import com.example.pegasys.rapmedixuser.activity.pojo.AppointmentsList;
 import com.example.pegasys.rapmedixuser.activity.pojo.AppointmentsResp;
+import com.example.pegasys.rapmedixuser.activity.pojo.Simpleresponse;
 import com.example.pegasys.rapmedixuser.activity.pojo.userIdreq;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitRequester;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitResponseListener;
@@ -28,16 +30,26 @@ import java.util.ArrayList;
  * Created by pegasys on 12/26/2017.
  */
 
-public class CompletedFrag extends Fragment implements RetrofitResponseListener{
+public class CompletedFrag extends Fragment implements RetrofitResponseListener {
 
     DataBase_Helper db;
     String uid;
     ArrayList<AppointmentsList> appointmentsList = new ArrayList<>();
+    ArrayList<AppointmentsList> mList = new ArrayList<>();
     AppointmentAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
     private Object obj;
+    TextView textView_nodata;
+
 
     public CompletedFrag() {
+    }
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+        }
     }
 
     RecyclerView recycler;
@@ -52,7 +64,9 @@ public class CompletedFrag extends Fragment implements RetrofitResponseListener{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_recyclerview, container, false);
-        recycler = (RecyclerView)view.findViewById(R.id.rv_add);
+        recycler = view.findViewById(R.id.rv_add);
+        textView_nodata = view.findViewById(R.id.text_nodata);
+
         layoutManager = new LinearLayoutManager(getActivity());
         recycler.setLayoutManager(layoutManager);
 
@@ -78,17 +92,52 @@ public class CompletedFrag extends Fragment implements RetrofitResponseListener{
         if (objectResponse == null || objectResponse.equals("")) {
             Toast.makeText(getActivity(), "Please Retry", Toast.LENGTH_SHORT).show();
         } else {
-            AppointmentsResp res = Common.getSpecificDataObject(objectResponse, AppointmentsResp.class);
-            Gson gson = new Gson();
-            if (res.status.equals("success")) {
-                appointmentsList = res.appointmentsLists;
-                adapter = new AppointmentAdapter(getActivity(), appointmentsList);
-                recycler.setAdapter(adapter);
+            switch (requestId) {
 
-            } else {
-                Toast.makeText(getActivity(), res.status, Toast.LENGTH_SHORT).show();
+                case 1:
+                    AppointmentsResp res = Common.getSpecificDataObject(objectResponse, AppointmentsResp.class);
+                    Gson gson = new Gson();
+                    if (res.status.equals("success")) {
+                        appointmentsList.clear();
+                        appointmentsList = res.appointmentsLists;
+                        mList.clear();
+                        for (int i = 0; i < appointmentsList.size(); i++) {
+                            AppointmentsList model = new AppointmentsList();
+                            model.name = appointmentsList.get(i).name;
+                            model.id = appointmentsList.get(i).id;
+                            model.categoryName = appointmentsList.get(i).categoryName;
+                            model.hospitalName = appointmentsList.get(i).hospitalName;
+                            model.location = appointmentsList.get(i).location;
+                            model.appointmentDate = appointmentsList.get(i).appointmentDate;
+                            model.appointmentTime = appointmentsList.get(i).appointmentTime;
+                            model.status = appointmentsList.get(i).status;
 
+
+                            if (appointmentsList.get(i).status.equals("3")) {
+//                        mList.clear();
+                                mList.add(model);
+                            }
+                        }
+                        if (mList.size() == 0) {
+                            textView_nodata.setVisibility(View.VISIBLE);
+                            textView_nodata.setText("No Completed Appointments yet");
+                        }
+                        adapter = new AppointmentAdapter(getActivity(), mList);
+                        recycler.setAdapter(adapter);
+
+
+                    } else {
+                        mList = new ArrayList<>();
+                        if (mList.size() == 0) {
+                            textView_nodata.setVisibility(View.VISIBLE);
+                            textView_nodata.setText("No Completed Appointments yet");
+                        }
+                        Toast.makeText(getActivity(), res.status, Toast.LENGTH_SHORT).show();
+
+                    }
+                    break;
             }
         }
     }
+
 }

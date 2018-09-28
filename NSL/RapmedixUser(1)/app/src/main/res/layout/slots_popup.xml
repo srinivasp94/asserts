@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/snaklayout"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/dates_tab"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            app:tabMode="scrollable">
+
+        </android.support.design.widget.TabLayout>
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/slots_list"
+        android:layout_below="@+id/snaklayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:horizontalSpacing="10dp"
+        android:listSelector="@drawable/grid_selector"
+        android:numColumns="4"
+        android:padding="10dp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:verticalSpacing="10dp">
+
+    </GridView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_above="@+id/v_view"
+        android:background="#cccccc" />
+
+    <LinearLayout
+        android:id="@+id/v_view"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/slots_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/doctor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hspital_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Hopital  Name"
+            android:textColor="#262626"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/doctor_row_desc1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/price_bg_oval"
+                android:padding="10dp"
+                android:text="02-04-2017"
+                android:textColor="#262626"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/price_bg_oval"
+                android:padding="10dp"
+                android:text="07:00 PM"
+                android:textColor="#262626"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/doctor_row_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/big_ovel_green"
+                android:padding="10dp"
+                android:text="r 250/-"
+                android:textColor="#262626"
+                android:textSize="11sp"
+
+                />
+
+            <Button
+                android:id="@+id/doctor_row_book"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/doctor_row_desc1"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_red_border"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Proceed"
+                android:textColor="#fff"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

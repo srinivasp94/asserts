@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>-->
 
     <color name="colorPrimary">#ed3237</color>
-    <color name="colorPrimaryDark">#ed3237</color>
+    <color name="colorPrimaryDark">#b4070b</color>
     <color name="colorAccent">#ed3237</color>
     <color name="white">#ffffff</color>
     <color name="input_bg">#d6d6d6</color>
@@ -25,4 +25,6 @@
     <color name="textColor">#2a2a2a</color>
     <color name="hint">#727273</color>
     <color name="hint1">#8a8a8a</color>
+
+    <color name="bgr_color">#dfdedddd</color>
 </resources>

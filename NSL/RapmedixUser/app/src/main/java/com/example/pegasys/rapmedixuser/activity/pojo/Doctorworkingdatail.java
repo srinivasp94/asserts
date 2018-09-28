@@ -87,7 +87,6 @@ public class Doctorworkingdatail implements Parcelable  {
     };
 
     public Doctorworkingdatail(DoctorDescription doctorDescription) {
-
     }
 
     @Override

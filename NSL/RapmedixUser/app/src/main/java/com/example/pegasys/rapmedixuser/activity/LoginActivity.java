@@ -1,6 +1,7 @@
 package com.example.pegasys.rapmedixuser.activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pegasys.rapmedixuser.R;
+import com.example.pegasys.rapmedixuser.activity.database.DataBase_Helper;
+import com.example.pegasys.rapmedixuser.activity.pojo.User;
 import com.example.pegasys.rapmedixuser.activity.pojo.loginRequsest;
 import com.example.pegasys.rapmedixuser.activity.pojo.userlog;
 import com.example.pegasys.rapmedixuser.activity.receivers.MyFirebaseInstanceIDService;
@@ -23,6 +26,8 @@ import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitRespons
 import com.example.pegasys.rapmedixuser.activity.utils.Common;
 import com.example.pegasys.rapmedixuser.activity.utils.ConnectionDetector;
 import com.google.gson.Gson;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity implements RetrofitResponseListener {
 
@@ -44,19 +49,19 @@ public class LoginActivity extends AppCompatActivity implements RetrofitResponse
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mobile_number = (EditText) findViewById(R.id.mobile_number_input);
-        pwd_login = (EditText) findViewById(R.id.pwd_login);
-        forgot_pwd = (TextView) findViewById(R.id.forgot);
-        sign_up = (TextView) findViewById(R.id.signup);
-        submit = (Button) findViewById(R.id.submit);
-        linearLayout = (LinearLayout) findViewById(R.id.snackbarlogin);
+        mobile_number = findViewById(R.id.mobile_number_input);
+        pwd_login = findViewById(R.id.pwd_login);
+        forgot_pwd = findViewById(R.id.forgot);
+        sign_up = findViewById(R.id.signup);
+        submit = findViewById(R.id.submit);
+        linearLayout = findViewById(R.id.snackbarlogin);
         detector = new ConnectionDetector(this);
         isNet = detector.isConnectingToInternet();
 
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Logging in...");
 
-        final SharedPreferences sp = getSharedPreferences(MyFirebaseInstanceIDService.pref, this.MODE_PRIVATE);
+        final SharedPreferences sp = getSharedPreferences(MyFirebaseInstanceIDService.pref, MODE_PRIVATE);
         Notification = sp.getString("Notification", "Error");
 
         forgot_pwd.setOnClickListener(new View.OnClickListener() {
@@ -121,35 +126,63 @@ public class LoginActivity extends AppCompatActivity implements RetrofitResponse
             userlog user = Common.getSpecificDataObject(objectResponse, userlog.class);
             Gson gson = new Gson();
             if (user.status.equals("success")) {
+
                 String uid = user.userId;
                 String mobile = user.mobile;
                 String otp = user.otp;
+                if (user.newuser_key.equals("1")) {
+                    if (mobile.equals(mobile_number.getText().toString())) {
 
-                global = getSharedPreferences("loggers",MODE_PRIVATE);
+                        Intent intent = new Intent(LoginActivity.this, OtpActivity.class);
+                        intent.putExtra("uid", uid);
+                        intent.putExtra("mobile", mobile);
+                        intent.putExtra("otp", otp);
+                        intent.putExtra("name", user.name);
+                        startActivity(intent);
+                        finish();
+//
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Not a registered User", Toast.LENGTH_SHORT).show();
+                    }
+                } else if (user.newuser_key.equals("2")) {
+                    DataBase_Helper dh = new DataBase_Helper(LoginActivity.this);
+                    /*SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("REFERRAL", otpresponse.referral);
+                    editor.commit();*/
+                    int c = dh.getUserCount();
+                    if (c == 0) {
+                        dh.insertUserId(new User("1", uid, mobile, user.name));
+                    } else {
+                        dh.updatetUserId(new User("1", uid, mobile, user.name));
+                    }
+                    List<User> li = dh.getUserData();
+                    for (User u : li) {
+                        String log = "username" + " " + u.getName() + " mobile " + u.getMobile() + " user id " + u.getUid();
+                        Log.e("db data", log);
+                    }
+                    //  Toast.makeText(getApplicationContext(), status, Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(LoginActivity.this, Home_page.class);
+                    startActivity(intent);
+                        /*if (broadcastReceiver != null) {
+                            unregisterReceiver(broadcastReceiver);
+                            broadcastReceiver = null;
+                        }*/
+                    finish();
+
+                }
+                global = getSharedPreferences("loggers", MODE_PRIVATE);
                 SharedPreferences.Editor editor = global.edit();
-                editor.putString("UID",uid);
-                editor.putString("NAME",user.name);
-                editor.putString("MOBILE",mobile);
+                editor.putString("UID", uid);
+                editor.putString("NAME", user.name);
+                editor.putString("MOBILE", mobile);
                 editor.commit();
 
-                if (mobile.equals(mobile_number.getText().toString())) {
-
-                    Intent intent = new Intent(LoginActivity.this, OtpActivity.class);
-                    intent.putExtra("uid", uid);
-                    intent.putExtra("mobile", mobile);
-                    intent.putExtra("otp", otp);
-                    intent.putExtra("name", user.name);
-                    startActivity(intent);
-                    finish();
-//
-
-                } else {
-                    Toast.makeText(LoginActivity.this, "Not a registered User", Toast.LENGTH_SHORT).show();
-                }
             } else {
                 Toast.makeText(LoginActivity.this, "Invalid Cresdentials Or " + user.status, Toast.LENGTH_SHORT).show();
             }
         }
+
     }
 
     public void onBackPressed() {

@@ -7,6 +7,46 @@
     android:orientation="vertical"
     tools:context="com.example.pegasys.rapmedixuser.activity.newactivities.DoctorDescription">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/MyToolbar"
+            app:title=""
+            app:titleTextColor="@color/white">
+
+            <ImageView
+                android:id="@+id/backbutton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:src="@drawable/back_arrow"
+                android:tint="@color/white" />
+
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
     <TextView
         android:id="@+id/tv"
         android:layout_width="match_parent"
@@ -62,15 +102,16 @@
 
         <LinearLayout
             android:id="@+id/lll1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@+id/doctor_image"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                 android:id="@+id/doctor_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:text="Doctor Name"
@@ -111,7 +152,7 @@
 
         <LinearLayout
             android:id="@+id/lll2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lll1"
             android:layout_marginLeft="15dp"
@@ -132,14 +173,14 @@
                     android:src="@drawable/medical" />
             </LinearLayout>
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/doctor_desig"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text=""
+                android:text="Category"
                 android:textColor="#262626"
                 android:textSize="12sp" />
 
@@ -147,7 +188,7 @@
 
         <LinearLayout
             android:id="@+id/lll3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lll2"
             android:layout_marginLeft="15dp"
@@ -168,7 +209,7 @@
                     android:src="@drawable/education" />
             </LinearLayout>
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:id="@+id/doctor_quli"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -176,8 +217,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/l2"
                 android:ellipsize="end"
-                android:maxLines="1"
-                android:text=""
+                android:singleLine="true"
+                android:text="Degree"
                 android:textColor="#262626"
                 android:textSize="12sp" />
 
@@ -206,14 +247,14 @@
                     android:src="@drawable/education" />
             </LinearLayout>
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                 android:id="@+id/doctor_exp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:ellipsize="marquee"
-                android:maxLines="1"
-                android:text=""
+                android:singleLine="true"
+                android:text="Experiance"
                 android:textColor="#262626"
                 android:textSize="12sp" />
 
@@ -227,7 +268,9 @@
         android:layout_height="0.5dp"
         android:layout_below="@+id/desc_relative"
         android:layout_marginTop="10dp"
-        android:background="@color/hint"></View>
+        android:background="@color/hint">
+
+    </View>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs_cat"

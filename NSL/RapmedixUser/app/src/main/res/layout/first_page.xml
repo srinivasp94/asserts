@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <android.support.v4.view.ViewPager
+  <!--  <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_320sdp"
@@ -13,7 +13,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="@dimen/_25sdp"
         android:adjustViewBounds="true"
-        android:background="@drawable/img1_1x"
+        android:background="@drawable/img1_3x"
         android:fitsSystemWindows="true"
         android:scaleType="centerInside" />
 
@@ -28,10 +28,79 @@
         app:pageColor="#cccccc"
         app:snap="false" />
 
-    <!--android:background="@drawable/login_bottom"-->
+    &lt;!&ndash;android:background="@drawable/login_bottom"&ndash;&gt;
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_130sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bgr"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/Registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/button_shape"
+            android:text="Registration"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Registration"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_shape"
+            android:text="Login"
+            android:textColor="@color/white" />
+    </LinearLayout>-->
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/rapmdix_logo" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_280sdp"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/img3_3x"
+        android:fitsSystemWindows="true"
+        android:scaleType="fitCenter" />
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pager"
+        android:padding="5dip"
+        app:centered="true"
+        app:fillColor="@color/colorPrimary"
+        app:pageColor="#cccccc"
+        app:snap="false" />
+
+    <!--android:background="@drawable/login_bottom"-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bgr"
         android:gravity="center"

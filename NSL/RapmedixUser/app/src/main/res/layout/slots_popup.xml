@@ -6,35 +6,99 @@
 
     <LinearLayout
         android:id="@+id/snaklayout"
-        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/dates_tab"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            app:tabMode="scrollable">
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-        </android.support.design.widget.TabLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:theme="@style/MyToolbar"
+                app:title=""
+                app:titleTextColor="@color/white">
+
+                <ImageView
+                    android:id="@+id/backbutton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="1dp"
+                    android:tint="@color/white"
+                    android:src="@drawable/back_arrow"/>
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textColor="@color/white"
+                    android:text="@string/app_name"
+                    android:textSize="@dimen/_16sdp" />
+
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/dates_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_85sdp"
+                android:background="@color/white"
+                app:tabMode="scrollable">
+
+            </android.support.design.widget.TabLayout>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+
     </LinearLayout>
 
-    <GridView
-        android:id="@+id/slots_list"
-        android:layout_below="@+id/snaklayout"
+    <!--<ScrollView-->
+    <!--android:id="@+id/sv"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@+id/snaklayout">-->
+    <!--
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/snaklayout"
+                android:orientation="vertical">-->
+    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/text_nodata"
+        android:text="@string/no_family_member_added_yet"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:textSize="@dimen/_18sdp"
+        android:visibility="gone"
+        />
+    <GridView
+        android:id="@+id/slots_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/v_view"
+        android:layout_below="@+id/snaklayout"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:drawSelectorOnTop="true"
         android:horizontalSpacing="10dp"
         android:listSelector="@drawable/grid_selector"
         android:numColumns="4"
         android:padding="10dp"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_5sdp"
         android:verticalSpacing="10dp">
 
     </GridView>
+
 
     <View
         android:layout_width="match_parent"
@@ -44,30 +108,33 @@
 
     <LinearLayout
         android:id="@+id/v_view"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/slots_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="@dimen/_15sdp"
-        android:gravity="bottom"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="10dp">
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
             android:id="@+id/doctor_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:text="Doctor Name"
             android:textColor="@color/colorPrimary"
             android:textSize="13sp"
             android:textStyle="bold" />
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
             android:id="@+id/hspital_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="5dp"
+            android:gravity="center"
             android:text="Hopital  Name"
             android:textColor="#262626"
             android:textSize="13sp" />
@@ -81,33 +148,39 @@
             android:paddingBottom="10dp"
             android:paddingTop="10dp">
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="@drawable/price_bg_oval"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="02-04-2017"
                 android:textColor="#262626"
                 android:textSize="11sp" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/price_bg_oval"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="07:00 PM"
                 android:textColor="#262626"
                 android:textSize="11sp" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
                 android:id="@+id/doctor_row_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/big_ovel_green"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="r 250/-"
                 android:textColor="#262626"
@@ -133,6 +206,7 @@
 
 
     </LinearLayout>
+    <!--</LinearLayout>&lt;!&ndash;</ScrollView>&ndash;&gt;-->
 
 
 </RelativeLayout>

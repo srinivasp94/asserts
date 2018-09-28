@@ -4,19 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e3e2e2e2"
     android:orientation="vertical"
     tools:context="com.example.pegasys.rapmedixuser.activity.newactivities.ProfileActivity">
 
-    <!-- <RelativeLayout
-         android:id="@+id/profile_page_view"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent">
- -->
-    <!-- <include
-         android:id="@+id/prfl_head"
-         layout="@layout/header">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-     </include>-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/MyToolbar"
+            app:title=""
+            app:titleTextColor="@color/white">
+
+            <ImageView
+                android:id="@+id/backbutton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:tint="@color/white"
+                android:src="@drawable/back_arrow"/>
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
 
     <RelativeLayout
         android:id="@+id/lay"
@@ -34,16 +64,16 @@
 
 
             <LinearLayout
-                android:layout_width="@dimen/_85sdp"
-                android:layout_height="@dimen/_85sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:background="@drawable/white_round_border"
                 android:gravity="center">
 
-                <ImageView
+                <com.example.pegasys.rapmedixuser.activity.customviews.RoundedImageView
                     android:id="@+id/prflImage"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:padding="5dp" />
+                    android:layout_width="@dimen/_68sdp"
+                    android:layout_height="@dimen/_68sdp"
+                    android:padding="@dimen/_3sdp" />
 
             </LinearLayout>
 
@@ -93,7 +123,7 @@
                 android:layout_height="@dimen/_18sdp"
                 android:src="@drawable/medical" />
 
-            <TextView
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_8sdp"
@@ -110,7 +140,8 @@
         android:id="@+id/d1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_8sdp"
+
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="@dimen/_6sdp"
@@ -122,7 +153,7 @@
             android:layout_weight="0.2"
             android:src="@drawable/member_profile" />
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_6sdp"
@@ -131,13 +162,13 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
             android:id="@+id/membership_type"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.8"
-            android:text=""
             android:padding="@dimen/_6sdp"
+            android:text=""
             android:textColor="@color/text_color"
             android:textSize="@dimen/_13sdp" />
 
@@ -145,65 +176,19 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.5dp"
         android:layout_below="@+id/d1"
-        android:background="#dedede">
+        android:background="@color/colorPrimary">
 
     </View>
-
-    <LinearLayout
-        android:id="@+id/d2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_8sdp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="@dimen/_6sdp"
-        android:weightSum="3">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_weight="0.2"
-            android:src="@drawable/location_pin" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_6sdp"
-            android:layout_weight="1"
-            android:gravity="start"
-            android:text="Address"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp" />
-
-        <TextView
-            android:id="@+id/membership_address"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.8"
-            android:ellipsize="end"
-            android:maxLines="3"
-            android:padding="@dimen/_6sdp"
-            android:text=""
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/_13sdp" />
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/d2"
-        android:background="#dedede"></View>
-
 
     <LinearLayout
         android:id="@+id/d3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_8sdp"
+
+
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="@dimen/_6sdp"
@@ -216,7 +201,7 @@
             android:layout_weight="0.2"
             android:src="@drawable/email_hos" />
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_6sdp"
@@ -225,7 +210,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
             android:id="@+id/prflEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -242,9 +227,9 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.5dp"
         android:layout_below="@+id/d3"
-        android:background="#dedede"></View>
+        android:background="@color/colorPrimary"></View>
 
     <!--
         <View
@@ -259,7 +244,8 @@
         android:id="@+id/d5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_8sdp"
+
+        android:background="@color/white"
         android:orientation="horizontal"
         android:padding="@dimen/_6sdp"
         android:weightSum="3">
@@ -271,23 +257,23 @@
             android:layout_weight="0.2"
             android:src="@drawable/free_consulting" />
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/_6sdp"
             android:layout_weight="1"
-            android:text="Free Consultancies"
+            android:text="Free Consultations"
             android:textColor="@color/text_color"
             android:textSize="13sp" />
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
             android:id="@+id/free_count"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|right"
-            android:layout_weight="1"
             android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_weight="1"
             android:background="#F4A758"
             android:gravity="center"
             android:padding="@dimen/_6sdp"
@@ -300,9 +286,57 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.5dp"
         android:layout_below="@+id/d5"
-        android:background="#dedede"></View>
+        android:background="@color/colorPrimary"></View>
+
+    <LinearLayout
+        android:id="@+id/d2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/_6sdp"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="0.2"
+            android:src="@drawable/location_pin" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:gravity="top|start"
+            android:text="Address"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+            android:id="@+id/membership_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:padding="@dimen/_6sdp"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/_13sdp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/d2"
+        android:background="@color/colorPrimary"></View>
 
 
     <!--</RelativeLayout>-->

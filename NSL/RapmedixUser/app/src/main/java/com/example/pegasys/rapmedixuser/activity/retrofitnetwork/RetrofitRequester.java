@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 import android.widget.Toast;
@@ -42,7 +43,12 @@ public class RetrofitRequester {
             this.context = (Context) retrofitResponseListener;
             this.activity = (Activity) retrofitResponseListener;
 
+        } else if (retrofitResponseListener instanceof DialogInterface.OnClickListener) {
+            this.context = (Context) retrofitResponseListener;
+            this.activity = (Activity) retrofitResponseListener;
+
         }
+
 
     }
 
@@ -68,7 +74,7 @@ public class RetrofitRequester {
             return;
 
         }
-
+// Run now
 
         if (showProgressDialog) {
 

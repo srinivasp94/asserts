@@ -25,9 +25,12 @@ public class userlog {
     @SerializedName("status")
     @Expose
     public String status;
+    @SerializedName("newuser_key")
+    @Expose
+    public String newuser_key;
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("userId", userId).append("name", name).append("otp", otp).append("mobile", mobile).append("status", status).toString();
+        return new ToStringBuilder(this).append("userId", userId).append("name", name).append("otp", otp).append("mobile", mobile).append("status", status).append("newuser_key",newuser_key).toString();
     }
 }

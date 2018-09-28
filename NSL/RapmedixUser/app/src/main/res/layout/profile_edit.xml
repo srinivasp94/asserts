@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/editprofile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/mainRelative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#363636"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:id="@+id/imageLayout"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/white_round_border"
+                android:gravity="center">
+
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.RoundedImageView
+                    android:id="@+id/prflImage"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imageLayout">
+
+                <ImageView
+                    android:id="@+id/rim"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/singlem" />
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/rim"
+                    android:text="Name"
+                    android:textColor="#fff" />
+
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rim"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textColor="#fff" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/d1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/mainRelative"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/contact_number" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainRelative"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/d1"
+            android:text="Mobile Number"
+            android:textColor="#4b4343"
+            android:textSize="15sp" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+            android:id="@+id/editMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/d1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/edittext_border"
+            android:padding="7dp"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/d2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/editMobile"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/email_hos" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editMobile"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/d2"
+            android:text="Email"
+            android:textColor="#4b4343"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/d2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/edittext_border"
+            android:padding="7dp"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/d3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/editEmail"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/membership" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editEmail"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/d3"
+            android:text="Address"
+            android:textColor="#4b4343"
+            android:textSize="15sp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/editaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/d3"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/edittext_border"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:padding="7dp"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/d4"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/editaddress"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/membership" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editaddress"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/d4"
+            android:text="City"
+            android:textColor="#4b4343"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/editCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/d4"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/edittext_border"
+            android:padding="7dp"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/d5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/editCity"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/membership" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editCity"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/d5"
+            android:text="State"
+            android:textColor="#4b4343"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/editState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/d5"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/edittext_border"
+            android:padding="7dp"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/editSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editState"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:padding="15dp"
+            android:text="Submit"
+            android:textColor="#fff"
+            android:textStyle="normal" />
+
+
+    </RelativeLayout>
+
+</ScrollView>

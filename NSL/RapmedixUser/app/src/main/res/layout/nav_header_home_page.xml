@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/nav_header_height"
+    android:layout_height="wrap_content"
     android:background="@color/colorPrimary"
     android:gravity="bottom"
     android:orientation="vertical"
@@ -10,45 +9,56 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
         android:paddingBottom="@dimen/_5sdp"
         android:paddingLeft="@dimen/_5sdp"
         android:paddingRight="@dimen/_5sdp"
         android:paddingTop="@dimen/_5sdp"
         android:weightSum="1">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="0dp"
+
+        <!--<de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/header_imageView"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+-->
+        <com.example.pegasys.rapmedixuser.activity.customviews.RoundedImageView
+            android:id="@+id/header_imageView"
+            android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
-            android:layout_weight="0.25"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fitsSystemWindows="true"
+            android:padding="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:scaleType="center"
             android:src="@drawable/doctor_icon" />
 
-        <TextView
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
             android:id="@+id/header_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginLeft="@dimen/_20sdp"
             android:layout_weight="0.5"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="Android Studio"
-            android:textSize="@dimen/_15sdp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:text="Welcome user"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="@dimen/_15sdp" />
 
-        <TextView
-            android:id="@+id/header_mail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="android.studio@android.com"
-            android:visibility="gone" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_2sdp"
+        android:layout_marginBottom="0.5dp"
         android:background="@color/black"
         android:orientation="horizontal"
         android:weightSum="3">
@@ -56,76 +66,98 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/drawline"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/_3sdp"
 
-            <TextView
-                android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:textSize="@dimen/_9sdp"
                 android:padding="@dimen/_5sdp"
                 android:text="Active" />
-            <TextView
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                android:textSize="@dimen/_10sdp"
                 android:id="@+id/header_notification_active"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="55dp"
+                android:layout_height="27dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:padding="@dimen/_5sdp"
-                android:textStyle="bold"
-                android:text="1" />
+                android:textColor="@color/white"
+                android:background="@drawable/bgr_header"
+                android:text="0"
+
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/drawline"
+            android:layout_marginBottom="@dimen/_3sdp"
+
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textSize="@dimen/_9sdp"
                 android:gravity="center"
                 android:padding="@dimen/_5sdp"
                 android:text="Pending" />
-            <TextView
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                android:textSize="@dimen/_10sdp"
                 android:id="@+id/header_notification_pending"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="55dp"
+                android:layout_height="27dp"
+                android:background="@drawable/bgr_header"
+                android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textStyle="bold"
                 android:padding="@dimen/_5sdp"
-                android:text="1" />
+                android:text="0"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/drawline"
+            android:layout_marginBottom="@dimen/_3sdp"
+
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:textSize="@dimen/_9sdp"
                 android:padding="@dimen/_5sdp"
-                android:text="Complete" />
-            <TextView
+                android:text="Completed" />
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                android:textSize="@dimen/_10sdp"
                 android:id="@+id/header_notification_completer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="55dp"
+                android:layout_height="27dp"
+                android:background="@drawable/bgr_header"
+                android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:padding="@dimen/_5sdp"
-                android:textStyle="bold"
-                android:text="1" />
+                android:text="0"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

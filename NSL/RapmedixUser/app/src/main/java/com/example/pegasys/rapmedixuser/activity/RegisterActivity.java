@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.pegasys.rapmedixuser.R;
 import com.example.pegasys.rapmedixuser.activity.pojo.RegisterDetails;
 import com.example.pegasys.rapmedixuser.activity.pojo.User;
+import com.example.pegasys.rapmedixuser.activity.pojo.userlog;
 import com.example.pegasys.rapmedixuser.activity.receivers.MyFirebaseInstanceIDService;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.APIInterface;
 import com.example.pegasys.rapmedixuser.activity.retrofitnetwork.RetrofitRequester;
@@ -52,21 +53,21 @@ public class RegisterActivity extends AppCompatActivity implements RetrofitRespo
         detector = new ConnectionDetector(this);
         isinternet = detector.isConnectingToInternet();
 
-        name_regi = (EditText) findViewById(R.id.name_reg);
-        mobile_num = (EditText) findViewById(R.id.mob_number);
-        email_reg = (EditText) findViewById(R.id.email_reg);
-        pwd_reg = (EditText) findViewById(R.id.pwd_reg);
-        confirm_pwd = (EditText) findViewById(R.id.confirm_pwd);
-        referral_code = (EditText) findViewById(R.id.referral_code);
-        reg_button = (Button) findViewById(R.id.submit_reg);
-        login_text = (TextView) findViewById(R.id.login_text);
-        layout = (LinearLayout) findViewById(R.id.loginsnackbar);
+        name_regi = findViewById(R.id.name_reg);
+        mobile_num = findViewById(R.id.mob_number);
+        email_reg = findViewById(R.id.email_reg);
+        pwd_reg = findViewById(R.id.pwd_reg);
+        confirm_pwd = findViewById(R.id.confirm_pwd);
+        referral_code = findViewById(R.id.referral_code);
+        reg_button = findViewById(R.id.submit_reg);
+        login_text = findViewById(R.id.login_text);
+        layout = findViewById(R.id.loginsnackbar);
 
-        inputLayoutName = (TextInputLayout) findViewById(R.id.tl_name);
-        inputLayoutphone = (TextInputLayout) findViewById(R.id.tl_phone);
-        inputLayoutMail = (TextInputLayout) findViewById(R.id.tl_email);
-        inputLayoutpwd = (TextInputLayout) findViewById(R.id.tl_pwd);
-        inputLayoutcnf = (TextInputLayout) findViewById(R.id.tl_cnfpwd);
+        inputLayoutName = findViewById(R.id.tl_name);
+        inputLayoutphone = findViewById(R.id.tl_phone);
+        inputLayoutMail = findViewById(R.id.tl_email);
+        inputLayoutpwd = findViewById(R.id.tl_pwd);
+        inputLayoutcnf = findViewById(R.id.tl_cnfpwd);
 
         final SharedPreferences sp = getSharedPreferences(MyFirebaseInstanceIDService.pref, MODE_PRIVATE);
         Notification = sp.getString("Notification", "Error");
@@ -137,6 +138,7 @@ public class RegisterActivity extends AppCompatActivity implements RetrofitRespo
                 Validation.hasText(pwd_reg);
             }
         });
+/*
         confirm_pwd.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -153,6 +155,7 @@ public class RegisterActivity extends AppCompatActivity implements RetrofitRespo
                 Validation.hasText(confirm_pwd);
             }
         });
+*/
         reg_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -182,7 +185,7 @@ public class RegisterActivity extends AppCompatActivity implements RetrofitRespo
         registerDetails.setMobile(mobile_num.getText().toString());
         registerDetails.setEmailId(email_reg.getText().toString());
         registerDetails.setPassword(pwd_reg.getText().toString());
-        registerDetails.setCpassword(confirm_pwd.getText().toString());
+//        registerDetails.setCpassword(confirm_pwd.getText().toString());
         registerDetails.setReferee(referral_code.getText().toString().trim());
         registerDetails.setDeviceToken(Notification);
         registerDetails.setDeviceType("1");
@@ -246,8 +249,8 @@ public class RegisterActivity extends AppCompatActivity implements RetrofitRespo
         if (!Validation.isPhoneNumber(mobile_num, true)) ret = false;
         if (!Validation.isEmailAddress(email_reg, true)) ret = false;
         if (!Validation.hasText(pwd_reg)) ret = false;
-        if (!Validation.hasText(confirm_pwd)) ret = false;
-        if (!Validation.isequal(pwd_reg, confirm_pwd)) ret = false;
+//        if (!Validation.hasText(confirm_pwd)) ret = false;
+//        if (!Validation.isequal(pwd_reg, confirm_pwd)) ret = false;
         return ret;
 
        /* if (name_regi.getText().toString().equalsIgnoreCase("")) {
@@ -260,26 +263,26 @@ public class RegisterActivity extends AppCompatActivity implements RetrofitRespo
     @Override
     public void onResponseSuccess(Object objectResponse, Object objectRequest, int requestId) {
 //        User user = (User) objectResponse;
-        User user = Common.getSpecificDataObject(objectResponse, User.class);
+        userlog user = Common.getSpecificDataObject(objectResponse, userlog.class);
         Gson gson = new Gson();
 
-        if (user.getStatus().equals("success")) {
-            String str_id = user.getId();
-            String str_uid = user.getUid();
-            String str_OTP = user.getOtp();
-            String str_mobile = user.getMobile();
-            String str_name = user.getName();
-            Log.d("TAg", str_uid + str_name + " OTPpojo " + str_OTP);
+        if (user.status.equals("success")) {
 
-            Intent intent = new Intent(RegisterActivity.this, OtpActivity.class);
+            String str_uid = user.userId;
+//            String str_OTP = user.otp;
+            String str_mobile = user.mobile;
+            String str_name = user.name;
+            Log.d("TAg", str_uid + str_name + " OTPpojo ");
+            Toast.makeText(getApplicationContext(), "" + user.status, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
             intent.putExtra("uid", str_uid);
             intent.putExtra("mobile", str_mobile);
-            intent.putExtra("otp", str_OTP);
+//            intent.putExtra("otp", str_OTP);
             intent.putExtra("name", str_name);
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(getApplicationContext(), "" + user.getStatus(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "" + user.status, Toast.LENGTH_SHORT).show();
         }
 
     }

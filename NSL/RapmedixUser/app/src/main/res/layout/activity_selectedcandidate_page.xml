@@ -7,6 +7,47 @@
     android:orientation="vertical"
     tools:context="com.example.pegasys.rapmedixuser.activity.newactivities.Selected_candidate_page">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/MyToolbar"
+            app:title=""
+            app:titleTextColor="@color/white">
+
+            <ImageView
+                android:id="@+id/backbutton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:tint="@color/white"
+                android:src="@drawable/back_arrow"/>
+
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:text="@string/app_name"
+                android:textSize="@dimen/_16sdp"
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,7 +70,7 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-                    <TextView
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                         android:id="@+id/main_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -45,7 +86,7 @@
                         android:layout_below="@+id/main_text">
 
                         <!--android:layout_below="@+id/d1"-->
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:id="@+id/member_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -123,7 +164,7 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-                    <TextView
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                         android:id="@+id/title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -172,7 +213,7 @@
                             android:layout_toRightOf="@+id/doctor_image"
                             android:gravity="center">
 
-                            <TextView
+                            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
                                 android:id="@+id/doctor_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -196,7 +237,7 @@
                                     android:layout_height="15dp"
                                     android:src="@drawable/star" />
 
-                                <TextView
+                                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                                     android:id="@+id/doctor_rating"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -235,7 +276,7 @@
                                     android:src="@drawable/medical" />
                             </LinearLayout>
 
-                            <TextView
+                            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                                 android:id="@+id/doctor_desig"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -271,7 +312,7 @@
                                     android:src="@drawable/education" />
                             </LinearLayout>
 
-                            <TextView
+                            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                                 android:id="@+id/doctor_quli"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -310,13 +351,13 @@
                                     android:src="@drawable/education" />
                             </LinearLayout>
 
-                            <TextView
+                            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                                 android:id="@+id/doctor_exp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:ellipsize="marquee"
-                                android:maxLines="1"
+                                android:singleLine="true"
                                 android:text="10:00 AM"
                                 android:textColor="#262626"
                                 android:textSize="12sp" />
@@ -343,18 +384,18 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Consultation Fee" />
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toLeftOf="@+id/price"
                             android:text="₹" />
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:id="@+id/price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -368,18 +409,18 @@
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp">
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Service Tax" />
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toLeftOf="@+id/service_tax"
                             android:text="₹" />
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:id="@+id/service_tax"
 
                             android:layout_width="wrap_content"
@@ -394,12 +435,12 @@
                         android:padding="10dp"
                         android:visibility="gone">
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Swachh Bharath Cess" />
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -413,12 +454,12 @@
                         android:paddingRight="10dp"
                         android:visibility="gone">
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Krishi kalyan Cess" />
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -436,14 +477,14 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp">
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Total"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toLeftOf="@+id/total"
@@ -452,7 +493,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                             android:id="@+id/total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

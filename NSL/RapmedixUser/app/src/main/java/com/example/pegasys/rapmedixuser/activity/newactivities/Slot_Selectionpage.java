@@ -1,20 +1,27 @@
 package com.example.pegasys.rapmedixuser.activity.newactivities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,11 +61,26 @@ public class Slot_Selectionpage extends AppCompatActivity implements RetrofitRes
     ArrayList<String> DatesOfSlots = new ArrayList();
     ArrayList<String> BookedSlots = new ArrayList();
     private String NoOfSlots;
+    private int nPrevSelGridItem = -1;
+//    private TextView textView_nodata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slots_popup);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        ImageView backButton = toolbar.findViewById(R.id.backbutton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
         final Intent intent = getIntent();
         d_Id = intent.getStringExtra("doctorId");
@@ -68,16 +90,17 @@ public class Slot_Selectionpage extends AppCompatActivity implements RetrofitRes
         main_Id = intent.getStringExtra("ID");
         sFee = intent.getStringExtra("Fee");
 
-        layout = (LinearLayout) findViewById(R.id.snaklayout);
-        tabLayout = (TabLayout) findViewById(R.id.dates_tab);
-        doctor_row_price = (TextView) findViewById(R.id.doctor_row_price);
-        doctor_name = (TextView) findViewById(R.id.doctor_name);
-        hosp_name = (TextView) findViewById(R.id.hspital_name);
-        datte = (TextView) findViewById(R.id.date);
-        timeW = (TextView) findViewById(R.id.time);
+        layout = findViewById(R.id.snaklayout);
+        tabLayout = findViewById(R.id.dates_tab);
+        doctor_row_price = findViewById(R.id.doctor_row_price);
+        doctor_name = findViewById(R.id.doctor_name);
+        hosp_name = findViewById(R.id.hspital_name);
+        datte = findViewById(R.id.date);
+        timeW = findViewById(R.id.time);
         timeW.setText("00:00");
-        doctor_row_book = (Button) findViewById(R.id.doctor_row_book);
-        slotGrid = (GridView) findViewById(R.id.slots_list);
+        doctor_row_book = findViewById(R.id.doctor_row_book);
+        slotGrid = findViewById(R.id.slots_list);
+//        textView_nodata = (TextView)findViewById(R.id.text_nodata);
         hosp_name.setText(Hosp_Name);
         doctor_name.setText(Doc_name);
         doctor_row_price.setText(sFee);
@@ -91,9 +114,9 @@ public class Slot_Selectionpage extends AppCompatActivity implements RetrofitRes
             converteDates = converted[2] + "-" + converted[1] + "-" + converted[0];
             modifiedDates.add(converteDates);
             Log.e("TheDataofString", "938   " + converteDates);
-            View relativeLayout = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.slot_date_item, tabLayout, false);
-            TextView tabTextView = (TextView) relativeLayout.findViewById(R.id.month);
-            TextView date = (TextView) relativeLayout.findViewById(R.id.date);
+            View relativeLayout = LayoutInflater.from(this).inflate(R.layout.slot_date_item, tabLayout, false);
+            TextView tabTextView = relativeLayout.findViewById(R.id.month);
+            TextView date = relativeLayout.findViewById(R.id.date);
             tabTextView.setBackgroundDrawable(img1);
             date.setBackgroundDrawable(img2);
 
@@ -163,6 +186,7 @@ public class Slot_Selectionpage extends AppCompatActivity implements RetrofitRes
                     intent1.putExtra("TimeSlot", timeW.getText().toString());
                     Log.i("data", d_Id + " workid" + main_Id + " hospid" + hosp_Id + " date " + modifiedDates.get(tabLayout.getSelectedTabPosition()) + " fee " + sFee + " time" + timeW.getText().toString());
                     startActivity(intent1);
+                    finish();
                 }
 
 
@@ -221,34 +245,56 @@ public class Slot_Selectionpage extends AppCompatActivity implements RetrofitRes
                 slotslist.clear();
 
                 slotslist = (ArrayList<String>) respo.schedule;
+                BookedSlots = (ArrayList<String>) respo.appointmentsdata;
                 for (int i = 0; i < slotslist.size(); i++) {
                     NoOfSlots = modifiedDates.get(0).toString() + " " + slotslist.get(i).toString();
                 }
                 java.util.Calendar c = java.util.Calendar.getInstance();
                 java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("dd-MM-yyyy hh:mm a");
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                        R.layout.timeslot_list, R.id.timeslot, slotslist);
+             /*   ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                        R.layout.timeslot_list, R.id.timeslot, slotslist);*/
+                SelectSlotsAdapter adapter = new SelectSlotsAdapter(Slot_Selectionpage.this, slotslist, BookedSlots);
 
                 slotGrid.setAdapter(adapter);
+//                int nPrevSelGridItem = -1;
+
                 slotGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    View viewPrev;
+
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int posi, long l) {
                         String mSlot = slotslist.get(posi).toString();
-                        CheckedTextView checkedTextView = (CheckedTextView) view.findViewById(R.id.timeslot);
-                        slotGrid.getChildAt(posi).setBackgroundResource(R.drawable.edittext_border_red);
-//                        if (checkedTextView.isChecked()) {
-//                            checkedTextView.setBackgroundColor(Color.RED);
-//                        } else {
-//                            checkedTextView.setBackgroundColor(Color.BLUE);
-//                        }
+
+                        try {
+                            if (nPrevSelGridItem != -1) {
+                                viewPrev = slotGrid.getChildAt(nPrevSelGridItem);
+                                viewPrev.setBackgroundColor(Color.WHITE);
+                            }
+                            nPrevSelGridItem = posi;
+                            if (nPrevSelGridItem == posi) {
+                                //View viewPrev = (View) gridview.getChildAt(nPrevSelGridItem);
+                                view.setBackgroundColor(Color.RED);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         timeW.setText(mSlot);
+                        if (BookedSlots.contains(slotslist.get(posi))) {
+
+                            Toast.makeText(Slot_Selectionpage.this,"This slot is Already booked",Toast.LENGTH_LONG).show();
+                            timeW.setText("00:00");
+                        }
+
                     }
                 });
 
             } else {
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1, slotslist);
+
+                slotslist = new ArrayList<>();
+             /*   ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_list_item_1, slotslist);*/
+                SelectSlotsAdapter adapter = new SelectSlotsAdapter(Slot_Selectionpage.this, slotslist, BookedSlots);
 
                 slotGrid.setAdapter(adapter);
 
@@ -257,4 +303,110 @@ public class Slot_Selectionpage extends AppCompatActivity implements RetrofitRes
         }
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public class SelectSlotsAdapter extends BaseAdapter {
+
+        Context con;
+        ArrayList<String> DatesToDisplay;
+        ArrayList<String> BookedSlots;
+        LayoutInflater inflater;
+
+        public SelectSlotsAdapter(Context con, ArrayList<String> DatesToDisplay, ArrayList<String> BookedSlots) {
+
+            this.con = con;
+            this.DatesToDisplay = DatesToDisplay;
+            this.BookedSlots = BookedSlots;
+            inflater = (LayoutInflater) con.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        }
+
+
+        @Override
+        public int getCount() {
+            return DatesToDisplay.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            final ViewHolder vh;
+
+
+            if (convertView == null) {
+                convertView = inflater.inflate(R.layout.timeslot_list, parent, false);
+                vh = new ViewHolder();
+
+                vh.listDates = convertView.findViewById(R.id.timeslot);
+
+                convertView.setTag(vh);
+
+            } else {
+                vh = (ViewHolder) convertView.getTag();
+
+            }
+            vh.listDates.setText(DatesToDisplay.get(position));
+
+            if (BookedSlots.contains(DatesToDisplay.get(position))) {
+
+                vh.listDates.setPaintFlags(vh.listDates.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                vh.listDates.setFocusable(false);
+            } else {
+
+                vh.listDates.setPaintFlags(vh.listDates.getPaintFlags() | Paint.FAKE_BOLD_TEXT_FLAG);
+
+               /* convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        slotTime = vh.listDates.getText().toString().trim();
+
+                        Log.e("SlotTimeee", "123     "+ slotTime);
+
+                        Intent intent = new Intent(SelectSlots.this, SelectFamilyMemebers.class);
+                        intent.putExtra("slotDay", Today.getText().toString().substring(0,3));
+                        intent.putExtra("slotDate", TodayDate.getText().toString());
+                        intent.putExtra("slotTime", slotTime);
+                        intent.putExtra("PriceFee", Price.getText().toString().trim());
+                        intent.putExtra("DoctorId", DoctorId);
+                        intent.putExtra("WorkingId", WorkingId);
+                        intent.putExtra("DoctorName", DoctorName);
+                        //intent.putExtra("HospitalName", HospiatlName);
+                        startActivity(intent);
+                    }
+                });*/
+            }
+
+            return convertView;
+        }
+
+    }
+
+    public class ViewHolder {
+
+        TextView listDates;
+
+    }
+
+
 }

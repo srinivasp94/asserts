@@ -3,6 +3,7 @@ package com.example.pegasys.rapmedixuser.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,9 +32,9 @@ public class FirstActivity extends AppCompatActivity {
     private static int NUM_PAGES = 0;
 
     private static final Integer[] IMAGES = {
-            R.drawable.img1_1x,
-            R.drawable.img2_1x,
-            R.drawable.img3_1x};
+            R.drawable.img1_3x,
+            R.drawable.img2_3x,
+            R.drawable.img3_3x};
 
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
 
@@ -42,8 +43,8 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_page);
 
-        Registration = (Button) findViewById(R.id.Registration);
-        login = (Button) findViewById(R.id.Login);
+        Registration = findViewById(R.id.Registration);
+        login = findViewById(R.id.Login);
 
         init();
     }
@@ -52,10 +53,9 @@ public class FirstActivity extends AppCompatActivity {
 
         for (int i = 0; i < IMAGES.length; i++)
             ImagesArray.add(IMAGES[i]);
-        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager = findViewById(R.id.pager);
         mPager.setAdapter(new SlidingImage_Adapter(FirstActivity.this, ImagesArray));
-        CirclePageIndicator indicator = (CirclePageIndicator)
-                findViewById(R.id.indicator);
+        CirclePageIndicator indicator = findViewById(R.id.indicator);
         indicator.setViewPager(mPager);
         final float density = getResources().getDisplayMetrics().density;
 //Set circle indicator radius

@@ -11,12 +11,14 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
@@ -84,12 +86,23 @@ public class Map_Loc extends AppCompatActivity implements LocationListener, OnMa
 
         sp = getSharedPreferences(pref, MODE_PRIVATE);
 
-        MapFragment supportMapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map_fragment);
-        supportMapFragment.getMapAsync(this);
+        try {
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    MapFragment supportMapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map_fragment);
+                    supportMapFragment.getMapAsync(Map_Loc.this);
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                }
+            }, 300);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
-        submit = (Button) findViewById(R.id.submit);
-        mAutocompleteTextView = (AutoCompleteTextView) findViewById(R.id.input_address);
+        submit = findViewById(R.id.submit);
+        mAutocompleteTextView = findViewById(R.id.input_address);
 
 
         mGoogleApiClient1 = new GoogleApiClient.Builder(Map_Loc.this)
@@ -120,6 +133,7 @@ public class Map_Loc extends AppCompatActivity implements LocationListener, OnMa
                     Log.e("address", "no address");
 
                 }
+
                 SharedPreferences.Editor edit = sp.edit();
                 edit.putLong("lattitude", Double.doubleToRawLongBits(currentLatitude));
                 edit.putLong("longitude", Double.doubleToRawLongBits(currentLongitude));
@@ -438,8 +452,6 @@ public class Map_Loc extends AppCompatActivity implements LocationListener, OnMa
         markerOptions.title("Current Position");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         googlemap1.addMarker(markerOptions);
-
-
     }
 
     @Override
@@ -447,7 +459,6 @@ public class Map_Loc extends AppCompatActivity implements LocationListener, OnMa
         googlemap1 = googleMap;
         googlemap1.getUiSettings().setMyLocationButtonEnabled(true);
         //  Log.e("","city");
-
 
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(LocationRequest.create());
@@ -475,10 +486,7 @@ public class Map_Loc extends AppCompatActivity implements LocationListener, OnMa
     }
 
     public void getCurrentLocatoin() {
-        if (mGoogleApiClient != null && mGoogleApiClient.isConnected())
-
-        {
-
+        if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
@@ -494,10 +502,10 @@ public class Map_Loc extends AppCompatActivity implements LocationListener, OnMa
 
             //  Log.e("crashingggg","crashing"+mLastLocation);
 
-            currentLatitude=mLastLocation.getLatitude();
-            currentLongitude=mLastLocation.getLongitude();
+            currentLatitude = mLastLocation.getLatitude();
+            currentLongitude = mLastLocation.getLongitude();
 
-            LatLng  latLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+            LatLng latLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
 
             googlemap1.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             googlemap1.animateCamera(CameraUpdateFactory.zoomTo(13));
@@ -514,44 +522,37 @@ public class Map_Loc extends AppCompatActivity implements LocationListener, OnMa
                 String cityName = addresses.get(0).getAddressLine(0);
                 String stateName = addresses.get(0).getAddressLine(1);
                 String countryName = addresses.get(0).getAddressLine(2);
-                selected_address=cityName+","+stateName+","+countryName;
+                selected_address = cityName + "," + stateName + "," + countryName;
             } catch (IOException e) {
                 e.printStackTrace();
                 //Log.e("address","no address");
 
             }
 
-        }
-        else
-        {
+        } else {
             //Log.e("crashing","crashing");
         }
 
 
     }
+
     @Override
-    public void onConnected(@Nullable Bundle bundle)
-    {
+    public void onConnected(@Nullable Bundle bundle) {
         mPlaceArrayAdapter.setGoogleApiClient(mGoogleApiClient1);
-
-
     }
 
     @Override
-    public void onConnectionSuspended(int i)
-    {
+    public void onConnectionSuspended(int i) {
         mPlaceArrayAdapter.setGoogleApiClient(null);
     }
 
     @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult)
-    {
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
 
         Geocoder geocoder = new Geocoder(Map_Loc.this, Locale.getDefault());
@@ -561,20 +562,32 @@ public class Map_Loc extends AppCompatActivity implements LocationListener, OnMa
             String cityName = addresses.get(0).getAddressLine(0);
             String stateName = addresses.get(0).getAddressLine(1);
             String countryName = addresses.get(0).getAddressLine(2);
-            selected_address=cityName+","+stateName+","+countryName;
+            selected_address = cityName + "," + stateName + "," + countryName;
         } catch (IOException e) {
             e.printStackTrace();
-            Log.e("address","no address");
-
+            Log.e("address", "no address");
         }
 
         SharedPreferences.Editor edit = sp.edit();
-        edit.putLong("lattitude",Double.doubleToRawLongBits(currentLatitude));
-        edit.putLong("longitude",Double.doubleToRawLongBits(currentLongitude));
-        edit.putString("address",selected_address);
+        edit.putLong("lattitude", Double.doubleToRawLongBits(currentLatitude));
+        edit.putLong("longitude", Double.doubleToRawLongBits(currentLongitude));
+        edit.putString("address", selected_address);
         edit.commit();
       /*  Intent intent=new Intent(Map_Loc.this,Home_Page.class);
         startActivity(intent);*/
         finish();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/exp_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Experience"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/exp_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shadow"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                            android:id="@+id/doc_exp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00"
+                            android:textSize="40sp" />
+
+                        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="years"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ListView
+                            android:id="@+id/list_xperiance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </ListView>
+                        <!-- <com.tiqs.rapmedix.ExpandableHeightGridView1
+                             android:id="@+id/profile_list"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content">
+
+                         </com.tiqs.rapmedix.ExpandableHeightGridView1>
+ -->
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Qualification"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shadow"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/cap_edu1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ListView
+                            android:id="@+id/list_qualification"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </ListView>
+                        <!-- <com.tiqs.rapmedix.ExpandableHeightGridView1
+                             android:id="@+id/text_qual"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:gravity="center"></com.tiqs.rapmedix.ExpandableHeightGridView1>
+ -->
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Memberships and Awards"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shadow"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/awardss" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ListView
+                            android:id="@+id/list_membership"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </ListView>
+                        <!--  <com.tiqs.rapmedix.ExpandableHeightGridView1
+                              android:id="@+id/list_awards"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+
+                          </com.tiqs.rapmedix.ExpandableHeightGridView1>
+  -->
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Registration Numbers"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shadow"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/register" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ListView
+                            android:id="@+id/list_registration_numbers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </ListView>
+                        <!--  <com.tiqs.rapmedix.ExpandableHeightGridView1
+                              android:id="@+id/reg_num"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+
+                          </com.tiqs.rapmedix.ExpandableHeightGridView1>
+  -->
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Seminars and Presentations"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shadow"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/seminars" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ListView
+                            android:id="@+id/list_seminars"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </ListView>
+                        <!--   <com.tiqs.rapmedix.ExpandableHeightGridView1
+                               android:id="@+id/seminars"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:gravity="center"></com.tiqs.rapmedix.ExpandableHeightGridView1>
+   -->
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

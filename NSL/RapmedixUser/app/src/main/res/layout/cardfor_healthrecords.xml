@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:elevation="@dimen/_3sdp"
+    app:cardCornerRadius="@dimen/_3sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_card"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_gravity="top|center"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/edittext_border">
+
+            <ImageView
+                android:id="@+id/iv_healthecord_proile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="top|center"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/doctor_icon"
+                android:tint="#6bd9d9d9" />
+        </RelativeLayout>
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+            android:id="@+id/tv_healthecord_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="namkl;gn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewLight
+            android:id="@+id/tv_healthecord_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="age"
+            android:textSize="@dimen/_16sdp" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

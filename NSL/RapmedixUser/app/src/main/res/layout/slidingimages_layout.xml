@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img1_1x" />
+        android:scaleType="centerInside"
+        android:src="@drawable/img1_3x" />
 
 
 </RelativeLayout>

@@ -15,10 +15,10 @@ public class docSpecReq {
     public String specialisationId;
     @SerializedName("latitude")
     @Expose
-    public String latitude;
+    public Double latitude;
     @SerializedName("longitude")
     @Expose
-    public String longitude;
+    public Double longitude;
 
     @Override
     public String toString() {

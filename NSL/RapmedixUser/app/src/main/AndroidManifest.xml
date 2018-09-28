@@ -9,27 +9,60 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="com.khusaki.rapmedix.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        tools:node="remove" />
+
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
     //AIzaSyC-gMt1p1czZ-N_w5jQWL_RcIxgUurpXw4
     <application
         android:name=".activity.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:versionCode="1"
         android:versionName="1.0">
-        <activity android:name=".activity.SplashScreen">
+        <activity
+            android:name=".activity.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.FirstActivity" />
+        <activity
+            android:name=".activity.FirstActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".activity.newactivities.CustomPhotoGalleryActivity" />
+
+        <provider
+            android:name=".activity.providers.GenericFileProvider"
+            android:authorities="${applicationId}.my.package.name.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
 
         <service android:name=".activity.receivers.MyFirebaseMessagingService">
             <intent-filter>
@@ -42,7 +75,9 @@
             </intent-filter>
         </service>
 
-        <receiver android:name=".activity.receivers.IncomingSms">
+        <receiver
+            android:name=".activity.receivers.IncomingSms"
+            android:permission="android.permission.BROADCAST_SMS">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
@@ -50,31 +85,160 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC-gMt1p1czZ-N_w5jQWL_RcIxgUurpXw4" />
+            android:value="@string/google_maps_key" />
+        <!--
+            <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+        -->
+        // FB ANALYTICS
+        <!--
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.OtpActivity" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        -->
+        <!--
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        -->
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.OtpActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".activity.Home_page"
             android:label="@string/title_activity_home_page"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.newactivities.DoctorlistPage" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.DoctorlistPage"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".activity.newactivities.Map_Loc" />
-        <activity android:name=".activity.newactivities.DoctorDescription" />
-        <activity android:name=".activity.newactivities.Slot_Selectionpage" />
-        <activity android:name=".activity.Forgotpassword" />
-        <activity android:name=".activity.newactivities.Selected_candidate_page" />
-        <activity android:name=".activity.newactivities.AboutusActivity" />
-        <activity android:name=".activity.newactivities.TermsActivity" />
-        <activity android:name=".activity.newactivities.ProfileActivity" />
-        <activity android:name=".activity.newactivities.EditprofileActivity" />
-        <activity android:name=".activity.newactivities.FamilymemberActivity" />
-        <activity android:name=".activity.newactivities.Changepassword" />
-        <activity android:name=".activity.newactivities.InviteFriendsActivity" />
-        <activity android:name=".activity.newactivities.AppointmentActivity" />
-        <activity android:name=".activity.newactivities.PrescriptionActivity" />
-        <activity android:name=".activity.newactivities.HealthRecordsActivity"></activity>
+        <activity
+            android:name=".activity.newactivities.DoctorDescription"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.Slot_Selectionpage"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.Forgotpassword"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.Selected_candidate_page"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.AboutusActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.TermsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.EditprofileActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.FamilymemberActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.Changepassword"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.newactivities.InviteFriendsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.AppointmentActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.PrescriptionActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.newactivities.HealthRecordsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.newactivities.MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.newactivities.HealthrecordsIndividualActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.newactivities.DiagnosticsPageSubCatActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.newactivities.DiagnosticsCentersActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.newactivities.TestReviewsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.newactivities.ImageListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.newactivities.ImageViewActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".activity.newactivities.Payments_Initiate"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

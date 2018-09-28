@@ -70,9 +70,9 @@ public class DoctorlistAdapter extends RecyclerView.Adapter<DoctorlistAdapter.Vi
 
         holder.textView.setText("Dr." + doclist.name);
 //        holder.textView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        holder.specialization.setText(doclist.specialisationName);
+        holder.specialization.setText(doclist.specialisationName.toString().split(",")[0]);
         holder.exp.setText("( " + doclist.experience + "years Experience)");
-        holder.degree.setText(doclist.degreeName);
+        holder.degree.setText(doclist.degreeName.toString().split(",")[0]);
         holder.hospital.setText(doclist.hospitalName);
         holder.doctorId = doclist.id;
 
@@ -96,15 +96,15 @@ public class DoctorlistAdapter extends RecyclerView.Adapter<DoctorlistAdapter.Vi
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textView = (TextView) itemView.findViewById(R.id.doctor_name);
-            imageView = (ImageView) itemView.findViewById(R.id.doctor_image);
-            call_button = (LinearLayout) itemView.findViewById(R.id.call_button);
+            textView = itemView.findViewById(R.id.doctor_name);
+            imageView = itemView.findViewById(R.id.doctor_image);
+            call_button = itemView.findViewById(R.id.call_button);
 
-            specialization = (TextView) itemView.findViewById(R.id.specialization);
-            exp = (TextView) itemView.findViewById(R.id.exp);
-            degree = (TextView) itemView.findViewById(R.id.degree);
-            hospital = (TextView) itemView.findViewById(R.id.hospital);
-            distance = (TextView) itemView.findViewById(R.id.distance);
+            specialization = itemView.findViewById(R.id.specialization);
+            exp = itemView.findViewById(R.id.exp);
+            degree = itemView.findViewById(R.id.degree);
+            hospital = itemView.findViewById(R.id.hospital);
+            distance = itemView.findViewById(R.id.distance);
 
             itemView.setOnClickListener(this);
         }

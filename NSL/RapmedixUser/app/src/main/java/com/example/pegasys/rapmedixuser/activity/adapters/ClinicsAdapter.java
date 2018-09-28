@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.pegasys.rapmedixuser.R;
@@ -68,6 +69,7 @@ public class ClinicsAdapter extends RecyclerView.Adapter<ClinicsAdapter.ViewHold
         TextView doctorName;
         TextView doctorPrice;
         TextView doctorTime;
+        ImageView Navigation;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -80,8 +82,9 @@ public class ClinicsAdapter extends RecyclerView.Adapter<ClinicsAdapter.ViewHold
             doctorPrice = (TextView) itemView.findViewById(R.id.doctor_row_price);
             doctorBook = (Button) itemView.findViewById(R.id.doctor_row_book);
             doctorDirection = (Button) itemView.findViewById(R.id.doctor_row_direction);
-
+            Navigation = (ImageView) itemView.findViewById(R.id.iv_navifation);
             doctorBook.setOnClickListener(this);
+            Navigation.setOnClickListener(this);
         }
 
         @Override

@@ -12,12 +12,27 @@ import java.util.List;
  */
 
 public class SlotResponse {
-    @SerializedName("schedule")
+    /*@SerializedName("schedule")
     @Expose
     public List<String> schedule = null;
     @SerializedName("appointmentsdata")
     @Expose
     public List<Object> appointmentsdata = null;
+    @SerializedName("status")
+    @Expose
+    public String status;
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this).append("schedule", schedule).append("appointmentsdata", appointmentsdata).append("status", status).toString();
+    }*/
+
+    @SerializedName("schedule")
+    @Expose
+    public List<String> schedule = null;
+    @SerializedName("appointmentsdata")
+    @Expose
+    public List<String> appointmentsdata = null;
     @SerializedName("status")
     @Expose
     public String status;

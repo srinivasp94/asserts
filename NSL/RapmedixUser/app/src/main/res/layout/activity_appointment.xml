@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgr_color"
     tools:context="com.example.pegasys.rapmedixuser.activity.newactivities.AppointmentActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -15,27 +17,48 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
+            android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tab"
+            <ImageView
+                android:id="@+id/backbutton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:tint="@color/white"
+                android:src="@drawable/back_arrow"/>
+
+
+            <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                android:id="@+id/toolbar_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                app:tabGravity="fill"
-                app:tabMode="scrollable"
-                app:tabSelectedTextColor="@color/colorPrimary"
-                app:tabTextColor="#cccccc" />
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:text="@string/app_name"
+                android:textSize="@dimen/_16sdp"
+                />
         </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:tabGravity="center"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="#cccccc" />
 
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
+        android:layout_marginTop="@dimen/_50sdp"
         android:id="@+id/viewpager1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

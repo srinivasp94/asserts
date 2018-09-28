@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "22610665771",
+    "firebase_url": "https://rapmedix-234ce.firebaseio.com",
+    "project_id": "rapmedix-234ce",
+    "storage_bucket": "rapmedix-234ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22610665771:android:77e4f34fa7b984ae",
+        "android_client_info": {
+          "package_name": "com.example.pegasys.rapmedixuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22610665771-fbb60ih7jbj8dou9t50anj7doghn7cit.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pegasys.rapmedixuser",
+            "certificate_hash": "d2fde41956d6c97f1fb7767cd257d7dd32ca6bd7"
+          }
+        },
+        {
+          "client_id": "22610665771-c7sdj0q5kmq2voa1shm1nfuf7lqi8r9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZr85l4yj0A7Dk_Wjk4dw4lU_zfKuJRCA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22610665771-c7sdj0q5kmq2voa1shm1nfuf7lqi8r9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

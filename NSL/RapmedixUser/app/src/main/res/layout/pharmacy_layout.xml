@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/rootll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+                    android:text="Upload Images" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_upload"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.5"
+                    android:gravity="end">
+
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                        android:id="@+id/q"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="left"
+                        android:layout_weight="0.5"
+                        android:text="Upload Images"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignRight="@+id/q"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/plus"
+                        android:tint="@color/colorPrimaryDark" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="#cccccc"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_90sdp"
+                    android:gravity="center|left">
+
+                    <ImageView
+                        android:id="@+id/iv_preview"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginRight="@dimen/_5sdp" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+                    android:text="Please Specify your Order"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/allmedicine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="I Want All medicines " />
+
+                    <RadioButton
+                        android:id="@+id/callme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Ask to call me" />
+
+                    <RadioButton
+                        android:id="@+id/writedescript"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="let me Write the Description" />
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/edt_description"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:background="@drawable/background_line"
+                    android:hint="Please Write Description here (Optional)"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@color/light_black" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Add coupon code"
+                    android:id="@+id/txt_coupons"/>
+                <EditText
+                    android:singleLine="true"
+                    android:id="@+id/edt_coupons"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:hint="Add coupon code" />
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                    android:id="@+id/txt_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Add "
+                    android:textColor="@color/colorPrimaryDark" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/rootll"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="#dcfceded"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green_dark"
+                android:text="Next"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

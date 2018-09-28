@@ -6,6 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.pegasys.rapmedixuser.R;
@@ -22,6 +25,7 @@ public class familyAdapter extends RecyclerView.Adapter<familyAdapter.ViewHolder
 
     Context context;
     ArrayList<Familydatum> list = new ArrayList<>();
+    LinearLayout ll_mobile;
 
     public familyAdapter(Context context, ArrayList<Familydatum> list) {
         this.context = context;
@@ -51,7 +55,21 @@ public class familyAdapter extends RecyclerView.Adapter<familyAdapter.ViewHolder
         Familydatum mFamilydatum = list.get(position);
         holder.name.setText(mFamilydatum.name);
         holder.age.setText(mFamilydatum.dateofbirth);
-        holder.mobile.setText(mFamilydatum.mobile);
+//        if (data.get(position).Mobile.equals("0"))
+//        {
+//            vh.mobilee_root.setVisibility(View.GONE);
+//
+//        }else {
+//            vh.mobilee_root.setVisibility(View.VISIBLE);
+//            vh.mobile.setText(data.get(position).Mobile);
+//        }
+        if (mFamilydatum.mobile.equals("0")) {
+            ll_mobile.setVisibility(View.GONE);
+        } else {
+            ll_mobile.setVisibility(View.VISIBLE);
+            holder.mobile.setText(mFamilydatum.mobile);
+        }
+
         holder.relation.setText(mFamilydatum.relationShip);
 
     }
@@ -64,15 +82,22 @@ public class familyAdapter extends RecyclerView.Adapter<familyAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView name, relation, mobile,age;
         CardView cardView;
+        RelativeLayout relativeLayout;
+        ImageView imageView_delete;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.name);
-            age = (TextView) itemView.findViewById(R.id.age);
-            relation = (TextView) itemView.findViewById(R.id.relation);
-            mobile = (TextView) itemView.findViewById(R.id.mobile);
-            cardView = (CardView)itemView.findViewById(R.id.cv_root);
-            cardView.setOnClickListener(this);
+            name = itemView.findViewById(R.id.name);
+            age = itemView.findViewById(R.id.age);
+            relation = itemView.findViewById(R.id.relation);
+            mobile = itemView.findViewById(R.id.mobile);
+            cardView = itemView.findViewById(R.id.cv_root);
+            relativeLayout = itemView.findViewById(R.id.layout_member);
+            ll_mobile = itemView.findViewById(R.id.mobilee_root);
+            imageView_delete = itemView.findViewById(R.id.iv_delete);
+//            cardView.setOnClickListener(this);
+            imageView_delete.setOnClickListener(this);
         }
 
         @Override

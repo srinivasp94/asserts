@@ -21,7 +21,7 @@
         <!--      android:id="@+id/miss_lay"    android:background="@drawable/popup_border"
 -->
 
-        <TextView
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"

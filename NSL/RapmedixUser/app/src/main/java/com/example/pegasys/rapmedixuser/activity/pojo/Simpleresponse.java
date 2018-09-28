@@ -13,6 +13,9 @@ public class Simpleresponse {
     @SerializedName("status")
     @Expose
     public String status;
+    @SerializedName("message")
+    @Expose
+    public String message;
 
     @Override
     public String toString() {

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:gravity="center">
-    <TextView
+    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
         android:id="@+id/month"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         android:padding="3dp"
         android:textSize="15sp"
         android:background="@drawable/slot_date_bg_selector"/>
-    <TextView
+    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
         android:id="@+id/date"
         android:layout_marginTop="2dp"
         android:layout_width="match_parent"

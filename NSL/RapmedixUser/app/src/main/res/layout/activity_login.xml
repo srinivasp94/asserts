@@ -5,49 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pegasys.rapmedixuser.activity.LoginActivity">
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
         android:id="@+id/ll_loginpage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
         android:layout_alignParentTop="true"
         android:background="@color/colorAccent">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:src="@drawable/header_reg"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/header_reg" />
     </LinearLayout>
+
     <ScrollView
-        android:layout_below="@+id/ll_loginpage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_loginpage">
+
         <LinearLayout
+            android:id="@+id/snackbarlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/snackbarlogin"
             android:orientation="vertical">
+
             <LinearLayout
                 android:id="@+id/mobile"
-                android:layout_marginTop="35dp"
-                android:padding="7dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="35dp"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:padding="7dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/contact_number"/>
+                    android:background="@drawable/contact_number" />
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_margin="0dp"
-                    android:padding="0dp"
-                    >
+                    android:padding="0dp">
+
                     <EditText
                         android:id="@+id/mobile_number_input"
                         android:layout_width="match_parent"
@@ -55,134 +61,139 @@
                         android:hint="Mobile Number"
                         android:inputType="number"
                         android:maxLength="10"
-                        android:textSize="15sp"/>
+                        android:textSize="15sp" />
                 </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/pwd"
-                android:layout_marginTop="0dp"
-                android:padding="7dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:padding="7dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/patient_name"/>
+                    android:background="@drawable/patient_name" />
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_margin="0dp"
-                    android:padding="0dp"
-                    >
+                    android:padding="0dp">
+
                     <EditText
                         android:id="@+id/pwd_login"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
                         android:hint="Enter Password"
                         android:inputType="textPassword"
                         android:paddingLeft="0dp"
-                        android:fontFamily="sans-serif"
 
 
-                        android:textSize="15sp"/>
+                        android:textSize="15sp" />
                 </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:visibility="gone"
                 android:id="@+id/email"
-                android:layout_marginTop="15dp"
-                android:padding="7dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/shadow2"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="7dp"
+                android:visibility="gone">
 
                 <LinearLayout
-                    android:gravity="center"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:background="@drawable/login_icon_back">
+                    android:background="@drawable/login_icon_back"
+                    android:gravity="center">
 
                     <ImageView
                         android:id="@+id/mobile_number"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/email"
-                        android:scaleType="fitXY"/>
+                        android:scaleType="fitXY"
+                        android:src="@drawable/email" />
                 </LinearLayout>
+
                 <EditText
                     android:id="@+id/email_input"
-                    android:textSize="14sp"
-                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
                     android:background="#00000000"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
-                    />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/submit"
-                android:layout_marginTop="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="center"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="SUBMIT"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/button_shape"
-                android:textColor="@color/white"/>
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="SUBMIT"
+                android:textColor="@color/white" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
                 android:gravity="right">
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                     android:id="@+id/forgot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Forgot Password?"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/hint"/>
+                    android:text="Forgot Password?"
+                    android:textColor="@color/hint" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center">
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Not yet registered? Signup"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/hint"/>
+                    android:text="Not yet registered? Signup"
+                    android:textColor="@color/hint" />
 
-                <TextView
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
                     android:id="@+id/signup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="here"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/colorAccent"/>
+                    android:text="here"
+                    android:textColor="@color/colorAccent" />
             </LinearLayout>
 
         </LinearLayout>

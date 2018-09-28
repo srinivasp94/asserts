@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgr_color"
+    tools:context="com.example.pegasys.rapmedixuser.activity.newactivities.DiagnosticsCentersActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/MyToolbar"
+            app:title=""
+            app:titleTextColor="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/backbutton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="1dp"
+                    android:src="@drawable/back_arrow"
+                    android:tint="@color/white" />
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_toRightOf="@+id/backbutton"
+                    android:gravity="left"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_toRightOf="@+id/toolbar_title"
+                    android:gravity="end"
+                    android:id="@+id/rl_click"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/relative_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_gravity="end"
+                            android:background="@drawable/ic_shoppingcart" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@id/relative_layout"
+                        android:gravity="end"
+                        android:text="0"
+                        android:background="@drawable/item_count"
+                        android:textColor="@color/com_facebook_blue"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"/>
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_centers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/appbar"
+        android:layout_marginTop="@dimen/_52sdp"
+        android:background="@color/white"
+        android:padding="@dimen/_6sdp">
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+            android:id="@+id/tv_hinttitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:padding="@dimen/_5sdp"
+            android:gravity="start"
+            android:text="" />
+
+        <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+            android:id="@+id/tv_sort"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableLeft="@drawable/edit"
+            android:drawablePadding="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Sort" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_proceedtocheckout"
+        android:layout_below="@+id/rl_centers"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_centers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_centers"
+            android:layout_margin="@dimen/_2sdp"
+            android:padding="@dimen/_4sdp"
+            android:visibility="gone"
+            app:cardElevation="@dimen/_4sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_8sdp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.8"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="Total Payment" />
+
+                    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="0"
+                        android:text="(Apply Discounts in checkout Page)"
+                        android:textColor="@color/green_dark"
+                        android:textSize="@dimen/_8sdp" />
+                </LinearLayout>
+
+                <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+                    android:id="@+id/tv_totalprice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="Rs.12000"
+                    android:visibility="gone"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_proceedtocheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_25sdp"
+        android:background="@drawable/red_shadow"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="proceed to checkout"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

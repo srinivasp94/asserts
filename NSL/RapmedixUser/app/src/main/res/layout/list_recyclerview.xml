@@ -2,10 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgr_color"
     android:orientation="vertical">
+
+    <com.example.pegasys.rapmedixuser.activity.customviews.CustomTextViewBold
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_nodata"
+        android:text="@string/no_family_member_added_yet"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:textSize="@dimen/_18sdp"
+        android:visibility="gone"
+        />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_add"
+        android:layout_marginTop="@dimen/_50sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

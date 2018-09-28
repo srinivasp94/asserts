@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Otp_rootview"
+    tools:context="com.example.pegasys.rapmedixuser.activity.OtpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/llsnack">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/rap_banner" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shadow2"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <LinearLayout
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/login_icon_back"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/topic_grid"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/email" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/logmobileotp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="#00000000"
+                    android:hint="Enter OTP"
+                    android:inputType="number"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/resend_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:text="Resend OTP"
+                android:textColor="@color/light_black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/otp_submit"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/button_shape"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:text="SUBMIT"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
